@@ -724,6 +724,18 @@
   ::-webkit-scrollbar { width: 5px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb { background: var(--gray-300); border-radius: 4px; }
+
+  /* ─── IMAGE CLARITY FIX ──────────────────────────────── */
+  .screenshot-placeholder img,
+  .scenario-avatar img,
+  .testimonial-photo img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
 </style>
 </head>
 <body>
