@@ -393,7 +393,7 @@
   }
 
   .kpi-screenshot {
-    width: 40%;
+    width: 48%;
     background: white;
     border-right: 1px solid var(--gray-200);
     border-bottom: none;
@@ -402,8 +402,8 @@
     align-items: center;
     justify-content: center;
     gap: 0;
-    padding: 12px;
-    min-height: 160px;
+    padding: 16px;
+    height: 200px;
     border: none;
     border-radius: var(--radius-lg) 0 0 0;
     margin: 0;
@@ -412,7 +412,7 @@
 
   .kpi-screenshot img {
     max-width: 100%;
-    height: auto;
+    max-height: 100%;
     display: block;
     object-fit: contain;
     image-rendering: -webkit-optimize-contrast;
