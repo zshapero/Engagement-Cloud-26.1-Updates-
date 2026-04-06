@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 3: Finding and Acquiring New Subscribers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #0314f8;
+      --blue-dark: #0010c4;
+      --blue-light: #e8eaff;
+      --blue-mid: #3d52f9;
+      --white: #ffffff;
+      --gray-100: #f7f8fc;
+      --gray-200: #eef0f7;
+      --gray-300: #d8dce8;
+      --gray-500: #8b91aa;
+      --gray-700: #4a4f66;
+      --gray-900: #1a1d2e;
+      --accent-orange: #ff7e21;
+      --radius: 4px;
+      --radius-lg: 8px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.10);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--gray-900);
+      background: var(--gray-100);
+    }
+
+    .main {
+      max-width: 960px;
+      margin: 0 auto;
+      background: var(--white);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Hero */
+    .lesson-hero {
+      background: var(--blue);
+      padding: 72px 100px 64px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lesson-hero::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .lesson-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -50px;
+      left: -50px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .lesson-title {
+      font-family: 'Source Serif 4', serif;
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .lesson-subtitle {
+      font-size: 18px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.85);
+      max-width: 620px;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .lesson-meta {
+      display: flex;
+      gap: 24px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      position: relative;
+      z-index: 1;
+    }
+
+    .lesson-meta span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Content Wrapper */
+    .content-wrapper {
+      padding: 0 100px 80px;
+    }
+
+    /* Scenario Block */
+    .scenario-block {
+      display: flex;
+      border: 1px solid var(--gray-300);
+      box-shadow: var(--shadow-sm);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin: 48px 0 40px;
+    }
+
+    .scenario-avatar {
+      width: 220px;
+      min-width: 220px;
+      background: var(--blue);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 20px;
+    }
+
+    .scenario-avatar svg {
+      width: 72px;
+      height: 72px;
+      fill: rgba(255,255,255,0.85);
+      margin-bottom: 14px;
+    }
+
+    .scenario-avatar-label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.8);
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .scenario-content {
+      padding: 32px 36px;
+      flex: 1;
+    }
+
+    .scenario-name {
+      font-family: 'Source Serif 4', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 8px;
+    }
+
+    .scenario-text {
+      font-size: 16px;
+      color: var(--gray-700);
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+
+    .scenario-questions {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .scenario-questions li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 15px;
+      color: var(--gray-700);
+    }
+
+    .scenario-questions .q-circle {
+      width: 24px;
+      height: 24px;
+      min-width: 24px;
+      border-radius: 50%;
+      background: var(--blue-light);
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    /* Section Heading */
+    .section-heading {
+      border-bottom: 2px solid var(--blue);
+      padding-bottom: 12px;
+      margin-bottom: 28px;
+      margin-top: 52px;
+    }
+
+    .sh-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--blue);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .section-heading h2 {
+      font-family: 'Source Serif 4', serif;
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--gray-900);
+    }
+
+    /* Prose */
+    .prose p {
+      margin-bottom: 18px;
+      color: var(--gray-700);
+      line-height: 1.75;
+    }
+
+    /* Callout Quote */
+    .callout-quote {
+      border-left: 4px solid var(--blue);
+      background: var(--blue-light);
+      padding: 20px 28px;
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+      margin: 28px 0;
+      font-size: 16px;
+      color: var(--gray-700);
+      line-height: 1.7;
+    }
+
+    .callout-quote strong {
+      color: var(--gray-900);
+    }
+
+    /* Outcomes Grid */
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 28px 0;
+    }
+
+    .outcome-card {
+      background: var(--gray-100);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      text-align: center;
+    }
+
+    .outcome-number {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: var(--white);
+      font-size: 18px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+
+    .outcome-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 6px;
+    }
+
+    .outcome-desc {
+      font-size: 14px;
+      color: var(--gray-500);
+      line-height: 1.6;
+    }
+
+    /* Update Item Rich */
+    .update-item--rich {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .update-area-tag {
+      display: inline-block;
+      background: var(--blue-light);
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 3px 10px;
+      border-radius: var(--radius);
+      margin-bottom: 10px;
+    }
+
+    .update-body {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .update-feature {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--gray-900);
+    }
+
+    .update-desc {
+      font-size: 15px;
+      color: var(--gray-700);
+      line-height: 1.65;
+    }
+
+    /* Embed Placeholder */
+    .embed-placeholder {
+      background: var(--gray-100);
+      border: 2px dashed var(--gray-300);
+      border-radius: var(--radius-lg);
+      padding: 48px 28px;
+      text-align: center;
+      margin: 28px 0;
+    }
+
+    .embed-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .embed-icon {
+      font-size: 36px;
+      color: var(--gray-500);
+      margin-bottom: 4px;
+    }
+
+    .embed-label {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--gray-700);
+    }
+
+    .embed-sublabel {
+      font-size: 13px;
+      color: var(--gray-500);
+    }
+
+    /* Reveal Sections */
+    .reveal-section {
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .reveal-section.hidden {
+      opacity: 0;
+      transform: translateY(30px);
+      pointer-events: none;
+      max-height: 0;
+      overflow: hidden;
+    }
+
+    .reveal-section.revealing {
+      opacity: 0;
+      transform: translateY(30px);
+      max-height: none;
+      overflow: visible;
+    }
+
+    .reveal-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+      max-height: none;
+      overflow: visible;
+    }
+
+    /* Continue Button */
+    .continue-wrap {
+      text-align: center;
+      margin: 40px 0 12px;
+    }
+
+    .continue-btn {
+      display: inline-block;
+      width: 759px;
+      max-width: 100%;
+      height: 56px;
+      line-height: 56px;
+      background: var(--blue);
+      color: var(--white);
+      font-size: 16px;
+      font-weight: 700;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background 0.2s;
+      text-align: center;
+    }
+
+    .continue-btn:hover {
+      background: var(--blue-dark);
+    }
+
+    /* Knowledge Check */
+    .knowledge-check {
+      background: var(--gray-100);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      margin: 28px 0;
+    }
+
+    .knowledge-check h3 {
+      font-family: 'Source Serif 4', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 20px;
+    }
+
+    .kc-question {
+      font-size: 16px;
+      color: var(--gray-700);
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .kc-option {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      border: 2px solid var(--gray-300);
+      border-radius: var(--radius);
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      font-size: 16px;
+      color: var(--gray-700);
+    }
+
+    .kc-option:hover {
+      border-color: var(--blue-mid);
+      background: var(--blue-light);
+    }
+
+    .kc-option.selected {
+      border-color: var(--blue);
+      background: var(--blue-light);
+      color: var(--gray-900);
+      font-weight: 700;
+    }
+
+    .kc-option.correct {
+      border-color: #22c55e;
+      background: #f0fdf4;
+    }
+
+    .kc-option.incorrect {
+      border-color: #ef4444;
+      background: #fef2f2;
+    }
+
+    .kc-option .radio-dot {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      border-radius: 50%;
+      border: 2px solid var(--gray-300);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .kc-option.selected .radio-dot {
+      border-color: var(--blue);
+    }
+
+    .kc-option.selected .radio-dot::after {
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--blue);
+    }
+
+    .kc-submit-btn {
+      display: inline-block;
+      padding: 12px 36px;
+      background: var(--blue);
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 700;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      margin-top: 12px;
+      transition: background 0.2s;
+    }
+
+    .kc-submit-btn:hover {
+      background: var(--blue-dark);
+    }
+
+    .kc-feedback {
+      margin-top: 16px;
+      padding: 14px 20px;
+      border-radius: var(--radius);
+      font-size: 15px;
+      display: none;
+    }
+
+    .kc-feedback.show { display: block; }
+    .kc-feedback.success { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+    .kc-feedback.fail { background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
+
+    .kc-retry-btn {
+      display: none;
+      padding: 10px 28px;
+      background: var(--accent-orange);
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 700;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .kc-retry-btn.show { display: inline-block; }
+
+    /* fadeUp Animation */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-up {
+      animation: fadeUp 0.5s ease forwards;
+    }
+
+    /* Scrollbar Styles */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--gray-100);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--gray-300);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--gray-500);
+    }
+
+    /* Step Cards */
+    .step-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 20px 24px;
+      margin-bottom: 14px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .step-number {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+
+    .step-card-body h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 4px;
+    }
+
+    .step-card-body p {
+      font-size: 14px;
+      color: var(--gray-700);
+      line-height: 1.6;
+    }
+
+    /* Use Case */
+    .use-case {
+      background: var(--gray-100);
+      border-left: 4px solid var(--accent-orange);
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+      padding: 24px 28px;
+      margin: 24px 0;
+    }
+
+    .use-case h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--accent-orange);
+      margin-bottom: 8px;
+    }
+
+    .use-case p {
+      font-size: 15px;
+      color: var(--gray-700);
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+
+<div class="main">
+
+  <!-- HERO -->
+  <div class="lesson-hero">
+    <h1 class="lesson-title">Finding and Acquiring New Subscribers</h1>
+    <p class="lesson-subtitle">Learn how to use AI-driven lookalike segments, Facebook audiences, ACP targeting, and prospect list uploads to find and acquire new subscribers.</p>
+    <div class="lesson-meta">
+      <span>&#9201; 15 min read</span>
+      <span>&#128202; Lesson 3 &middot; 5 sections</span>
+    </div>
+  </div>
+
+  <div class="content-wrapper">
+
+    <!-- SCENARIO BLOCK -->
+    <div class="scenario-block">
+      <div class="scenario-avatar">
+        <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="40" cy="28" r="14" fill="rgba(255,255,255,0.85)"/>
+          <ellipse cx="40" cy="62" rx="22" ry="16" fill="rgba(255,255,255,0.85)"/>
+        </svg>
+        <div class="scenario-avatar-label">Rachel Mathers<br>Marketing Specialist</div>
+      </div>
+      <div class="scenario-content">
+        <div class="scenario-name">Meet Rachel</div>
+        <p class="scenario-text">Rachel is a Marketing Specialist at Fast Fiber, a regional broadband provider. She has a limited budget and wants to target prospects who are most likely to convert by finding people who look like her best current subscribers. She needs to understand the different acquisition tools available in Engagement Cloud to build a strategy that maximizes her return on investment.</p>
+        <ul class="scenario-questions">
+          <li><span class="q-circle">?</span> How can Rachel use AI to find prospects that resemble her highest-value subscribers?</li>
+          <li><span class="q-circle">?</span> What role can Facebook audiences play in reaching new potential subscribers?</li>
+          <li><span class="q-circle">?</span> Are there ways to target underserved communities or upload her own prospect lists?</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SECTION 1 - VISIBLE -->
+    <div class="reveal-section visible" id="section-1">
+      <div class="section-heading">
+        <span class="sh-label">Section 1</span>
+        <h2>AI-Driven Lookalike Subscriber Segments</h2>
+      </div>
+      <div class="prose">
+        <p>One of the most powerful tools in Engagement Cloud is the ability to create <strong>AI-driven lookalike subscriber segments</strong>. These segments identify non-subscribers within your service area who share demographic and psychographic traits with your best existing customers.</p>
+        <p>Using machine learning algorithms, the platform analyzes your current subscriber base to identify patterns in demographics, location, online behavior, and service usage. It then scores prospects in your coverage area based on how closely they match those patterns, producing a ranked list of the individuals most likely to convert.</p>
+        <p>This approach is far more efficient than broad, untargeted marketing. Instead of casting a wide net, you focus your budget on the people who are statistically most likely to respond positively to your offers.</p>
+      </div>
+      <div class="callout-quote">
+        <strong>Key Insight:</strong> Lookalike segments leverage the characteristics of your highest-value subscribers to find more people just like them, allowing you to acquire new customers with a much higher predicted lifetime value.
+      </div>
+
+      <div class="continue-wrap">
+        <button class="continue-btn" onclick="revealSection('section-2')">Continue to Section 2 &rarr;</button>
+      </div>
+    </div>
+
+    <!-- SECTION 2 - HIDDEN -->
+    <div class="reveal-section hidden" id="section-2">
+      <div class="section-heading">
+        <span class="sh-label">Section 2</span>
+        <h2>Facebook Lookalike Segments</h2>
+      </div>
+      <div class="prose">
+        <p>Engagement Cloud integrates directly with Facebook to help you reach potential subscribers through <strong>Facebook Lookalike Audiences</strong>. By sharing a high-value subscriber segment with Facebook, you enable its algorithms to find similar users on the platform and serve them targeted ads.</p>
+        <p>This process involves four key outcomes that work together to create a seamless acquisition pipeline.</p>
+      </div>
+
+      <div class="outcomes-grid">
+        <div class="outcome-card">
+          <div class="outcome-number">1</div>
+          <div class="outcome-title">Develop Custom Audience</div>
+          <div class="outcome-desc">Export your high-value subscriber data to create a Facebook Custom Audience as the seed for matching.</div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-number">2</div>
+          <div class="outcome-title">Target Lookalike</div>
+          <div class="outcome-desc">Use the Custom Audience to generate a Lookalike Audience of similar Facebook users in your market.</div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-number">3</div>
+          <div class="outcome-title">Facebook Analyzes</div>
+          <div class="outcome-desc">Facebook matches profiles based on interests, demographics, and behavior patterns to find the best prospects.</div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-number">4</div>
+          <div class="outcome-title">Facebook Targets</div>
+          <div class="outcome-desc">Your ad campaigns are served directly to the Lookalike Audience, maximizing relevance and conversion rates.</div>
+        </div>
+      </div>
+
+      <div class="prose">
+        <p>Follow these seven steps to set up your Facebook Lookalike campaign through Engagement Cloud:</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <div class="step-card-body">
+          <h4>Integrate Facebook</h4>
+          <p>Connect your Facebook Business account to Engagement Cloud through the Integrations settings panel.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <div class="step-card-body">
+          <h4>Create Exclusion List</h4>
+          <p>Build a segment of all current subscribers and send it to Facebook as a Custom Audience to exclude from your ads.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <div class="step-card-body">
+          <h4>Send to Facebook</h4>
+          <p>Export your exclusion segment to Facebook so current subscribers are automatically filtered out of campaigns.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-number">4</div>
+        <div class="step-card-body">
+          <h4>Create High-Value Segment</h4>
+          <p>Define a segment of your most valuable subscribers based on plan tier, tenure, or engagement metrics.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-number">5</div>
+        <div class="step-card-body">
+          <h4>Send Segment to Facebook</h4>
+          <p>Export the high-value segment to Facebook as a Custom Audience to serve as the seed for your Lookalike.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-number">6</div>
+        <div class="step-card-body">
+          <h4>Create Lookalike in Facebook</h4>
+          <p>In Facebook Ads Manager, create a Lookalike Audience from the high-value Custom Audience, selecting your target geography and audience size percentage.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-number">7</div>
+        <div class="step-card-body">
+          <h4>Create and Launch Ad</h4>
+          <p>Build your ad creative, set your budget, and launch the campaign targeting the Lookalike Audience while excluding current subscribers.</p>
+        </div>
+      </div>
+
+      <div class="continue-wrap">
+        <button class="continue-btn" onclick="revealSection('section-3')">Continue to Section 3 &rarr;</button>
+      </div>
+    </div>
+
+    <!-- SECTION 3 - HIDDEN -->
+    <div class="reveal-section hidden" id="section-3">
+      <div class="section-heading">
+        <span class="sh-label">Section 3</span>
+        <h2>ACP Targeting</h2>
+      </div>
+      <div class="prose">
+        <p>The <strong>Affordable Connectivity Program (ACP)</strong> is a Federal Communications Commission (FCC) initiative designed to help low-income households afford broadband internet service. Engagement Cloud includes tools to help you identify and reach eligible households in your service area.</p>
+        <p>ACP targeting allows you to proactively reach out to communities that qualify for the program, increasing your subscriber base while fulfilling a vital community service mission. By connecting underserved populations with affordable broadband, you expand your market and strengthen community relationships.</p>
+      </div>
+
+      <div class="callout-quote">
+        <strong>Eligibility Note:</strong> The ACP program uses federal poverty guidelines to determine household eligibility. Households at or below 200% of the Federal Poverty Guidelines, or those participating in certain government assistance programs, may qualify for a monthly broadband discount.
+      </div>
+
+      <div class="use-case">
+        <h4>Use Case: Ava Kelly at 123 Fiber</h4>
+        <p>Ava is a community outreach manager at 123 Fiber. She wants to increase subscriber counts in underserved neighborhoods while helping residents access affordable internet. Using ACP targeting in Engagement Cloud, she identifies eligible households, sends personalized mailers explaining the ACP benefit, and provides a simple sign-up path. Within three months, 123 Fiber adds 340 new ACP subscribers.</p>
+      </div>
+
+      <div class="prose">
+        <p>Follow these steps to set up ACP targeting in Engagement Cloud:</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <div class="step-card-body">
+          <h4>Identify Eligible Areas</h4>
+          <p>Use the ACP Targeting module to view a heatmap of eligible households within your coverage area, filtered by poverty level and government program participation.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <div class="step-card-body">
+          <h4>Create and Launch Campaign</h4>
+          <p>Build a targeted campaign with messaging tailored to ACP-eligible households, including details on the discount, eligibility, and a simple enrollment process.</p>
+        </div>
+      </div>
+
+      <div class="embed-placeholder">
+        <div class="embed-inner">
+          <div class="embed-icon">&#127909;</div>
+          <div class="embed-label">ACP Targeting Walkthrough Video</div>
+          <div class="embed-sublabel">Video embed will appear here when published</div>
+        </div>
+      </div>
+
+      <div class="continue-wrap">
+        <button class="continue-btn" onclick="revealSection('section-4')">Continue to Section 4 &rarr;</button>
+      </div>
+    </div>
+
+    <!-- SECTION 4 - HIDDEN -->
+    <div class="reveal-section hidden" id="section-4">
+      <div class="section-heading">
+        <span class="sh-label">Section 4</span>
+        <h2>Uploading Prospect Lists</h2>
+      </div>
+      <div class="prose">
+        <p>Sometimes you already have a list of addresses or prospects you want to target -- perhaps from a partner, a new development, or a recently completed network buildout. Engagement Cloud lets you <strong>upload prospect address lists</strong> directly into the platform so you can immediately begin marketing to those locations.</p>
+        <p>Uploaded addresses are geocoded and matched against your serviceable area, then added to your prospect database. From there, you can create segments, launch campaigns, and track conversions just as you would with any other prospect group.</p>
+      </div>
+
+      <div class="use-case">
+        <h4>Use Case: Tori Michaels at Huntsville Electric</h4>
+        <p>Tori manages marketing for Huntsville Electric's broadband division. The utility just completed a fiber buildout in three new subdivisions, and Tori has a spreadsheet of 1,200 serviceable addresses. She uploads the list to Engagement Cloud, creates a welcome campaign with a limited-time offer, and tracks sign-ups in real time. Within 60 days, she achieves a 28% take rate across all three communities.</p>
+      </div>
+
+      <div class="prose">
+        <p>Follow these five steps to upload and activate a prospect list:</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <div class="step-card-body">
+          <h4>Prepare Your File</h4>
+          <p>Format your address list as a CSV file with columns for street address, city, state, and ZIP code. Include any additional data fields you want to use for segmentation.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <div class="step-card-body">
+          <h4>Upload to Engagement Cloud</h4>
+          <p>Navigate to the Prospect Lists section and use the upload tool to import your CSV file. The system will validate the format and flag any issues.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <div class="step-card-body">
+          <h4>Geocode and Match</h4>
+          <p>Engagement Cloud will automatically geocode each address and match it against your serviceable area footprint, categorizing each as serviceable or out-of-area.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-number">4</div>
+        <div class="step-card-body">
+          <h4>Create a Segment</h4>
+          <p>Build a segment from the uploaded addresses to use as the target audience for your marketing campaigns.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-number">5</div>
+        <div class="step-card-body">
+          <h4>Launch Your Campaign</h4>
+          <p>Design and deploy your campaign -- whether it is direct mail, email, or digital ads -- targeting the newly uploaded prospect segment.</p>
+        </div>
+      </div>
+
+      <div class="callout-quote">
+        <strong>Important Distinction:</strong> In Engagement Cloud, a <em>subscriber</em> is someone who currently has an active service account, while a <em>prospect</em> is a serviceable address that does not yet have an account. Uploaded lists are treated as prospects until they convert.
+      </div>
+
+      <div class="continue-wrap">
+        <button class="continue-btn" onclick="revealSection('section-5')">Continue to Knowledge Check &rarr;</button>
+      </div>
+    </div>
+
+    <!-- SECTION 5 - KNOWLEDGE CHECK - HIDDEN -->
+    <div class="reveal-section hidden" id="section-5">
+      <div class="section-heading">
+        <span class="sh-label">Section 5</span>
+        <h2>Knowledge Check</h2>
+      </div>
+
+      <div class="knowledge-check" id="kc-1">
+        <h3>Test Your Understanding</h3>
+        <div class="kc-question">
+          Look-alike Acquisition Segments consist of non-subscribers within your pre-defined base area with similar data usage habits and demographic traits as your existing subscribers, identified through AI and machine learning analysis.
+        </div>
+        <div class="kc-option" data-index="0" onclick="selectOption('kc-1', 0)">
+          <span class="radio-dot"></span>
+          True
+        </div>
+        <div class="kc-option" data-index="1" onclick="selectOption('kc-1', 1)">
+          <span class="radio-dot"></span>
+          False
+        </div>
+        <button class="kc-submit-btn" onclick="submitKnowledgeCheck('kc-1')">Submit Answer</button>
+        <div class="kc-feedback" id="kc-1-feedback"></div>
+        <button class="kc-retry-btn" id="kc-1-retry" onclick="retryKnowledgeCheck('kc-1')">Try Again</button>
+      </div>
+    </div>
+
+  </div><!-- /content-wrapper -->
+</div><!-- /main -->
+
+<script>
+  const kcAnswers = { 'kc-1': 0 };
+  const kcSelections = {};
+
+  function revealSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (!section) return;
+    section.classList.remove('hidden');
+    section.classList.add('revealing');
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() {
+        section.classList.remove('revealing');
+        section.classList.add('visible');
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  }
+
+  function selectOption(kcId, index) {
+    kcSelections[kcId] = index;
+    var container = document.getElementById(kcId);
+    var options = container.querySelectorAll('.kc-option');
+    options.forEach(function(opt) {
+      opt.classList.remove('selected', 'correct', 'incorrect');
+    });
+    options[index].classList.add('selected');
+  }
+
+  function submitKnowledgeCheck(kcId) {
+    if (kcSelections[kcId] === undefined) return;
+
+    var container = document.getElementById(kcId);
+    var options = container.querySelectorAll('.kc-option');
+    var feedback = document.getElementById(kcId + '-feedback');
+    var retryBtn = document.getElementById(kcId + '-retry');
+    var correct = kcAnswers[kcId];
+    var selected = kcSelections[kcId];
+
+    options.forEach(function(opt) {
+      opt.style.pointerEvents = 'none';
+    });
+
+    if (selected === correct) {
+      options[selected].classList.add('correct');
+      feedback.textContent = 'Correct! Lookalike Acquisition Segments use AI and machine learning to identify non-subscribers who share similar demographic and psychographic traits with your existing subscriber base.';
+      feedback.className = 'kc-feedback show success';
+      retryBtn.classList.remove('show');
+    } else {
+      options[selected].classList.add('incorrect');
+      options[correct].classList.add('correct');
+      feedback.textContent = 'Not quite. The correct answer is True. Lookalike segments identify non-subscribers with similar traits to your current subscribers using AI-driven analysis.';
+      feedback.className = 'kc-feedback show fail';
+      retryBtn.classList.add('show');
+    }
+  }
+
+  function retryKnowledgeCheck(kcId) {
+    var container = document.getElementById(kcId);
+    var options = container.querySelectorAll('.kc-option');
+    var feedback = document.getElementById(kcId + '-feedback');
+    var retryBtn = document.getElementById(kcId + '-retry');
+
+    delete kcSelections[kcId];
+
+    options.forEach(function(opt) {
+      opt.classList.remove('selected', 'correct', 'incorrect');
+      opt.style.pointerEvents = 'auto';
+    });
+
+    feedback.className = 'kc-feedback';
+    feedback.textContent = '';
+    retryBtn.classList.remove('show');
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Lesson 2: Working with Geographies in Engagement Cloud Plus</title>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --blue: #0314f8;
+    --blue-dark: #0010c4;
+    --blue-light: #e8eaff;
+    --blue-mid: #3d52f9;
+    --white: #ffffff;
+    --gray-100: #f7f8fc;
+    --gray-200: #eef0f7;
+    --gray-300: #d8dce8;
+    --gray-500: #8b91aa;
+    --gray-700: #4a4f66;
+    --gray-900: #1a1d2e;
+    --accent-orange: #ff7e21;
+    --radius: 4px;
+    --radius-lg: 8px;
+    --shadow-sm: 0 1px 4px rgba(3,20,248,0.08);
+    --shadow-md: 0 4px 20px rgba(3,20,248,0.12);
+    --shadow-lg: 0 8px 40px rgba(3,20,248,0.16);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    background: var(--white);
+    color: var(--gray-900);
+    font-size: 17px;
+    line-height: 1.7;
+    display: block;
+    min-height: 100vh;
+  }
+
+  .main { width: 100%; display: flex; flex-direction: column; }
+
+  /* ─── HERO ────────────────────────────────────────────── */
+  .lesson-hero {
+    background: var(--blue);
+    color: white;
+    padding: 72px 100px 64px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .lesson-hero::before {
+    content: '';
+    position: absolute;
+    right: -80px; top: -80px;
+    width: 360px; height: 360px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+
+  .lesson-hero::after {
+    content: '';
+    position: absolute;
+    right: 80px; bottom: -120px;
+    width: 240px; height: 240px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+
+  .lesson-title {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    max-width: 800px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .lesson-subtitle {
+    font-size: 18px;
+    opacity: 0.8;
+    max-width: 700px;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+  }
+
+  .lesson-meta {
+    display: flex;
+    gap: 24px;
+    margin-top: 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .lesson-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 17px;
+    opacity: 0.7;
+  }
+
+  /* ─── CONTENT WRAPPER ─────────────────────────────────── */
+  .content-wrapper { width: 100%; padding: 0 100px 80px; }
+
+  /* ─── SECTION HEADING ─────────────────────────────────── */
+  .section-heading {
+    margin-top: 56px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--blue);
+  }
+
+  .section-heading h2 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--gray-900);
+    line-height: 1.25;
+  }
+
+  .section-heading .sh-label {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 8px;
+  }
+
+  /* ─── PROSE ───────────────────────────────────────────── */
+  .prose { padding-top: 20px; }
+
+  .prose p {
+    font-size: 17px;
+    color: var(--gray-700);
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  .prose p:last-child { margin-bottom: 0; }
+
+  /* ─── DATA SOURCES BLOCK ──────────────────────────────── */
+  .data-sources {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 28px 0;
+  }
+
+  .data-sources.three-col {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .data-source-card {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-top: 4px solid var(--blue);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    transition: box-shadow 0.2s;
+  }
+
+  .data-source-card:hover { box-shadow: var(--shadow-md); }
+
+  .data-source-icon {
+    width: 44px; height: 44px;
+    border-radius: var(--radius);
+    background: var(--blue-light);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  .data-source-icon svg { width: 22px; height: 22px; color: var(--blue); }
+
+  .data-source-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 8px;
+  }
+
+  .data-source-desc {
+    font-size: 17px;
+    color: var(--gray-500);
+    line-height: 1.6;
+  }
+
+  /* ─── CALLOUT QUOTE ──────────────────────────────────── */
+  .callout-quote {
+    border-left: 4px solid var(--blue);
+    padding: 16px 24px;
+    background: var(--blue-light);
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    margin: 24px 0;
+  }
+
+  .callout-quote p {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 19px;
+    font-style: italic;
+    color: var(--blue-dark);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ─── EMBED PLACEHOLDER ──────────────────────────────── */
+  .embed-placeholder {
+    background: var(--gray-100);
+    border: 2px dashed var(--gray-300);
+    border-radius: var(--radius-lg);
+    margin: 28px 0;
+  }
+
+  .embed-inner {
+    min-height: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 60px 40px;
+  }
+
+  .embed-icon {
+    width: 60px; height: 60px;
+    border-radius: var(--radius-lg);
+    background: var(--gray-200);
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .embed-icon svg { width: 28px; height: 28px; color: var(--gray-500); }
+
+  .embed-label {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--gray-500);
+  }
+
+  .embed-sublabel {
+    font-size: 17px;
+    color: var(--gray-300);
+  }
+
+  /* ─── SECTION REVEAL + CONTINUE ──────────────────────── */
+  .reveal-section { overflow: hidden; transition: opacity 0.5s ease, transform 0.5s ease; }
+  .reveal-section.hidden { display: none; }
+  .reveal-section.revealing { display: block; opacity: 0; transform: translateY(20px); }
+  .reveal-section.visible { display: block; opacity: 1; transform: translateY(0); }
+
+  .continue-wrap { display: flex; justify-content: center; margin: 40px 0 8px; }
+
+  .continue-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 759px;
+    height: 56px;
+    background: var(--blue);
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+  }
+
+  .continue-btn:hover { background: var(--blue-dark); box-shadow: 0 4px 16px rgba(3,20,248,0.3); }
+  .continue-btn:active { transform: translateY(1px); }
+
+  /* ─── ANIMATIONS ──────────────────────────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .lesson-hero > * { animation: fadeUp 0.5s ease both; }
+  .lesson-hero .lesson-title    { animation-delay: 0.05s; }
+  .lesson-hero .lesson-subtitle { animation-delay: 0.13s; }
+  .lesson-hero .lesson-meta     { animation-delay: 0.2s; }
+
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--gray-300); border-radius: 4px; }
+
+  /* ─── IMAGE CLARITY FIX ──────────────────────────────── */
+  .embed-placeholder img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+
+  /* ─── KNOWLEDGE CHECK ─────────────────────────────────── */
+  .knowledge-check {
+    background: var(--gray-100);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    margin-top: 32px;
+  }
+  .knowledge-check-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .knowledge-check-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: white;
+    flex-shrink: 0;
+  }
+  .knowledge-check-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--gray-900);
+  }
+  .knowledge-check-subtitle {
+    font-size: 14px;
+    color: var(--gray-500);
+    margin-top: 2px;
+  }
+  .kc-question {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    margin-bottom: 16px;
+    transition: border-color 0.3s;
+  }
+  .kc-question.correct {
+    border-color: #22c55e;
+    background: #f0fdf4;
+  }
+  .kc-question.incorrect {
+    border-color: #ef4444;
+    background: #fef2f2;
+  }
+  .kc-question-text {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 14px;
+    color: var(--gray-900);
+  }
+  .kc-question-number {
+    color: var(--blue);
+    margin-right: 6px;
+  }
+  .kc-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .kc-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 15px;
+    color: var(--gray-700);
+    background: var(--white);
+  }
+  .kc-option:hover {
+    border-color: var(--blue-mid);
+    background: var(--blue-light);
+  }
+  .kc-option.selected {
+    border-color: var(--blue);
+    background: var(--blue-light);
+    color: var(--gray-900);
+    font-weight: 600;
+  }
+  .kc-option.correct-answer {
+    border-color: #22c55e;
+    background: #dcfce7;
+    color: #166534;
+    font-weight: 600;
+  }
+  .kc-option.wrong-answer {
+    border-color: #ef4444;
+    background: #fee2e2;
+    color: #991b1b;
+  }
+  .kc-option-radio {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--gray-300);
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+  .kc-option.selected .kc-option-radio {
+    border-color: var(--blue);
+  }
+  .kc-option.selected .kc-option-radio::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: var(--blue);
+    border-radius: 50%;
+  }
+  .kc-option.correct-answer .kc-option-radio {
+    border-color: #22c55e;
+  }
+  .kc-option.correct-answer .kc-option-radio::after {
+    content: '\2713';
+    font-size: 12px;
+    color: #22c55e;
+    font-weight: 700;
+  }
+  .kc-option.wrong-answer .kc-option-radio {
+    border-color: #ef4444;
+  }
+  .kc-option.wrong-answer .kc-option-radio::after {
+    content: '\2717';
+    font-size: 12px;
+    color: #ef4444;
+    font-weight: 700;
+  }
+  .kc-option.disabled {
+    pointer-events: none;
+  }
+  .kc-feedback {
+    margin-top: 10px;
+    padding: 10px 14px;
+    border-radius: var(--radius);
+    font-size: 14px;
+    font-weight: 600;
+    display: none;
+  }
+  .kc-feedback.show { display: block; }
+  .kc-feedback.correct {
+    background: #dcfce7;
+    color: #166534;
+  }
+  .kc-feedback.incorrect {
+    background: #fee2e2;
+    color: #991b1b;
+  }
+  .kc-submit-wrap {
+    text-align: center;
+    margin-top: 24px;
+  }
+  .kc-submit-btn {
+    background: var(--blue);
+    color: white;
+    border: none;
+    padding: 14px 48px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: var(--radius);
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: background 0.2s;
+  }
+  .kc-submit-btn:hover { background: var(--blue-dark); }
+  .kc-submit-btn:disabled {
+    background: var(--gray-300);
+    cursor: not-allowed;
+  }
+  .kc-results {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: var(--radius-lg);
+    display: none;
+  }
+  .kc-results.show { display: block; }
+  .kc-results.pass {
+    background: #dcfce7;
+    border: 1px solid #22c55e;
+  }
+  .kc-results.fail {
+    background: #fef3c7;
+    border: 1px solid #f59e0b;
+  }
+  .kc-results-score {
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 4px;
+  }
+  .kc-results.pass .kc-results-score { color: #166534; }
+  .kc-results.fail .kc-results-score { color: #92400e; }
+  .kc-results-text {
+    font-size: 15px;
+    color: var(--gray-700);
+  }
+  .kc-retry-btn {
+    margin-top: 12px;
+    background: var(--blue);
+    color: white;
+    border: none;
+    padding: 10px 32px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .kc-retry-btn:hover { background: var(--blue-dark); }
+
+</style>
+</head>
+<body>
+<main class="main">
+
+  <!-- ═══ HERO ═══════════════════════════════════════════ -->
+  <div class="lesson-hero">
+    <h1 class="lesson-title">Working with Geographies in Engagement Cloud Plus</h1>
+    <p class="lesson-subtitle">Understand demographic and psychographic data, audience segments, micro-geographic targeting with ZIP+4, and how to define your base area.</p>
+    <div class="lesson-meta">
+      <div class="lesson-meta-item">&#9201; 10 min read</div>
+      <div class="lesson-meta-item">&#128202; Lesson 2 &middot; 5 sections</div>
+    </div>
+  </div>
+
+  <!-- ═══ CONTENT ═══════════════════════════════════════ -->
+  <div class="content-wrapper">
+
+    <!-- ─── SECTION 1: Demographic and Psychographic Data ─── -->
+    <div class="section-heading">
+      <div class="sh-label">Section 1</div>
+      <h2>Demographic and Psychographic Data</h2>
+    </div>
+
+    <div class="prose">
+      <p>Calix Engagement Cloud Plus enables broadband service providers to use data to generate insights about subscribers and prospects, equipping them with the capability to filter and segment audiences by demographic and psychographic attributes.</p>
+    </div>
+
+    <div class="data-sources">
+      <div class="data-source-card">
+        <div class="data-source-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+        </div>
+        <div class="data-source-title">Demographics</div>
+        <div class="data-source-desc">Demographic information is most often quantitative and tends to focus on external or physical factors such as age, ethnicity, gender, and location.</div>
+      </div>
+      <div class="data-source-card">
+        <div class="data-source-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a7 7 0 0 1 7 7c0 3-2 5-3 7h-8c-1-2-3-4-3-7a7 7 0 0 1 7-7z"/><path d="M9 16h6"/><path d="M10 20h4"/></svg>
+        </div>
+        <div class="data-source-title">Psychographics</div>
+        <div class="data-source-desc">Psychographic information is almost always qualitative and describes an individual's psychological characteristics and traits such as spending habits and technology usage.</div>
+      </div>
+    </div>
+
+    <div class="continue-wrap">
+      <button class="continue-btn" onclick="revealSection('section2', this)">CONTINUE</button>
+    </div>
+
+    <!-- ─── SECTION 2: Audience Segments ─── -->
+    <div id="section2" class="reveal-section hidden">
+
+      <div class="section-heading">
+        <div class="sh-label">Section 2</div>
+        <h2>Audience Segments</h2>
+      </div>
+
+      <div class="prose">
+        <p>Pre-populated segment profiles and categories in Calix Engagement Cloud Plus make it easier for broadband marketers to identify subscribers and prospects within their service area by lifestyle, shopping, financial, technology usage habits, and more. Calix Engagement Cloud Plus includes three unique segmentation categories.</p>
+      </div>
+
+      <div class="data-sources three-col">
+        <div class="data-source-card">
+          <div class="data-source-title">Lifestyle Segment</div>
+          <div class="data-source-desc">Provides detailed socioeconomic insights about your subscribers. Lifestyle combines demographic data such as presence of children, age, and income with psychographic data to define 68 segments according to socioeconomic rank.</div>
+        </div>
+        <div class="data-source-card">
+          <div class="data-source-title">Finance Segment</div>
+          <div class="data-source-desc">Organizes subscribers into 60 segments, ranked from most to least affluent, based on demographic and psychographic data including income, financial habits, age, and presence of children.</div>
+        </div>
+        <div class="data-source-card">
+          <div class="data-source-title">Tech Segment</div>
+          <div class="data-source-desc">Designed specifically for the technology and telecommunications industry. Defines 53 audience segments based on technology usage habits, ranked from highest to least use of technology.</div>
+        </div>
+      </div>
+
+      <div class="prose">
+        <p>Each segment includes a profile that highlights key demographic and psychographic attributes. You can filter subscribers and prospects by segment from the Explore Data dashboard.</p>
+      </div>
+
+      <div class="embed-placeholder">
+        <div class="embed-inner">
+          <div class="embed-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+          </div>
+          <div class="embed-label">Psychographic Filters</div>
+          <div class="embed-sublabel">Located at the bottom of both the Explore Data Subscribers and Prospects page</div>
+        </div>
+      </div>
+
+      <div class="continue-wrap">
+        <button class="continue-btn" onclick="revealSection('section3', this)">CONTINUE</button>
+      </div>
+    </div>
+
+    <!-- ─── SECTION 3: Micro-Geographic Targeting ─── -->
+    <div id="section3" class="reveal-section hidden">
+
+      <div class="section-heading">
+        <div class="sh-label">Section 3</div>
+        <h2>Micro-Geographic Targeting</h2>
+      </div>
+
+      <div class="prose">
+        <p>Most advertising and technology tools operate at the ZIP-code level. However, because ZIP-code geography often bears no resemblance to actual fiberhoods, conducting marketing campaigns by ZIP-code can result in high-cost and ineffective campaigns.</p>
+        <p>Calix Engagement Cloud Plus enables BSP marketers to go beyond the ZIP-code level with the integration of ZIP+4. ZIP+4 allows for highly specific targeting of a BSP's service area. This not only increases the accuracy of the definition of a marketing area, but can also reduce marketing waste.</p>
+      </div>
+
+      <div class="callout-quote">
+        <p>You can manually upload a batch of ZIP-Codes and ZIP+4s in CSV format to expand your base area from the Administrator section. Administrator privileges are required.</p>
+      </div>
+
+      <div class="embed-placeholder">
+        <div class="embed-inner">
+          <div class="embed-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+          </div>
+          <div class="embed-label">ZIP Code Upload Format</div>
+          <div class="embed-sublabel">Screenshot placeholder</div>
+        </div>
+      </div>
+
+      <div class="continue-wrap">
+        <button class="continue-btn" onclick="revealSection('section4', this)">CONTINUE</button>
+      </div>
+    </div>
+
+    <!-- ─── SECTION 4: Defining Your Base Area ─── -->
+    <div id="section4" class="reveal-section hidden">
+
+      <div class="section-heading">
+        <div class="sh-label">Section 4</div>
+        <h2>Defining Your Base Area</h2>
+      </div>
+
+      <div class="prose">
+        <p>A Base Area is the geography from which you receive prospecting and subscriber data. During your Calix Engagement Cloud Plus onboarding, Professional Services will assist you in defining your Base Area through the selection of ZIP-codes and ZIP+4s.</p>
+        <p>Calix recommends that you include your existing service area plus ZIP codes within a five-mile radius of your service area. Engagement Cloud Plus creates recommended Acquisition segments from non-subscriber households within the base area.</p>
+      </div>
+
+      <div class="callout-quote">
+        <p>Currently, it is not possible to view or modify your base area directly from within Calix Cloud. If you would like to update your base area, please contact your Success Manager.</p>
+      </div>
+
+      <div class="continue-wrap">
+        <button class="continue-btn" onclick="revealSection('section5', this)">CONTINUE</button>
+      </div>
+    </div>
+
+    <!-- ─── SECTION 5: Knowledge Check ─── -->
+    <div id="section5" class="reveal-section hidden">
+
+      <div class="section-heading">
+        <div class="sh-label">Section 5</div>
+        <h2>Knowledge Check</h2>
+      </div>
+
+      <div class="knowledge-check">
+        <div class="knowledge-check-header">
+          <div class="knowledge-check-icon">&#10003;</div>
+          <div>
+            <div class="knowledge-check-title">Check Your Understanding</div>
+            <div class="knowledge-check-subtitle">Answer the question below to test your knowledge.</div>
+          </div>
+        </div>
+
+        <div class="kc-question" id="kcQ0">
+          <div class="kc-question-text">
+            <span class="kc-question-number">Q1.</span> Which of the following is a psychographic data type?
+          </div>
+          <div class="kc-options">
+            <div class="kc-option" data-question="0" data-option="0" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>Median Household Income</span>
+            </div>
+            <div class="kc-option" data-question="0" data-option="1" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>Marital Status</span>
+            </div>
+            <div class="kc-option" data-question="0" data-option="2" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>Technology Usage Habits</span>
+            </div>
+            <div class="kc-option" data-question="0" data-option="3" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>Employment Status</span>
+            </div>
+          </div>
+          <div class="kc-feedback" id="kcFeedback0"></div>
+        </div>
+
+        <div class="kc-submit-wrap">
+          <button class="kc-submit-btn" id="kcSubmitBtn" onclick="submitKnowledgeCheck()" disabled>SUBMIT ANSWER</button>
+        </div>
+        <div class="kc-results" id="kcResults">
+          <div class="kc-results-score" id="kcScore"></div>
+          <div class="kc-results-text" id="kcResultsText"></div>
+          <button class="kc-retry-btn" id="kcRetryBtn" onclick="retryKnowledgeCheck()" style="display:none;">TRY AGAIN</button>
+        </div>
+      </div>
+
+    </div>
+
+  </div><!-- /content-wrapper -->
+</main>
+
+<script>
+  function revealSection(sectionId, btn) {
+    const section = document.getElementById(sectionId);
+    if (!section) return;
+    btn.closest('.continue-wrap').style.display = 'none';
+    section.classList.remove('hidden');
+    section.classList.add('revealing');
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        section.classList.remove('revealing');
+        section.classList.add('visible');
+      });
+    });
+    setTimeout(() => section.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
+  }
+
+  /* ── Knowledge Check ── */
+  const kcAnswers = [2];
+  const kcSelections = {};
+  const kcTotal = 1;
+
+  function selectOption(el) {
+    const q = el.dataset.question;
+    const o = el.dataset.option;
+    const questionEl = document.getElementById('kcQ' + q);
+    if (questionEl.classList.contains('correct') || questionEl.classList.contains('incorrect')) return;
+    questionEl.querySelectorAll('.kc-option').forEach(opt => opt.classList.remove('selected'));
+    el.classList.add('selected');
+    kcSelections[q] = parseInt(o);
+    document.getElementById('kcSubmitBtn').disabled = Object.keys(kcSelections).length < kcTotal;
+  }
+
+  function submitKnowledgeCheck() {
+    let score = 0;
+    for (let i = 0; i < kcTotal; i++) {
+      const questionEl = document.getElementById('kcQ' + i);
+      const feedbackEl = document.getElementById('kcFeedback' + i);
+      const options = questionEl.querySelectorAll('.kc-option');
+      const selected = kcSelections[i];
+      const correct = kcAnswers[i];
+
+      options.forEach((opt, j) => {
+        opt.classList.add('disabled');
+        if (j === correct) {
+          opt.classList.add('correct-answer');
+        } else if (j === selected && j !== correct) {
+          opt.classList.add('wrong-answer');
+        }
+      });
+
+      if (selected === correct) {
+        score++;
+        questionEl.classList.add('correct');
+        feedbackEl.textContent = 'Correct!';
+        feedbackEl.className = 'kc-feedback show correct';
+      } else {
+        questionEl.classList.add('incorrect');
+        feedbackEl.textContent = 'Incorrect — see the correct answer highlighted above.';
+        feedbackEl.className = 'kc-feedback show incorrect';
+      }
+    }
+
+    const resultsEl = document.getElementById('kcResults');
+    const scoreEl = document.getElementById('kcScore');
+    const textEl = document.getElementById('kcResultsText');
+    const retryBtn = document.getElementById('kcRetryBtn');
+    const submitBtn = document.getElementById('kcSubmitBtn');
+
+    scoreEl.textContent = score + ' / ' + kcTotal;
+    submitBtn.style.display = 'none';
+
+    if (score === kcTotal) {
+      resultsEl.className = 'kc-results show pass';
+      textEl.textContent = 'Great job! You answered all questions correctly.';
+    } else {
+      resultsEl.className = 'kc-results show fail';
+      textEl.textContent = 'Review the incorrect answers above and try again.';
+      retryBtn.style.display = 'inline-block';
+    }
+  }
+
+  function retryKnowledgeCheck() {
+    for (let i = 0; i < kcTotal; i++) {
+      const questionEl = document.getElementById('kcQ' + i);
+      const feedbackEl = document.getElementById('kcFeedback' + i);
+      questionEl.className = 'kc-question';
+      feedbackEl.className = 'kc-feedback';
+      feedbackEl.textContent = '';
+      questionEl.querySelectorAll('.kc-option').forEach(opt => {
+        opt.className = 'kc-option';
+      });
+      delete kcSelections[i];
+    }
+    document.getElementById('kcResults').className = 'kc-results';
+    document.getElementById('kcSubmitBtn').style.display = 'inline-block';
+    document.getElementById('kcSubmitBtn').disabled = true;
+    document.getElementById('kcRetryBtn').style.display = 'none';
+  }
+
+</script>
+</body>
+</html>

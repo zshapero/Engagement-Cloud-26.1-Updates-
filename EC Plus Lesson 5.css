@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 5: Grow Adoption of Managed Service Offerings</title>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue: #0314f8;
+  --blue-dark: #0010c4;
+  --blue-light: #e8eaff;
+  --blue-mid: #3d52f9;
+  --white: #ffffff;
+  --gray-100: #f7f8fc;
+  --gray-200: #eef0f7;
+  --gray-300: #d8dce8;
+  --gray-500: #8b91aa;
+  --gray-700: #4a4f66;
+  --gray-900: #1a1d2e;
+  --accent-orange: #ff7e21;
+  --radius: 4px;
+  --radius-lg: 8px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--gray-900);
+  background: var(--gray-100);
+}
+
+.main {
+  max-width: 1120px;
+  margin: 0 auto;
+  background: var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+/* ── Hero ── */
+.lesson-hero {
+  background: var(--blue);
+  padding: 72px 100px 64px;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.lesson-hero::before {
+  content: '';
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  top: -80px;
+  right: -60px;
+}
+
+.lesson-hero::after {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+  bottom: -40px;
+  left: -30px;
+}
+
+.lesson-title {
+  font-family: 'Source Serif 4', serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.lesson-subtitle {
+  font-size: 19px;
+  font-weight: 300;
+  line-height: 1.6;
+  opacity: 0.92;
+  max-width: 640px;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.lesson-meta {
+  display: flex;
+  gap: 24px;
+  font-size: 15px;
+  opacity: 0.8;
+  position: relative;
+  z-index: 1;
+}
+
+.lesson-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ── Content ── */
+.content-wrapper {
+  padding: 0 100px 80px;
+}
+
+/* ── Scenario Block ── */
+.scenario-block {
+  display: flex;
+  gap: 32px;
+  background: var(--gray-100);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  margin: 48px 0 56px;
+  align-items: flex-start;
+}
+
+.scenario-avatar {
+  width: 220px;
+  min-width: 220px;
+  height: 220px;
+  background: var(--blue);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+}
+
+.scenario-avatar svg {
+  width: 72px;
+  height: 72px;
+  opacity: 0.85;
+  margin-bottom: 12px;
+}
+
+.scenario-avatar-label {
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.4;
+  padding: 0 12px;
+}
+
+.scenario-content {
+  flex: 1;
+}
+
+.scenario-name {
+  font-family: 'Source Serif 4', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+
+.scenario-text {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--gray-700);
+  margin-bottom: 16px;
+}
+
+.scenario-questions {
+  list-style: none;
+  padding: 0;
+}
+
+.scenario-questions li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: var(--gray-700);
+  font-style: italic;
+}
+
+.scenario-questions li::before {
+  content: '?';
+  position: absolute;
+  left: 0;
+  color: var(--accent-orange);
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* ── Section Headings ── */
+.section-heading {
+  margin: 56px 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sh-label {
+  font-family: 'Source Serif 4', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+/* ── Prose ── */
+.prose p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--gray-700);
+  margin-bottom: 20px;
+}
+
+/* ── Data Sources Grid ── */
+.data-sources {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 32px 0 48px;
+}
+
+.data-source-card {
+  border-top: 4px solid var(--blue);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.data-source-title {
+  font-family: 'Source Serif 4', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 14px;
+}
+
+.filter-list {
+  list-style: none;
+  padding: 0;
+}
+
+.filter-list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 6px;
+  font-size: 15px;
+  color: var(--gray-700);
+  line-height: 1.5;
+}
+
+.filter-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-orange);
+}
+
+/* ── Update Items ── */
+.update-item--rich {
+  background: var(--gray-100);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  margin-bottom: 20px;
+}
+
+.update-area-tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--blue);
+  background: var(--blue-light);
+  padding: 3px 10px;
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+}
+
+.update-body {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--gray-700);
+}
+
+.update-feature {
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 4px;
+  font-size: 18px;
+}
+
+.update-desc {
+  font-size: 16px;
+  color: var(--gray-700);
+  line-height: 1.7;
+}
+
+/* ── Embed Placeholder ── */
+.embed-placeholder {
+  background: var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 56px 32px;
+  text-align: center;
+  margin: 32px 0;
+}
+
+.embed-inner {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.embed-icon {
+  font-size: 40px;
+  opacity: 0.5;
+}
+
+.embed-label {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gray-700);
+}
+
+.embed-sublabel {
+  font-size: 14px;
+  color: var(--gray-500);
+}
+
+/* ── Reveal Sections ── */
+.reveal-section {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-section.hidden {
+  opacity: 0;
+  transform: translateY(24px);
+  pointer-events: none;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.reveal-section.revealing {
+  opacity: 0;
+  transform: translateY(24px);
+  max-height: none;
+  overflow: visible;
+}
+
+.reveal-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+  max-height: none;
+  overflow: visible;
+  pointer-events: auto;
+}
+
+/* ── Continue Button ── */
+.continue-wrap {
+  text-align: center;
+  margin: 48px 0;
+}
+
+.continue-btn {
+  width: 759px;
+  max-width: 100%;
+  height: 56px;
+  background: var(--blue);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius);
+  font-family: 'Lato', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.continue-btn:hover {
+  background: var(--blue-dark);
+}
+
+/* ── Knowledge Check ── */
+.knowledge-check {
+  background: var(--gray-100);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  margin: 40px 0;
+}
+
+.kc-title {
+  font-family: 'Source Serif 4', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 8px;
+}
+
+.kc-question {
+  font-size: 17px;
+  color: var(--gray-700);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.kc-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.kc-option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  background: var(--white);
+  border: 2px solid var(--gray-300);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  font-size: 16px;
+  color: var(--gray-700);
+}
+
+.kc-option:hover {
+  border-color: var(--blue-mid);
+}
+
+.kc-option.selected {
+  border-color: var(--blue);
+  background: var(--blue-light);
+  color: var(--gray-900);
+}
+
+.kc-option.correct {
+  border-color: #16a34a;
+  background: #f0fdf4;
+  color: #15803d;
+}
+
+.kc-option.incorrect {
+  border-color: #dc2626;
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.kc-radio {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--gray-300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 0.2s;
+}
+
+.kc-option.selected .kc-radio {
+  border-color: var(--blue);
+}
+
+.kc-option.selected .kc-radio::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--blue);
+}
+
+.kc-submit {
+  width: 759px;
+  max-width: 100%;
+  height: 52px;
+  background: var(--blue);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius);
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.kc-submit:hover {
+  background: var(--blue-dark);
+}
+
+.kc-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.kc-feedback {
+  margin-top: 20px;
+  padding: 16px 20px;
+  border-radius: var(--radius-lg);
+  font-size: 16px;
+  display: none;
+}
+
+.kc-feedback.show {
+  display: block;
+}
+
+.kc-feedback.success {
+  background: #f0fdf4;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+}
+
+.kc-feedback.fail {
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.kc-retry {
+  margin-top: 12px;
+  background: none;
+  border: 2px solid var(--blue);
+  color: var(--blue);
+  padding: 10px 28px;
+  border-radius: var(--radius);
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.kc-retry:hover {
+  background: var(--blue);
+  color: var(--white);
+}
+
+/* ── Animation ── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-300);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-500);
+}
+
+/* ── Step Cards ── */
+.step-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 24px 0 32px;
+}
+
+.step-card {
+  display: flex;
+  gap: 20px;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--blue);
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.step-content h4 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 4px;
+}
+
+.step-content p {
+  font-size: 15px;
+  color: var(--gray-700);
+  line-height: 1.6;
+  margin: 0;
+}
+</style>
+</head>
+<body>
+
+<div class="main">
+
+  <!-- ════ HERO ════ -->
+  <div class="lesson-hero">
+    <h1 class="lesson-title">Grow Adoption of Managed Service Offerings</h1>
+    <p class="lesson-subtitle">Learn how to use Engagement Cloud Plus data and filters to match subscribers and prospects with relevant managed service offers.</p>
+    <div class="lesson-meta">
+      <span>&#9201; 10 min read</span>
+      <span>&#128202; Lesson 5 &middot; 4 sections</span>
+    </div>
+  </div>
+
+  <div class="content-wrapper">
+
+    <!-- ════ SCENARIO ════ -->
+    <div class="scenario-block">
+      <div class="scenario-avatar">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="22" r="12" fill="rgba(255,255,255,0.85)"/>
+          <ellipse cx="32" cy="52" rx="20" ry="14" fill="rgba(255,255,255,0.85)"/>
+        </svg>
+        <div class="scenario-avatar-label">Becky Smith &middot; Chief Marketing Officer</div>
+      </div>
+      <div class="scenario-content">
+        <div class="scenario-name">Scenario: Becky's Managed Services Campaign</div>
+        <p class="scenario-text">
+          Becky Smith is the Chief Marketing Officer at XYZ Fiber. She is launching a new upsell campaign targeting existing subscribers who would be a strong fit for the Silver Bundle, which includes Bark parental controls. Becky wants to use Engagement Cloud Plus to identify the right audience and craft messaging that resonates.
+        </p>
+        <ul class="scenario-questions">
+          <li>Which filters should she use to find subscribers most likely to adopt Bark?</li>
+          <li>How can she segment households with children who are already tech-savvy?</li>
+          <li>What data points help her measure the success of the upsell campaign?</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ════ SECTION 1 ════ -->
+    <div id="section-1" class="reveal-section visible">
+      <div class="section-heading">
+        <span class="sh-label">Section 1: Deliver New Experiences with Managed Services</span>
+      </div>
+      <div class="prose">
+        <p>
+          Broadband Service Providers have a powerful opportunity to grow revenue and deepen subscriber relationships by matching households and businesses with the right managed service offerings. By leveraging Engagement Cloud Plus data, BSPs can move beyond one-size-fits-all promotions and instead deliver personalized recommendations based on household composition, tech sophistication, and subscriber behaviors.
+        </p>
+        <p>
+          For example, a household with multiple children and high device usage may be an ideal match for Bark parental controls or ExperienceIQ content filtering. A tech-savvy homeowner with numerous IoT devices could benefit from Arlo smart security or ProtectIQ network protection. The key is using the right combination of filters and data attributes to build precise audience segments.
+        </p>
+        <p>
+          In the sections that follow, you will explore recommended filters for each managed service, learn how to build targeted segments, and practice identifying upsell opportunities using real-world scenarios.
+        </p>
+      </div>
+
+      <div class="continue-wrap">
+        <button class="continue-btn" onclick="revealSection(2)">Continue to Section 2 &rarr;</button>
+      </div>
+    </div>
+
+    <!-- ════ SECTION 2 ════ -->
+    <div id="section-2" class="reveal-section hidden">
+      <div class="section-heading">
+        <span class="sh-label">Section 2: Recommended Filters By Managed Services</span>
+      </div>
+      <div class="prose">
+        <p>
+          Each managed service offering has a unique set of recommended filters that help you identify the best-fit subscribers. Use these filters in the Explore Data view to build segments tailored to each product.
+        </p>
+      </div>
+
+      <div class="data-sources">
+
+        <!-- Arlo -->
+        <div class="data-source-card">
+          <div class="data-source-title">Arlo</div>
+          <ul class="filter-list">
+            <li>IoT devices</li>
+            <li>Tech sophistication</li>
+            <li>Homeowner</li>
+            <li>Income level</li>
+          </ul>
+        </div>
+
+        <!-- Bark -->
+        <div class="data-source-card">
+          <div class="data-source-title">Bark</div>
+          <ul class="filter-list">
+            <li>Children 1+</li>
+            <li>Tech sophistication</li>
+            <li>CommandIQ parental controls</li>
+            <li>Devices</li>
+            <li>Has/doesn't have Bark</li>
+          </ul>
+        </div>
+
+        <!-- Servify -->
+        <div class="data-source-card">
+          <div class="data-source-title">Servify</div>
+          <ul class="filter-list">
+            <li>IoT devices</li>
+            <li>Device brands</li>
+            <li>Homeowner</li>
+            <li>Income</li>
+            <li>Tech sophistication</li>
+            <li>Has/doesn't have Servify</li>
+          </ul>
+        </div>
+
+        <!-- ProtectIQ -->
+        <div class="data-source-card">
+          <div class="data-source-title">ProtectIQ</div>
+          <ul class="filter-list">
+            <li>IoT devices</li>
+            <li>Device brands</li>
+            <li>Homeowner</li>
+            <li>Tech sophistication</li>
+            <li>Usage Type</li>
+            <li>Has/doesn't have ProtectIQ</li>
+          </ul>
+        </div>
+
+        <!-- ExperienceIQ -->
+        <div class="data-source-card">
+          <div class="data-source-title">ExperienceIQ</div>
+          <ul class="filter-list">
+            <li>Families</li>
+            <li>Age Range</li>
+            <li>Marital Status</li>
+            <li>Children</li>
+            <li>Household Size</li>
+            <li>Has/doesn't have ExperienceIQ</li>
+          </ul>
+        </div>
+
+        <!-- SmartBiz -->
+        <div class="data-source-card">
+          <div class="data-source-title">SmartBiz</div>
+          <ul class="filter-list">
+            <li>SMB Match</li>
+            <li>Age of Business</li>
+            <li>Business Type</li>
+            <li>Employee Count</li>
+            <li>Annual Revenue</li>
+            <li>Has/doesn't have SmartBiz</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="continue-wrap">
+        <button class="continue-btn" onclick="revealSection(3)">Continue to Section 3 &rarr;</button>
+      </div>
+    </div>
+
+    <!-- ════ SECTION 3 ════ -->
+    <div id="section-3" class="reveal-section hidden">
+      <div class="section-heading">
+        <span class="sh-label">Section 3: Identifying and Upselling SmartBiz Opportunities</span>
+      </div>
+      <div class="prose">
+        <p>
+          The SMB Dashboard within Engagement Cloud Plus provides a consolidated view of small and medium business subscribers in your footprint. Use the <strong>SMB Match</strong> filter to quickly surface residential accounts that exhibit business-like behaviors, making them prime candidates for a SmartBiz upsell.
+        </p>
+        <p>
+          Once you have identified potential SmartBiz subscribers, follow these steps to move from insight to action:
+        </p>
+      </div>
+
+      <div class="step-cards">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h4>Navigate to Explore Data</h4>
+            <p>Open the Explore Data view and apply relevant filters such as SMB Match, Business Type, and Employee Count to narrow your audience.</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h4>Save as Segment</h4>
+            <p>Once you are satisfied with your filtered audience, save it as a named segment for ongoing use and tracking.</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h4>Launch Campaign</h4>
+            <p>Use your saved segment to launch a targeted SmartBiz upsell campaign through your preferred marketing channel.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="embed-placeholder">
+        <div class="embed-inner">
+          <div class="embed-icon">&#127909;</div>
+          <div class="embed-label">SmartBiz Walkthrough Video</div>
+          <div class="embed-sublabel">Video embed will appear here</div>
+        </div>
+      </div>
+
+      <div class="continue-wrap">
+        <button class="continue-btn" onclick="revealSection(4)">Continue to Knowledge Check &rarr;</button>
+      </div>
+    </div>
+
+    <!-- ════ SECTION 4: KNOWLEDGE CHECK ════ -->
+    <div id="section-4" class="reveal-section hidden">
+      <div class="knowledge-check" id="kc-1">
+        <div class="kc-title">Knowledge Check</div>
+        <div class="kc-question">Which is a recommended filter for targeting Bark?</div>
+        <div class="kc-options" id="kc-options-1">
+          <div class="kc-option" onclick="selectOption(1, 0)">
+            <div class="kc-radio"></div>
+            <span>SMB Match</span>
+          </div>
+          <div class="kc-option" onclick="selectOption(1, 1)">
+            <div class="kc-radio"></div>
+            <span>Number of Children 1+</span>
+          </div>
+          <div class="kc-option" onclick="selectOption(1, 2)">
+            <div class="kc-radio"></div>
+            <span>Annual Revenue</span>
+          </div>
+          <div class="kc-option" onclick="selectOption(1, 3)">
+            <div class="kc-radio"></div>
+            <span>Age of Business</span>
+          </div>
+        </div>
+        <button class="kc-submit" id="kc-submit-1" disabled onclick="submitKnowledgeCheck(1)">Submit Answer</button>
+        <div class="kc-feedback" id="kc-feedback-1"></div>
+      </div>
+    </div>
+
+  </div><!-- /content-wrapper -->
+</div><!-- /main -->
+
+<script>
+// ── Correct Answers ──
+const kcAnswers = [1]; // index 1 = "Number of Children 1+"
+
+// ── State ──
+const kcSelections = {};
+
+// ── Reveal Sections ──
+function revealSection(num) {
+  const section = document.getElementById('section-' + num);
+  if (!section) return;
+  section.classList.remove('hidden');
+  section.classList.add('revealing');
+  // Force reflow
+  void section.offsetHeight;
+  section.classList.remove('revealing');
+  section.classList.add('visible');
+  setTimeout(function() {
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 100);
+}
+
+// ── Select Option ──
+function selectOption(kcId, optionIndex) {
+  const container = document.getElementById('kc-options-' + kcId);
+  const options = container.querySelectorAll('.kc-option');
+  // Clear previous
+  options.forEach(function(opt) {
+    opt.classList.remove('selected', 'correct', 'incorrect');
+  });
+  // Select new
+  options[optionIndex].classList.add('selected');
+  kcSelections[kcId] = optionIndex;
+  // Enable submit
+  document.getElementById('kc-submit-' + kcId).disabled = false;
+  // Hide feedback if showing
+  var fb = document.getElementById('kc-feedback-' + kcId);
+  fb.classList.remove('show', 'success', 'fail');
+}
+
+// ── Submit Knowledge Check ──
+function submitKnowledgeCheck(kcId) {
+  var selected = kcSelections[kcId];
+  if (selected === undefined) return;
+
+  var correct = kcAnswers[kcId - 1];
+  var container = document.getElementById('kc-options-' + kcId);
+  var options = container.querySelectorAll('.kc-option');
+  var feedback = document.getElementById('kc-feedback-' + kcId);
+  var submitBtn = document.getElementById('kc-submit-' + kcId);
+
+  // Disable further selection
+  options.forEach(function(opt) {
+    opt.style.pointerEvents = 'none';
+  });
+  submitBtn.disabled = true;
+
+  if (selected === correct) {
+    options[selected].classList.add('correct');
+    feedback.innerHTML = '<strong>Correct!</strong> Number of Children 1+ is a recommended filter for targeting Bark, as the service is designed for families with children.';
+    feedback.classList.add('show', 'success');
+  } else {
+    options[selected].classList.add('incorrect');
+    options[correct].classList.add('correct');
+    feedback.innerHTML = '<strong>Not quite.</strong> The correct answer is <strong>Number of Children 1+</strong>. Bark is a parental controls service, so households with children are the primary target audience. <br><button class="kc-retry" onclick="retryKnowledgeCheck(' + kcId + ')">Try Again</button>';
+    feedback.classList.add('show', 'fail');
+  }
+}
+
+// ── Retry Knowledge Check ──
+function retryKnowledgeCheck(kcId) {
+  var container = document.getElementById('kc-options-' + kcId);
+  var options = container.querySelectorAll('.kc-option');
+  var feedback = document.getElementById('kc-feedback-' + kcId);
+  var submitBtn = document.getElementById('kc-submit-' + kcId);
+
+  // Reset everything
+  options.forEach(function(opt) {
+    opt.classList.remove('selected', 'correct', 'incorrect');
+    opt.style.pointerEvents = '';
+  });
+  feedback.classList.remove('show', 'success', 'fail');
+  submitBtn.disabled = true;
+  delete kcSelections[kcId];
+}
+</script>
+
+</body>
+</html>

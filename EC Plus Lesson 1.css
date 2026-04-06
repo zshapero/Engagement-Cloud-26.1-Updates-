@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Lesson 1: What is Engagement Cloud Plus</title>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --blue: #0314f8;
+    --blue-dark: #0010c4;
+    --blue-light: #e8eaff;
+    --blue-mid: #3d52f9;
+    --white: #ffffff;
+    --gray-100: #f7f8fc;
+    --gray-200: #eef0f7;
+    --gray-300: #d8dce8;
+    --gray-500: #8b91aa;
+    --gray-700: #4a4f66;
+    --gray-900: #1a1d2e;
+    --accent-orange: #ff7e21;
+    --radius: 4px;
+    --radius-lg: 8px;
+    --shadow-sm: 0 1px 4px rgba(3,20,248,0.08);
+    --shadow-md: 0 4px 20px rgba(3,20,248,0.12);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    background: var(--white);
+    color: var(--gray-900);
+    font-size: 17px;
+    line-height: 1.7;
+    display: block;
+    min-height: 100vh;
+  }
+
+  .main { width: 100%; display: flex; flex-direction: column; }
+
+  /* ─── HERO ────────────────────────────────────────────── */
+  .lesson-hero {
+    background: var(--blue);
+    color: white;
+    padding: 72px 100px 64px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .lesson-hero::before {
+    content: '';
+    position: absolute;
+    right: -80px; top: -80px;
+    width: 360px; height: 360px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+
+  .lesson-hero::after {
+    content: '';
+    position: absolute;
+    right: 80px; bottom: -120px;
+    width: 240px; height: 240px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+
+  .lesson-title {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    max-width: 800px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .lesson-subtitle {
+    font-size: 18px;
+    opacity: 0.8;
+    max-width: 700px;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+  }
+
+  .lesson-meta {
+    display: flex;
+    gap: 24px;
+    margin-top: 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .lesson-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 17px;
+    opacity: 0.7;
+  }
+
+  /* ─── CONTENT WRAPPER ─────────────────────────────────── */
+  .content-wrapper { width: 100%; padding: 0 100px 80px; }
+
+  /* ─── SCENARIO ────────────────────────────────────────── */
+  .scenario-block {
+    display: flex;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin: 48px 0 0;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--gray-300);
+  }
+
+  .scenario-avatar {
+    width: 220px;
+    min-height: 280px;
+    flex-shrink: 0;
+    background: var(--blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 36px 24px;
+  }
+
+  .scenario-avatar-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.9);
+    text-align: center;
+    line-height: 1.4;
+    letter-spacing: 0.3px;
+  }
+
+  .scenario-content {
+    flex: 1;
+    padding: 36px 40px;
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .scenario-name {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .scenario-name::before {
+    content: '';
+    width: 24px;
+    height: 2px;
+    background: var(--blue);
+    display: inline-block;
+    flex-shrink: 0;
+  }
+
+  .scenario-text {
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--gray-700);
+    margin-bottom: 0;
+  }
+
+  /* ─── SECTION HEADING ─────────────────────────────────── */
+  .section-heading {
+    margin-top: 56px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--blue);
+  }
+
+  .section-heading h2 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--gray-900);
+    line-height: 1.25;
+  }
+
+  .section-heading .sh-label {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 8px;
+  }
+
+  /* ─── PROSE ───────────────────────────────────────────── */
+  .prose { padding-top: 20px; }
+
+  .prose p {
+    font-size: 17px;
+    color: var(--gray-700);
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  .prose p:last-child { margin-bottom: 0; }
+
+  /* ─── OUTCOMES GRID ───────────────────────────────────── */
+  .outcomes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin: 28px 0;
+  }
+
+  .outcome-card {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+
+  .outcome-card:hover { box-shadow: var(--shadow-md); border-color: var(--blue-mid); }
+
+  .outcome-number {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--blue);
+    color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+
+  .outcome-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 8px;
+  }
+
+  .outcome-desc {
+    font-size: 17px;
+    color: var(--gray-500);
+    line-height: 1.65;
+  }
+
+  /* ─── CALLOUT QUOTE ──────────────────────────────────── */
+  .callout-quote {
+    border-left: 4px solid var(--blue);
+    padding: 16px 24px;
+    background: var(--blue-light);
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    margin: 24px 0;
+  }
+
+  .callout-quote p {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 19px;
+    font-style: italic;
+    color: var(--blue-dark);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ─── EMBED PLACEHOLDER ──────────────────────────────── */
+  .embed-placeholder {
+    background: var(--gray-100);
+    border: 2px dashed var(--gray-300);
+    border-radius: var(--radius-lg);
+    margin: 28px 0;
+    overflow: hidden;
+  }
+
+  .embed-inner {
+    min-height: 340px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 14px; padding: 60px 40px;
+  }
+
+  .embed-icon {
+    width: 60px; height: 60px; border-radius: var(--radius-lg);
+    background: var(--gray-200);
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .embed-icon svg { width: 28px; height: 28px; color: var(--gray-500); }
+
+  .embed-label { font-size: 17px; font-weight: 700; color: var(--gray-500); }
+
+  .embed-sublabel { font-size: 17px; color: var(--gray-300); text-align: center; max-width: 500px; }
+
+  /* ─── REVEAL SECTIONS ────────────────────────────────── */
+  .reveal-section { overflow: hidden; transition: opacity 0.5s ease, transform 0.5s ease; }
+  .reveal-section.hidden { display: none; }
+  .reveal-section.revealing { display: block; opacity: 0; transform: translateY(20px); }
+  .reveal-section.visible { display: block; opacity: 1; transform: translateY(0); }
+
+  .continue-wrap { display: flex; justify-content: center; margin: 40px 0 8px; }
+
+  .continue-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 759px;
+    height: 56px;
+    background: var(--blue);
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+  }
+
+  .continue-btn:hover { background: var(--blue-dark); box-shadow: 0 4px 16px rgba(3,20,248,0.3); }
+  .continue-btn:active { transform: translateY(1px); }
+
+  /* ─── ANIMATIONS ──────────────────────────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .lesson-hero > * { animation: fadeUp 0.5s ease both; }
+  .lesson-hero .lesson-title    { animation-delay: 0.05s; }
+  .lesson-hero .lesson-subtitle { animation-delay: 0.13s; }
+  .lesson-hero .lesson-meta     { animation-delay: 0.2s; }
+
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--gray-300); border-radius: 4px; }
+
+  /* ─── IMAGE CLARITY FIX ──────────────────────────────── */
+  .scenario-avatar img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+
+  /* ─── KNOWLEDGE CHECK ─────────────────────────────────── */
+  .knowledge-check {
+    background: var(--gray-100);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    margin-top: 32px;
+  }
+  .knowledge-check-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .knowledge-check-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: white;
+    flex-shrink: 0;
+  }
+  .knowledge-check-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--gray-900);
+  }
+  .knowledge-check-subtitle {
+    font-size: 14px;
+    color: var(--gray-500);
+    margin-top: 2px;
+  }
+  .kc-question {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    margin-bottom: 16px;
+    transition: border-color 0.3s;
+  }
+  .kc-question.correct {
+    border-color: #22c55e;
+    background: #f0fdf4;
+  }
+  .kc-question.incorrect {
+    border-color: #ef4444;
+    background: #fef2f2;
+  }
+  .kc-question-text {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 14px;
+    color: var(--gray-900);
+  }
+  .kc-question-number {
+    color: var(--blue);
+    margin-right: 6px;
+  }
+  .kc-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .kc-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 15px;
+    color: var(--gray-700);
+    background: var(--white);
+  }
+  .kc-option:hover {
+    border-color: var(--blue-mid);
+    background: var(--blue-light);
+  }
+  .kc-option.selected {
+    border-color: var(--blue);
+    background: var(--blue-light);
+    color: var(--gray-900);
+    font-weight: 600;
+  }
+  .kc-option.correct-answer {
+    border-color: #22c55e;
+    background: #dcfce7;
+    color: #166534;
+    font-weight: 600;
+  }
+  .kc-option.wrong-answer {
+    border-color: #ef4444;
+    background: #fee2e2;
+    color: #991b1b;
+  }
+  .kc-option-radio {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--gray-300);
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+  .kc-option.selected .kc-option-radio {
+    border-color: var(--blue);
+  }
+  .kc-option.selected .kc-option-radio::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: var(--blue);
+    border-radius: 50%;
+  }
+  .kc-option.correct-answer .kc-option-radio {
+    border-color: #22c55e;
+  }
+  .kc-option.correct-answer .kc-option-radio::after {
+    content: '\2713';
+    font-size: 12px;
+    color: #22c55e;
+    font-weight: 700;
+  }
+  .kc-option.wrong-answer .kc-option-radio {
+    border-color: #ef4444;
+  }
+  .kc-option.wrong-answer .kc-option-radio::after {
+    content: '\2717';
+    font-size: 12px;
+    color: #ef4444;
+    font-weight: 700;
+  }
+  .kc-option.disabled {
+    pointer-events: none;
+  }
+  .kc-feedback {
+    margin-top: 10px;
+    padding: 10px 14px;
+    border-radius: var(--radius);
+    font-size: 14px;
+    font-weight: 600;
+    display: none;
+  }
+  .kc-feedback.show { display: block; }
+  .kc-feedback.correct {
+    background: #dcfce7;
+    color: #166534;
+  }
+  .kc-feedback.incorrect {
+    background: #fee2e2;
+    color: #991b1b;
+  }
+  .kc-submit-wrap {
+    text-align: center;
+    margin-top: 24px;
+  }
+  .kc-submit-btn {
+    background: var(--blue);
+    color: white;
+    border: none;
+    padding: 14px 48px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: var(--radius);
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: background 0.2s;
+  }
+  .kc-submit-btn:hover { background: var(--blue-dark); }
+  .kc-submit-btn:disabled {
+    background: var(--gray-300);
+    cursor: not-allowed;
+  }
+  .kc-results {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: var(--radius-lg);
+    display: none;
+  }
+  .kc-results.show { display: block; }
+  .kc-results.pass {
+    background: #dcfce7;
+    border: 1px solid #22c55e;
+  }
+  .kc-results.fail {
+    background: #fef3c7;
+    border: 1px solid #f59e0b;
+  }
+  .kc-results-score {
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 4px;
+  }
+  .kc-results.pass .kc-results-score { color: #166534; }
+  .kc-results.fail .kc-results-score { color: #92400e; }
+  .kc-results-text {
+    font-size: 15px;
+    color: var(--gray-700);
+  }
+  .kc-retry-btn {
+    margin-top: 12px;
+    background: var(--blue);
+    color: white;
+    border: none;
+    padding: 10px 32px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .kc-retry-btn:hover { background: var(--blue-dark); }
+
+</style>
+</head>
+<body>
+<main class="main">
+
+  <!-- ═══ HERO ═══════════════════════════════════════════ -->
+  <div class="lesson-hero">
+    <h1 class="lesson-title">What is Engagement Cloud Plus</h1>
+    <p class="lesson-subtitle">Discover how Engagement Cloud Plus enriches subscriber experience insights with demographic, psychographic, and geographic data to accelerate acquisition.</p>
+    <div class="lesson-meta">
+      <span class="lesson-meta-item">⏱ 5 min read</span>
+      <span class="lesson-meta-item">📊 Lesson 1 · 3 sections</span>
+    </div>
+  </div>
+
+  <!-- ═══ CONTENT ════════════════════════════════════════ -->
+  <div class="content-wrapper">
+
+    <!-- ─── SCENARIO ─────────────────────────────────────── -->
+    <div class="scenario-block">
+      <div class="scenario-avatar">
+        <div style="width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+        </div>
+        <div class="scenario-avatar-label">Broadband Marketer</div>
+      </div>
+      <div class="scenario-content">
+        <div class="scenario-name">BROADBAND MARKETER</div>
+        <p class="scenario-text">Calix Engagement Cloud Plus is the only marketing platform purpose-built for the BSP industry, with rich subscriber experience and demographic data that allows BSPs to generate insights about their subscribers and prospects in ways they couldn't before.</p>
+      </div>
+    </div>
+
+    <!-- ═══ SECTION 1 ════════════════════════════════════ -->
+    <div class="reveal-section visible" id="section-1">
+
+      <div class="section-heading">
+        <div class="sh-label">Section 1</div>
+        <h2>What is Engagement Cloud Plus</h2>
+      </div>
+
+      <div class="prose">
+        <p>Calix Engagement Cloud Plus enriches subscriber experience insights in Calix Engagement Cloud with powerful demographic, psychographic, and geographic data. It stands alone as the only broadband industry solution that allows BSPs to leverage the totality of these rich data sources to accelerate subscriber acquisition. Complete with insights from 10 major lifestyle groups and 53 syndicated audience personas, Engagement Cloud Plus allows broadband marketers to generate a real-time, 360-degree view of current and potential subscribers.</p>
+      </div>
+
+      <div class="outcomes-grid">
+        <div class="outcome-card">
+          <div class="outcome-number">1</div>
+          <div>
+            <div class="outcome-title">Acquire New Subscribers</div>
+            <div class="outcome-desc">Acquire new subscribers in existing service areas, reducing the number of homes passed.</div>
+          </div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-number">2</div>
+          <div>
+            <div class="outcome-title">Prioritize Service Expansions</div>
+            <div class="outcome-desc">Prioritize service expansions with micro-geographic targeting and insights into areas likely to drive a higher ROI.</div>
+          </div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-number">3</div>
+          <div>
+            <div class="outcome-title">Deliver New Experiences</div>
+            <div class="outcome-desc">Deliver new experiences with managed service offers, targeting subscribers and prospects with relevant offers.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout-quote">
+        <p>Engagement Cloud Plus is the only acquisition tool for the broadband industry that enables BSPs to generate Subscriber Experience and Demographic Insights.</p>
+      </div>
+
+      <div class="continue-wrap">
+        <button class="continue-btn" onclick="revealSection('section-2', this)">CONTINUE TO NEXT SECTION</button>
+      </div>
+
+    </div>
+
+    <!-- ═══ SECTION 2 ════════════════════════════════════ -->
+    <div class="reveal-section hidden" id="section-2">
+
+      <div class="section-heading">
+        <div class="sh-label">Section 2</div>
+        <h2>Engagement Cloud Plus Announcement</h2>
+      </div>
+
+      <div class="embed-placeholder">
+        <div class="embed-inner">
+          <div class="embed-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16" fill="currentColor" stroke="none"/></svg>
+          </div>
+          <div class="embed-label">Video Placeholder</div>
+          <div class="embed-sublabel">Calix Chief Marketing Officer Matt Collins announces Engagement Cloud Plus at ConneXions 2022</div>
+        </div>
+      </div>
+
+      <div class="continue-wrap">
+        <button class="continue-btn" onclick="revealSection('section-knowledge-check', this)">CONTINUE TO KNOWLEDGE CHECK</button>
+      </div>
+
+    </div>
+
+    <!-- ═══ SECTION 3 — KNOWLEDGE CHECK ══════════════════ -->
+    <div class="reveal-section hidden" id="section-knowledge-check">
+
+      <div class="section-heading">
+        <div class="sh-label">Section 3</div>
+        <h2>Knowledge Check</h2>
+      </div>
+
+      <div class="knowledge-check" id="knowledgeCheck">
+        <div class="knowledge-check-header">
+          <div class="knowledge-check-icon">?</div>
+          <div>
+            <div class="knowledge-check-title">Knowledge Check</div>
+            <div class="knowledge-check-subtitle">Test your understanding of this lesson</div>
+          </div>
+        </div>
+
+        <div class="kc-question" id="kcQ0">
+          <div class="kc-question-text"><span class="kc-question-number">Q1.</span> What is the primary purpose of Engagement Cloud Plus?</div>
+          <div class="kc-options">
+            <div class="kc-option" data-question="0" data-option="0" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>To replace your billing system</span>
+            </div>
+            <div class="kc-option" data-question="0" data-option="1" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>To help BSPs leverage demographic, psychographic, and geographic data to accelerate subscriber acquisition</span>
+            </div>
+            <div class="kc-option" data-question="0" data-option="2" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>To manage network infrastructure and hardware</span>
+            </div>
+            <div class="kc-option" data-question="0" data-option="3" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>To provide customer support ticketing</span>
+            </div>
+          </div>
+          <div class="kc-feedback" id="kcFeedback0"></div>
+        </div>
+
+        <div class="kc-submit-wrap">
+          <button class="kc-submit-btn" id="kcSubmitBtn" onclick="submitKnowledgeCheck()" disabled>SUBMIT ANSWER</button>
+        </div>
+        <div class="kc-results" id="kcResults">
+          <div class="kc-results-score" id="kcScore"></div>
+          <div class="kc-results-text" id="kcResultsText"></div>
+          <button class="kc-retry-btn" id="kcRetryBtn" onclick="retryKnowledgeCheck()" style="display:none;">TRY AGAIN</button>
+        </div>
+      </div>
+
+    </div>
+
+  </div><!-- /content-wrapper -->
+
+</main>
+
+<script>
+  /* ── Section Reveal ── */
+  function revealSection(sectionId, btn) {
+    const section = document.getElementById(sectionId);
+    if (!section) return;
+    btn.closest('.continue-wrap').style.display = 'none';
+    section.classList.remove('hidden');
+    section.classList.add('revealing');
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        section.classList.remove('revealing');
+        section.classList.add('visible');
+      });
+    });
+    setTimeout(() => section.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
+  }
+
+  /* ── Knowledge Check ── */
+  const kcAnswers = [1];
+  const kcSelections = {};
+  const kcTotal = 1;
+
+  function selectOption(el) {
+    const q = el.dataset.question;
+    const o = el.dataset.option;
+    const questionEl = document.getElementById('kcQ' + q);
+    if (questionEl.classList.contains('correct') || questionEl.classList.contains('incorrect')) return;
+    questionEl.querySelectorAll('.kc-option').forEach(opt => opt.classList.remove('selected'));
+    el.classList.add('selected');
+    kcSelections[q] = parseInt(o);
+    document.getElementById('kcSubmitBtn').disabled = Object.keys(kcSelections).length < kcTotal;
+  }
+
+  function submitKnowledgeCheck() {
+    let score = 0;
+    for (let i = 0; i < kcTotal; i++) {
+      const questionEl = document.getElementById('kcQ' + i);
+      const feedbackEl = document.getElementById('kcFeedback' + i);
+      const options = questionEl.querySelectorAll('.kc-option');
+      const selected = kcSelections[i];
+      const correct = kcAnswers[i];
+
+      options.forEach((opt, j) => {
+        opt.classList.add('disabled');
+        if (j === correct) {
+          opt.classList.add('correct-answer');
+        } else if (j === selected && j !== correct) {
+          opt.classList.add('wrong-answer');
+        }
+      });
+
+      if (selected === correct) {
+        score++;
+        questionEl.classList.add('correct');
+        feedbackEl.textContent = 'Correct!';
+        feedbackEl.className = 'kc-feedback show correct';
+      } else {
+        questionEl.classList.add('incorrect');
+        feedbackEl.textContent = 'Incorrect — see the correct answer highlighted above.';
+        feedbackEl.className = 'kc-feedback show incorrect';
+      }
+    }
+
+    const resultsEl = document.getElementById('kcResults');
+    const scoreEl = document.getElementById('kcScore');
+    const textEl = document.getElementById('kcResultsText');
+    const retryBtn = document.getElementById('kcRetryBtn');
+    const submitBtn = document.getElementById('kcSubmitBtn');
+
+    scoreEl.textContent = score + ' / ' + kcTotal;
+    submitBtn.style.display = 'none';
+
+    if (score === kcTotal) {
+      resultsEl.className = 'kc-results show pass';
+      textEl.textContent = 'Great job! You answered all questions correctly.';
+    } else {
+      resultsEl.className = 'kc-results show fail';
+      textEl.textContent = 'Review the incorrect answers above and try again.';
+      retryBtn.style.display = 'inline-block';
+    }
+  }
+
+  function retryKnowledgeCheck() {
+    for (let i = 0; i < kcTotal; i++) {
+      const questionEl = document.getElementById('kcQ' + i);
+      const feedbackEl = document.getElementById('kcFeedback' + i);
+      questionEl.className = 'kc-question';
+      feedbackEl.className = 'kc-feedback';
+      feedbackEl.textContent = '';
+      questionEl.querySelectorAll('.kc-option').forEach(opt => {
+        opt.className = 'kc-option';
+      });
+      delete kcSelections[i];
+    }
+    document.getElementById('kcResults').className = 'kc-results';
+    document.getElementById('kcSubmitBtn').style.display = 'inline-block';
+    document.getElementById('kcSubmitBtn').disabled = true;
+    document.getElementById('kcRetryBtn').style.display = 'none';
+  }
+
+</script>
+</body>
+</html>
