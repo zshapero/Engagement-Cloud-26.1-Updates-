@@ -848,10 +848,10 @@
   .screenshot-placeholder img,
   .scenario-avatar img,
   .testimonial-photo img {
-    max-width: 100%;
-    width: 100%;
+    max-width: 75%;
     height: auto;
     display: block;
+    margin: 0 auto;
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
   }
