@@ -1131,7 +1131,7 @@
     <!-- ═══ KNOWLEDGE CHECK ════════════════════════════════════ -->
     <div class="reveal-section hidden" id="section-knowledge-check">
 
-      <div class="knowledge-check" id="knowledgeCheck">
+            <div class="knowledge-check" id="knowledgeCheck">
         <div class="knowledge-check-header">
           <div class="knowledge-check-icon">?</div>
           <div>
@@ -1161,75 +1161,9 @@
           </div>
           <div class="kc-feedback" id="kcFeedback0"></div>
         </div>
-        <div class="kc-question" id="kcQ1">
-          <div class="kc-question-text"><span class="kc-question-number">Q2.</span> What are pre-built segments?</div>
-          <div class="kc-options">
-            <div class="kc-option" data-question="1" data-option="0" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Segments that require manual data entry</span>
-            </div>
-            <div class="kc-option" data-question="1" data-option="1" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Ready-made subscriber lists based on common use cases like upsell and retention</span>
-            </div>
-            <div class="kc-option" data-question="1" data-option="2" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Segments that only work with Engagement Cloud Plus</span>
-            </div>
-            <div class="kc-option" data-question="1" data-option="3" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Custom filters applied to dashboards</span>
-            </div>
-          </div>
-          <div class="kc-feedback" id="kcFeedback1"></div>
-        </div>
-        <div class="kc-question" id="kcQ2">
-          <div class="kc-question-text"><span class="kc-question-number">Q3.</span> When would you create a custom segment instead of using a pre-built one?</div>
-          <div class="kc-options">
-            <div class="kc-option" data-question="2" data-option="0" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>When you need to configure billing data</span>
-            </div>
-            <div class="kc-option" data-question="2" data-option="1" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>When you want to target a very specific group based on unique criteria</span>
-            </div>
-            <div class="kc-option" data-question="2" data-option="2" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>When you want to delete subscribers from the system</span>
-            </div>
-            <div class="kc-option" data-question="2" data-option="3" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Custom segments are never recommended</span>
-            </div>
-          </div>
-          <div class="kc-feedback" id="kcFeedback2"></div>
-        </div>
-        <div class="kc-question" id="kcQ3">
-          <div class="kc-question-text"><span class="kc-question-number">Q4.</span> What types of data can you use to build a custom segment?</div>
-          <div class="kc-options">
-            <div class="kc-option" data-question="3" data-option="0" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Only subscriber names and addresses</span>
-            </div>
-            <div class="kc-option" data-question="3" data-option="1" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Subscriber data, usage patterns, and service information</span>
-            </div>
-            <div class="kc-option" data-question="3" data-option="2" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Only financial billing data</span>
-            </div>
-            <div class="kc-option" data-question="3" data-option="3" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Only geographic location data</span>
-            </div>
-          </div>
-          <div class="kc-feedback" id="kcFeedback3"></div>
-        </div>
 
         <div class="kc-submit-wrap">
-          <button class="kc-submit-btn" id="kcSubmitBtn" onclick="submitKnowledgeCheck()" disabled>SUBMIT ANSWERS</button>
+          <button class="kc-submit-btn" id="kcSubmitBtn" onclick="submitKnowledgeCheck()" disabled>SUBMIT ANSWER</button>
         </div>
         <div class="kc-results" id="kcResults">
           <div class="kc-results-score" id="kcScore"></div>
@@ -1261,9 +1195,9 @@
   }
 
   /* ── Knowledge Check ── */
-  const kcAnswers = [1, 1, 1, 1];
+  const kcAnswers = [1];
   const kcSelections = {};
-  const kcTotal = 4;
+  const kcTotal = 1;
 
   function selectOption(el) {
     const q = el.dataset.question;
