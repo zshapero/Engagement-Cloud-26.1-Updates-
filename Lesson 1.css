@@ -736,6 +736,228 @@
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
   }
+
+  /* ─── KNOWLEDGE CHECK ─────────────────────────────────── */
+  .knowledge-check {
+    background: var(--gray-100);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    margin-top: 32px;
+  }
+  .knowledge-check-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .knowledge-check-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: white;
+    flex-shrink: 0;
+  }
+  .knowledge-check-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--gray-900);
+  }
+  .knowledge-check-subtitle {
+    font-size: 14px;
+    color: var(--gray-500);
+    margin-top: 2px;
+  }
+  .kc-question {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    margin-bottom: 16px;
+    transition: border-color 0.3s;
+  }
+  .kc-question.correct {
+    border-color: #22c55e;
+    background: #f0fdf4;
+  }
+  .kc-question.incorrect {
+    border-color: #ef4444;
+    background: #fef2f2;
+  }
+  .kc-question-text {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 14px;
+    color: var(--gray-900);
+  }
+  .kc-question-number {
+    color: var(--blue);
+    margin-right: 6px;
+  }
+  .kc-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .kc-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 15px;
+    color: var(--gray-700);
+    background: var(--white);
+  }
+  .kc-option:hover {
+    border-color: var(--blue-mid);
+    background: var(--blue-light);
+  }
+  .kc-option.selected {
+    border-color: var(--blue);
+    background: var(--blue-light);
+    color: var(--gray-900);
+    font-weight: 600;
+  }
+  .kc-option.correct-answer {
+    border-color: #22c55e;
+    background: #dcfce7;
+    color: #166534;
+    font-weight: 600;
+  }
+  .kc-option.wrong-answer {
+    border-color: #ef4444;
+    background: #fee2e2;
+    color: #991b1b;
+  }
+  .kc-option-radio {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--gray-300);
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+  .kc-option.selected .kc-option-radio {
+    border-color: var(--blue);
+  }
+  .kc-option.selected .kc-option-radio::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: var(--blue);
+    border-radius: 50%;
+  }
+  .kc-option.correct-answer .kc-option-radio {
+    border-color: #22c55e;
+  }
+  .kc-option.correct-answer .kc-option-radio::after {
+    content: '\2713';
+    font-size: 12px;
+    color: #22c55e;
+    font-weight: 700;
+  }
+  .kc-option.wrong-answer .kc-option-radio {
+    border-color: #ef4444;
+  }
+  .kc-option.wrong-answer .kc-option-radio::after {
+    content: '\2717';
+    font-size: 12px;
+    color: #ef4444;
+    font-weight: 700;
+  }
+  .kc-option.disabled {
+    pointer-events: none;
+  }
+  .kc-feedback {
+    margin-top: 10px;
+    padding: 10px 14px;
+    border-radius: var(--radius);
+    font-size: 14px;
+    font-weight: 600;
+    display: none;
+  }
+  .kc-feedback.show { display: block; }
+  .kc-feedback.correct {
+    background: #dcfce7;
+    color: #166534;
+  }
+  .kc-feedback.incorrect {
+    background: #fee2e2;
+    color: #991b1b;
+  }
+  .kc-submit-wrap {
+    text-align: center;
+    margin-top: 24px;
+  }
+  .kc-submit-btn {
+    background: var(--blue);
+    color: white;
+    border: none;
+    padding: 14px 48px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: var(--radius);
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: background 0.2s;
+  }
+  .kc-submit-btn:hover { background: var(--blue-dark); }
+  .kc-submit-btn:disabled {
+    background: var(--gray-300);
+    cursor: not-allowed;
+  }
+  .kc-results {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: var(--radius-lg);
+    display: none;
+  }
+  .kc-results.show { display: block; }
+  .kc-results.pass {
+    background: #dcfce7;
+    border: 1px solid #22c55e;
+  }
+  .kc-results.fail {
+    background: #fef3c7;
+    border: 1px solid #f59e0b;
+  }
+  .kc-results-score {
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 4px;
+  }
+  .kc-results.pass .kc-results-score { color: #166534; }
+  .kc-results.fail .kc-results-score { color: #92400e; }
+  .kc-results-text {
+    font-size: 15px;
+    color: var(--gray-700);
+  }
+  .kc-retry-btn {
+    margin-top: 12px;
+    background: var(--blue);
+    color: white;
+    border: none;
+    padding: 10px 32px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .kc-retry-btn:hover { background: var(--blue-dark); }
+
 </style>
 </head>
 <body>
@@ -958,7 +1180,146 @@
         <p>We will explore the workflow that drives results — from insights to audience to campaign to results — and how each step leads to smarter, more effective marketing.</p>
       </div>
 
+
+      <div class="continue-wrap">
+        <button class="continue-btn" onclick="revealSection('section-knowledge-check', this)">CONTINUE TO KNOWLEDGE CHECK</button>
+      </div>
     </div><!-- /section-4 -->
+
+    <!-- ═══ KNOWLEDGE CHECK ════════════════════════════════════ -->
+    <div class="reveal-section hidden" id="section-knowledge-check">
+
+      <div class="knowledge-check" id="knowledgeCheck">
+        <div class="knowledge-check-header">
+          <div class="knowledge-check-icon">?</div>
+          <div>
+            <div class="knowledge-check-title">Knowledge Check</div>
+            <div class="knowledge-check-subtitle">Test your understanding of this lesson</div>
+          </div>
+        </div>
+        <div class="kc-question" id="kcQ0">
+          <div class="kc-question-text"><span class="kc-question-number">Q1.</span> What is the primary purpose of Engagement Cloud?</div>
+          <div class="kc-options">
+            <div class="kc-option" data-question="0" data-option="0" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>To replace your billing system</span>
+            </div>
+            <div class="kc-option" data-question="0" data-option="1" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>To help service providers understand, segment, and engage their subscribers</span>
+            </div>
+            <div class="kc-option" data-question="0" data-option="2" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>To manage network infrastructure and hardware</span>
+            </div>
+            <div class="kc-option" data-question="0" data-option="3" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>To provide customer support ticketing</span>
+            </div>
+          </div>
+          <div class="kc-feedback" id="kcFeedback0"></div>
+        </div>
+        <div class="kc-question" id="kcQ1">
+          <div class="kc-question-text"><span class="kc-question-number">Q2.</span> Which of the following is NOT a core capability of Engagement Cloud?</div>
+          <div class="kc-options">
+            <div class="kc-option" data-question="1" data-option="0" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>Subscriber insights and dashboards</span>
+            </div>
+            <div class="kc-option" data-question="1" data-option="1" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>Audience segmentation</span>
+            </div>
+            <div class="kc-option" data-question="1" data-option="2" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>Network equipment provisioning</span>
+            </div>
+            <div class="kc-option" data-question="1" data-option="3" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>Campaign creation and management</span>
+            </div>
+          </div>
+          <div class="kc-feedback" id="kcFeedback1"></div>
+        </div>
+        <div class="kc-question" id="kcQ2">
+          <div class="kc-question-text"><span class="kc-question-number">Q3.</span> What is a 'segment' in Engagement Cloud?</div>
+          <div class="kc-options">
+            <div class="kc-option" data-question="2" data-option="0" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>A section of your network infrastructure</span>
+            </div>
+            <div class="kc-option" data-question="2" data-option="1" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>A billing category for services</span>
+            </div>
+            <div class="kc-option" data-question="2" data-option="2" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>A targeted list of subscribers grouped by shared characteristics</span>
+            </div>
+            <div class="kc-option" data-question="2" data-option="3" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>A type of dashboard filter</span>
+            </div>
+          </div>
+          <div class="kc-feedback" id="kcFeedback2"></div>
+        </div>
+        <div class="kc-question" id="kcQ3">
+          <div class="kc-question-text"><span class="kc-question-number">Q4.</span> What does 'churn' refer to in Engagement Cloud?</div>
+          <div class="kc-options">
+            <div class="kc-option" data-question="3" data-option="0" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>The speed at which data is processed</span>
+            </div>
+            <div class="kc-option" data-question="3" data-option="1" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>The measure of how many subscribers discontinued their service</span>
+            </div>
+            <div class="kc-option" data-question="3" data-option="2" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>The rate of new subscriber sign-ups</span>
+            </div>
+            <div class="kc-option" data-question="3" data-option="3" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>The frequency of campaign deployments</span>
+            </div>
+          </div>
+          <div class="kc-feedback" id="kcFeedback3"></div>
+        </div>
+        <div class="kc-question" id="kcQ4">
+          <div class="kc-question-text"><span class="kc-question-number">Q5.</span> What additional features does Engagement Cloud Plus provide?</div>
+          <div class="kc-options">
+            <div class="kc-option" data-question="4" data-option="0" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>Advanced network monitoring tools</span>
+            </div>
+            <div class="kc-option" data-question="4" data-option="1" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>Prospect and demographic data for non-subscribers in your base area</span>
+            </div>
+            <div class="kc-option" data-question="4" data-option="2" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>Automated billing and invoicing</span>
+            </div>
+            <div class="kc-option" data-question="4" data-option="3" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>Hardware inventory management</span>
+            </div>
+          </div>
+          <div class="kc-feedback" id="kcFeedback4"></div>
+        </div>
+
+        <div class="kc-submit-wrap">
+          <button class="kc-submit-btn" id="kcSubmitBtn" onclick="submitKnowledgeCheck()" disabled>SUBMIT ANSWERS</button>
+        </div>
+        <div class="kc-results" id="kcResults">
+          <div class="kc-results-score" id="kcScore"></div>
+          <div class="kc-results-text" id="kcResultsText"></div>
+          <button class="kc-retry-btn" id="kcRetryBtn" onclick="retryKnowledgeCheck()" style="display:none;">TRY AGAIN</button>
+        </div>
+      </div>
+
+    </div>
+
 
   </div><!-- /content-wrapper -->
 </main>
@@ -1050,6 +1411,90 @@
     });
     setTimeout(() => section.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
   }
+
+  /* ── Knowledge Check ── */
+  const kcAnswers = [1, 2, 2, 1, 1];
+  const kcSelections = {};
+  const kcTotal = 5;
+
+  function selectOption(el) {
+    const q = el.dataset.question;
+    const o = el.dataset.option;
+    const questionEl = document.getElementById('kcQ' + q);
+    if (questionEl.classList.contains('correct') || questionEl.classList.contains('incorrect')) return;
+    questionEl.querySelectorAll('.kc-option').forEach(opt => opt.classList.remove('selected'));
+    el.classList.add('selected');
+    kcSelections[q] = parseInt(o);
+    document.getElementById('kcSubmitBtn').disabled = Object.keys(kcSelections).length < kcTotal;
+  }
+
+  function submitKnowledgeCheck() {
+    let score = 0;
+    for (let i = 0; i < kcTotal; i++) {
+      const questionEl = document.getElementById('kcQ' + i);
+      const feedbackEl = document.getElementById('kcFeedback' + i);
+      const options = questionEl.querySelectorAll('.kc-option');
+      const selected = kcSelections[i];
+      const correct = kcAnswers[i];
+
+      options.forEach((opt, j) => {
+        opt.classList.add('disabled');
+        if (j === correct) {
+          opt.classList.add('correct-answer');
+        } else if (j === selected && j !== correct) {
+          opt.classList.add('wrong-answer');
+        }
+      });
+
+      if (selected === correct) {
+        score++;
+        questionEl.classList.add('correct');
+        feedbackEl.textContent = 'Correct!';
+        feedbackEl.className = 'kc-feedback show correct';
+      } else {
+        questionEl.classList.add('incorrect');
+        feedbackEl.textContent = 'Incorrect — see the correct answer highlighted above.';
+        feedbackEl.className = 'kc-feedback show incorrect';
+      }
+    }
+
+    const resultsEl = document.getElementById('kcResults');
+    const scoreEl = document.getElementById('kcScore');
+    const textEl = document.getElementById('kcResultsText');
+    const retryBtn = document.getElementById('kcRetryBtn');
+    const submitBtn = document.getElementById('kcSubmitBtn');
+
+    scoreEl.textContent = score + ' / ' + kcTotal;
+    submitBtn.style.display = 'none';
+
+    if (score === kcTotal) {
+      resultsEl.className = 'kc-results show pass';
+      textEl.textContent = 'Great job! You answered all questions correctly.';
+    } else {
+      resultsEl.className = 'kc-results show fail';
+      textEl.textContent = 'Review the incorrect answers above and try again.';
+      retryBtn.style.display = 'inline-block';
+    }
+  }
+
+  function retryKnowledgeCheck() {
+    for (let i = 0; i < kcTotal; i++) {
+      const questionEl = document.getElementById('kcQ' + i);
+      const feedbackEl = document.getElementById('kcFeedback' + i);
+      questionEl.className = 'kc-question';
+      feedbackEl.className = 'kc-feedback';
+      feedbackEl.textContent = '';
+      questionEl.querySelectorAll('.kc-option').forEach(opt => {
+        opt.className = 'kc-option';
+      });
+      delete kcSelections[i];
+    }
+    document.getElementById('kcResults').className = 'kc-results';
+    document.getElementById('kcSubmitBtn').style.display = 'inline-block';
+    document.getElementById('kcSubmitBtn').disabled = true;
+    document.getElementById('kcRetryBtn').style.display = 'none';
+  }
+
 </script>
 </body>
 </html>
