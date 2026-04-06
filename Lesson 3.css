@@ -956,27 +956,6 @@
         <p>The Dashboards page gives you structured views of your data. Each dashboard is organized around a different type of question. There are two primary dashboards available to all users—and additional dashboards for Engagement Cloud Plus subscribers.</p>
       </div>
 
-      <!-- Wistia Video Embed -->
-      <script src="https://fast.wistia.com/player.js" async></script>
-      <script src="https://fast.wistia.com/embed/s7v83i01yr.js" async type="module"></script>
-      <style>
-        wistia-player[media-id='s7v83i01yr']:not(:defined) {
-          background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/s7v83i01yr/swatch');
-          display: block;
-          filter: blur(5px);
-          padding-top: 56.25%;
-        }
-        wistia-player[media-id='s7v83i01yr'] {
-          display: block;
-          width: 60%;
-          aspect-ratio: 16 / 9;
-          border-radius: var(--radius-lg);
-          overflow: hidden;
-          margin: 24px auto;
-        }
-      </style>
-      <wistia-player media-id="s7v83i01yr" aspect="1.7777777777777777"></wistia-player>
-
       <div class="card-grid">
         <div class="card">
           <div class="card-icon">
@@ -1018,8 +997,29 @@
         </div>
       </div>
 
+      <!-- Wistia Video Embed -->
+      <script src="https://fast.wistia.com/player.js" async></script>
+      <script src="https://fast.wistia.com/embed/s7v83i01yr.js" async type="module"></script>
+      <style>
+        wistia-player[media-id='s7v83i01yr']:not(:defined) {
+          background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/s7v83i01yr/swatch');
+          display: block;
+          filter: blur(5px);
+          padding-top: 56.25%;
+        }
+        wistia-player[media-id='s7v83i01yr'] {
+          display: block;
+          width: 60%;
+          aspect-ratio: 16 / 9;
+          border-radius: var(--radius-lg);
+          overflow: hidden;
+          margin: 24px auto;
+        }
+      </style>
+      <wistia-player media-id="s7v83i01yr" aspect="1.7777777777777777"></wistia-player>
+
       <div class="continue-wrap">
-        <button class="continue-btn" onclick="revealSection('section-2', this)">CONTINUE</button>
+        <button class="continue-btn" onclick="revealSection('section-2', this)">CONTINUE TO NEXT SECTION</button>
       </div>
     </div>
 
@@ -1078,7 +1078,7 @@
       </div>
 
       <div class="continue-wrap">
-        <button class="continue-btn" onclick="revealSection('section-3', this)">CONTINUE</button>
+        <button class="continue-btn" onclick="revealSection('section-3', this)">CONTINUE TO NEXT SECTION</button>
       </div>
     </div>
 
@@ -1136,7 +1136,7 @@
       </div>
 
       <div class="continue-wrap">
-        <button class="continue-btn" onclick="revealSection('section-4', this)">CONTINUE</button>
+        <button class="continue-btn" onclick="revealSection('section-4', this)">CONTINUE TO NEXT SECTION</button>
       </div>
     </div>
 
@@ -1160,16 +1160,8 @@
         <div class="filter-tag"><div class="filter-tag-dot"></div>Campaign Audience</div>
       </div>
 
-      <div class="screenshot-placeholder">
-        <div class="screenshot-inner">
-          <div class="screenshot-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
-            </svg>
-          </div>
-          <div class="screenshot-label">Screenshot: Dashboard Filter Panel</div>
-          <div class="screenshot-sublabel">Filter options expanded with selections applied</div>
-        </div>
+      <div class="screenshot-placeholder" style="background:none;border:none;">
+        <img src="data:image/png;base64,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" />
         <div class="screenshot-caption">The filter panel — narrow any dashboard view by region, tier, customer type, and more</div>
       </div>
 
@@ -1195,7 +1187,7 @@
       </div>
 
       <div class="continue-wrap">
-        <button class="continue-btn" onclick="revealSection('section-final', this)">CONTINUE</button>
+        <button class="continue-btn" onclick="revealSection('section-final', this)">CONTINUE TO NEXT SECTION</button>
       </div>
     </div>
 
