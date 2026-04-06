@@ -389,29 +389,28 @@
 
   .kpi-card-top {
     display: flex;
-    flex-direction: column;
     gap: 0;
   }
 
   .kpi-screenshot {
-    width: 100%;
-    background: var(--gray-100);
-    border-bottom: 1px solid var(--gray-200);
+    width: 50%;
+    background: white;
+    border-right: 1px solid var(--gray-200);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 24px;
-    height: 240px;
-    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    padding: 20px;
+    border: none;
+    border-radius: var(--radius-lg) 0 0 0;
     margin: 0;
     overflow: hidden;
   }
 
   .kpi-screenshot img {
     max-width: 480px;
-    max-height: 100%;
+    width: 100%;
+    height: auto;
     display: block;
-    margin: 0 auto;
     object-fit: contain;
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
@@ -438,7 +437,7 @@
   }
 
   .kpi-content {
-    width: 100%;
+    width: 50%;
     padding: 32px 36px;
     display: flex;
     flex-direction: column;
