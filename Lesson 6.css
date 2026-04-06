@@ -669,27 +669,6 @@
         <p>The Configuration page includes four tabs.</p>
       </div>
 
-      <!-- Wistia Video Embed: Configuration Overview -->
-      <script src="https://fast.wistia.com/player.js" async></script>
-      <script src="https://fast.wistia.com/embed/yjx56jyin8.js" async type="module"></script>
-      <style>
-        wistia-player[media-id='yjx56jyin8']:not(:defined) {
-          background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/yjx56jyin8/swatch');
-          display: block;
-          filter: blur(5px);
-          padding-top: 56.25%;
-        }
-        wistia-player[media-id='yjx56jyin8'] {
-          display: block;
-          width: 60%;
-          aspect-ratio: 16 / 9;
-          border-radius: var(--radius-lg);
-          overflow: hidden;
-          margin: 24px auto;
-        }
-      </style>
-      <wistia-player media-id="yjx56jyin8" aspect="1.7777777777777777"></wistia-player>
-
       <div class="tab-overview">
         <div class="tab-card">
           <div class="tab-card-icon">🔍</div>
@@ -712,6 +691,27 @@
           <div class="tab-card-desc">Configure service package mappings and rider fields for accurate insight generation.</div>
         </div>
       </div>
+
+      <!-- Wistia Video Embed: Configuration Overview -->
+      <script src="https://fast.wistia.com/player.js" async></script>
+      <script src="https://fast.wistia.com/embed/yjx56jyin8.js" async type="module"></script>
+      <style>
+        wistia-player[media-id='yjx56jyin8']:not(:defined) {
+          background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/yjx56jyin8/swatch');
+          display: block;
+          filter: blur(5px);
+          padding-top: 56.25%;
+        }
+        wistia-player[media-id='yjx56jyin8'] {
+          display: block;
+          width: 60%;
+          aspect-ratio: 16 / 9;
+          border-radius: var(--radius-lg);
+          overflow: hidden;
+          margin: 24px auto;
+        }
+      </style>
+      <wistia-player media-id="yjx56jyin8" aspect="1.7777777777777777"></wistia-player>
 
 
 
