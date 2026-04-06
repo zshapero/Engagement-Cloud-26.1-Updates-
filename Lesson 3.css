@@ -1440,7 +1440,7 @@
     <!-- ═══ KNOWLEDGE CHECK ════════════════════════════════════ -->
     <div class="reveal-section hidden" id="section-knowledge-check">
 
-      <div class="knowledge-check" id="knowledgeCheck">
+            <div class="knowledge-check" id="knowledgeCheck">
         <div class="knowledge-check-header">
           <div class="knowledge-check-icon">?</div>
           <div>
@@ -1470,97 +1470,9 @@
           </div>
           <div class="kc-feedback" id="kcFeedback0"></div>
         </div>
-        <div class="kc-question" id="kcQ1">
-          <div class="kc-question-text"><span class="kc-question-number">Q2.</span> Which dashboard would you use to analyze subscriber service tier distribution?</div>
-          <div class="kc-options">
-            <div class="kc-option" data-question="1" data-option="0" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Business Performance Dashboard</span>
-            </div>
-            <div class="kc-option" data-question="1" data-option="1" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Campaign Dashboard</span>
-            </div>
-            <div class="kc-option" data-question="1" data-option="2" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Subscribers Dashboard</span>
-            </div>
-            <div class="kc-option" data-question="1" data-option="3" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Configuration Dashboard</span>
-            </div>
-          </div>
-          <div class="kc-feedback" id="kcFeedback1"></div>
-        </div>
-        <div class="kc-question" id="kcQ2">
-          <div class="kc-question-text"><span class="kc-question-number">Q3.</span> What is the purpose of using filters on dashboards?</div>
-          <div class="kc-options">
-            <div class="kc-option" data-question="2" data-option="0" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>To permanently delete data from the system</span>
-            </div>
-            <div class="kc-option" data-question="2" data-option="1" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>To narrow the data view and focus on specific subscriber groups or time periods</span>
-            </div>
-            <div class="kc-option" data-question="2" data-option="2" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>To export data to spreadsheets</span>
-            </div>
-            <div class="kc-option" data-question="2" data-option="3" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>To create new subscriber accounts</span>
-            </div>
-          </div>
-          <div class="kc-feedback" id="kcFeedback2"></div>
-        </div>
-        <div class="kc-question" id="kcQ3">
-          <div class="kc-question-text"><span class="kc-question-number">Q4.</span> What does the Business Performance Dashboard help you track?</div>
-          <div class="kc-options">
-            <div class="kc-option" data-question="3" data-option="0" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Individual employee productivity</span>
-            </div>
-            <div class="kc-option" data-question="3" data-option="1" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Revenue, ARPU, and financial health metrics</span>
-            </div>
-            <div class="kc-option" data-question="3" data-option="2" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Network uptime and latency</span>
-            </div>
-            <div class="kc-option" data-question="3" data-option="3" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Customer support ticket volume</span>
-            </div>
-          </div>
-          <div class="kc-feedback" id="kcFeedback3"></div>
-        </div>
-        <div class="kc-question" id="kcQ4">
-          <div class="kc-question-text"><span class="kc-question-number">Q5.</span> If Engagement Cloud Plus is enabled, which additional dashboards become available?</div>
-          <div class="kc-options">
-            <div class="kc-option" data-question="4" data-option="0" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Network Performance and Hardware dashboards</span>
-            </div>
-            <div class="kc-option" data-question="4" data-option="1" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Residential Prospects and Business Prospects dashboards</span>
-            </div>
-            <div class="kc-option" data-question="4" data-option="2" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Financial Forecasting and Budget dashboards</span>
-            </div>
-            <div class="kc-option" data-question="4" data-option="3" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Employee and HR dashboards</span>
-            </div>
-          </div>
-          <div class="kc-feedback" id="kcFeedback4"></div>
-        </div>
 
         <div class="kc-submit-wrap">
-          <button class="kc-submit-btn" id="kcSubmitBtn" onclick="submitKnowledgeCheck()" disabled>SUBMIT ANSWERS</button>
+          <button class="kc-submit-btn" id="kcSubmitBtn" onclick="submitKnowledgeCheck()" disabled>SUBMIT ANSWER</button>
         </div>
         <div class="kc-results" id="kcResults">
           <div class="kc-results-score" id="kcScore"></div>
@@ -1613,9 +1525,9 @@
   }
 
   /* ── Knowledge Check ── */
-  const kcAnswers = [1, 2, 1, 1, 1];
+  const kcAnswers = [1];
   const kcSelections = {};
-  const kcTotal = 5;
+  const kcTotal = 1;
 
   function selectOption(el) {
     const q = el.dataset.question;

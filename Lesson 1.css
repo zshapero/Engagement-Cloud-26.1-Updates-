@@ -1189,7 +1189,7 @@
     <!-- ═══ KNOWLEDGE CHECK ════════════════════════════════════ -->
     <div class="reveal-section hidden" id="section-knowledge-check">
 
-      <div class="knowledge-check" id="knowledgeCheck">
+            <div class="knowledge-check" id="knowledgeCheck">
         <div class="knowledge-check-header">
           <div class="knowledge-check-icon">?</div>
           <div>
@@ -1219,97 +1219,9 @@
           </div>
           <div class="kc-feedback" id="kcFeedback0"></div>
         </div>
-        <div class="kc-question" id="kcQ1">
-          <div class="kc-question-text"><span class="kc-question-number">Q2.</span> Which of the following is NOT a core capability of Engagement Cloud?</div>
-          <div class="kc-options">
-            <div class="kc-option" data-question="1" data-option="0" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Subscriber insights and dashboards</span>
-            </div>
-            <div class="kc-option" data-question="1" data-option="1" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Audience segmentation</span>
-            </div>
-            <div class="kc-option" data-question="1" data-option="2" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Network equipment provisioning</span>
-            </div>
-            <div class="kc-option" data-question="1" data-option="3" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Campaign creation and management</span>
-            </div>
-          </div>
-          <div class="kc-feedback" id="kcFeedback1"></div>
-        </div>
-        <div class="kc-question" id="kcQ2">
-          <div class="kc-question-text"><span class="kc-question-number">Q3.</span> What is a 'segment' in Engagement Cloud?</div>
-          <div class="kc-options">
-            <div class="kc-option" data-question="2" data-option="0" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>A section of your network infrastructure</span>
-            </div>
-            <div class="kc-option" data-question="2" data-option="1" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>A billing category for services</span>
-            </div>
-            <div class="kc-option" data-question="2" data-option="2" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>A targeted list of subscribers grouped by shared characteristics</span>
-            </div>
-            <div class="kc-option" data-question="2" data-option="3" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>A type of dashboard filter</span>
-            </div>
-          </div>
-          <div class="kc-feedback" id="kcFeedback2"></div>
-        </div>
-        <div class="kc-question" id="kcQ3">
-          <div class="kc-question-text"><span class="kc-question-number">Q4.</span> What does 'churn' refer to in Engagement Cloud?</div>
-          <div class="kc-options">
-            <div class="kc-option" data-question="3" data-option="0" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>The speed at which data is processed</span>
-            </div>
-            <div class="kc-option" data-question="3" data-option="1" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>The measure of how many subscribers discontinued their service</span>
-            </div>
-            <div class="kc-option" data-question="3" data-option="2" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>The rate of new subscriber sign-ups</span>
-            </div>
-            <div class="kc-option" data-question="3" data-option="3" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>The frequency of campaign deployments</span>
-            </div>
-          </div>
-          <div class="kc-feedback" id="kcFeedback3"></div>
-        </div>
-        <div class="kc-question" id="kcQ4">
-          <div class="kc-question-text"><span class="kc-question-number">Q5.</span> What additional features does Engagement Cloud Plus provide?</div>
-          <div class="kc-options">
-            <div class="kc-option" data-question="4" data-option="0" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Advanced network monitoring tools</span>
-            </div>
-            <div class="kc-option" data-question="4" data-option="1" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Prospect and demographic data for non-subscribers in your base area</span>
-            </div>
-            <div class="kc-option" data-question="4" data-option="2" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Automated billing and invoicing</span>
-            </div>
-            <div class="kc-option" data-question="4" data-option="3" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Hardware inventory management</span>
-            </div>
-          </div>
-          <div class="kc-feedback" id="kcFeedback4"></div>
-        </div>
 
         <div class="kc-submit-wrap">
-          <button class="kc-submit-btn" id="kcSubmitBtn" onclick="submitKnowledgeCheck()" disabled>SUBMIT ANSWERS</button>
+          <button class="kc-submit-btn" id="kcSubmitBtn" onclick="submitKnowledgeCheck()" disabled>SUBMIT ANSWER</button>
         </div>
         <div class="kc-results" id="kcResults">
           <div class="kc-results-score" id="kcScore"></div>
@@ -1413,9 +1325,9 @@
   }
 
   /* ── Knowledge Check ── */
-  const kcAnswers = [1, 2, 2, 1, 1];
+  const kcAnswers = [1];
   const kcSelections = {};
-  const kcTotal = 5;
+  const kcTotal = 1;
 
   function selectOption(el) {
     const q = el.dataset.question;

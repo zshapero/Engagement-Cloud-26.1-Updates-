@@ -983,7 +983,7 @@
     <!-- ═══ KNOWLEDGE CHECK ════════════════════════════════════ -->
     <div class="reveal-section hidden" id="section-knowledge-check">
 
-      <div class="knowledge-check" id="knowledgeCheck">
+            <div class="knowledge-check" id="knowledgeCheck">
         <div class="knowledge-check-header">
           <div class="knowledge-check-icon">?</div>
           <div>
@@ -1013,75 +1013,9 @@
           </div>
           <div class="kc-feedback" id="kcFeedback0"></div>
         </div>
-        <div class="kc-question" id="kcQ1">
-          <div class="kc-question-text"><span class="kc-question-number">Q2.</span> What is the first step in creating a campaign in Engagement Cloud?</div>
-          <div class="kc-options">
-            <div class="kc-option" data-question="1" data-option="0" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Writing the email content</span>
-            </div>
-            <div class="kc-option" data-question="1" data-option="1" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Selecting a segment or audience to target</span>
-            </div>
-            <div class="kc-option" data-question="1" data-option="2" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Choosing the campaign type and configuring settings in the Campaign Builder</span>
-            </div>
-            <div class="kc-option" data-question="1" data-option="3" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Setting the budget for the campaign</span>
-            </div>
-          </div>
-          <div class="kc-feedback" id="kcFeedback1"></div>
-        </div>
-        <div class="kc-question" id="kcQ2">
-          <div class="kc-question-text"><span class="kc-question-number">Q3.</span> Which of the following can you review in campaign results?</div>
-          <div class="kc-options">
-            <div class="kc-option" data-question="2" data-option="0" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Delivery status, audience distribution, revenue impact, and service conversions</span>
-            </div>
-            <div class="kc-option" data-question="2" data-option="1" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Only the number of emails sent</span>
-            </div>
-            <div class="kc-option" data-question="2" data-option="2" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Only subscriber churn data</span>
-            </div>
-            <div class="kc-option" data-question="2" data-option="3" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Network performance during the campaign</span>
-            </div>
-          </div>
-          <div class="kc-feedback" id="kcFeedback2"></div>
-        </div>
-        <div class="kc-question" id="kcQ3">
-          <div class="kc-question-text"><span class="kc-question-number">Q4.</span> What actions can you take on existing campaigns from the Campaigns page?</div>
-          <div class="kc-options">
-            <div class="kc-option" data-question="3" data-option="0" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Only view their status</span>
-            </div>
-            <div class="kc-option" data-question="3" data-option="1" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Edit drafts, duplicate, delete, and review performance of live campaigns</span>
-            </div>
-            <div class="kc-option" data-question="3" data-option="2" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Only delete them</span>
-            </div>
-            <div class="kc-option" data-question="3" data-option="3" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Only export them to CSV</span>
-            </div>
-          </div>
-          <div class="kc-feedback" id="kcFeedback3"></div>
-        </div>
 
         <div class="kc-submit-wrap">
-          <button class="kc-submit-btn" id="kcSubmitBtn" onclick="submitKnowledgeCheck()" disabled>SUBMIT ANSWERS</button>
+          <button class="kc-submit-btn" id="kcSubmitBtn" onclick="submitKnowledgeCheck()" disabled>SUBMIT ANSWER</button>
         </div>
         <div class="kc-results" id="kcResults">
           <div class="kc-results-score" id="kcScore"></div>
@@ -1111,9 +1045,9 @@
   }
 
   /* ── Knowledge Check ── */
-  const kcAnswers = [1, 2, 0, 1];
+  const kcAnswers = [1];
   const kcSelections = {};
-  const kcTotal = 4;
+  const kcTotal = 1;
 
   function selectOption(el) {
     const q = el.dataset.question;

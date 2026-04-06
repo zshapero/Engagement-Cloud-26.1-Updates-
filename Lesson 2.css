@@ -1086,7 +1086,7 @@
     <!-- ═══ KNOWLEDGE CHECK ════════════════════════════════════ -->
     <div class="reveal-section hidden" id="section-knowledge-check">
 
-      <div class="knowledge-check" id="knowledgeCheck">
+            <div class="knowledge-check" id="knowledgeCheck">
         <div class="knowledge-check-header">
           <div class="knowledge-check-icon">?</div>
           <div>
@@ -1116,75 +1116,9 @@
           </div>
           <div class="kc-feedback" id="kcFeedback0"></div>
         </div>
-        <div class="kc-question" id="kcQ1">
-          <div class="kc-question-text"><span class="kc-question-number">Q2.</span> What type of information do the homepage KPIs display?</div>
-          <div class="kc-options">
-            <div class="kc-option" data-question="1" data-option="0" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Network equipment status</span>
-            </div>
-            <div class="kc-option" data-question="1" data-option="1" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Employee performance metrics</span>
-            </div>
-            <div class="kc-option" data-question="1" data-option="2" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>High-level subscriber metrics like total subscribers, ARPU, and churn</span>
-            </div>
-            <div class="kc-option" data-question="1" data-option="3" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Detailed billing line items</span>
-            </div>
-          </div>
-          <div class="kc-feedback" id="kcFeedback1"></div>
-        </div>
-        <div class="kc-question" id="kcQ2">
-          <div class="kc-question-text"><span class="kc-question-number">Q3.</span> How does the homepage help a marketer like Elena prepare for a leadership meeting?</div>
-          <div class="kc-options">
-            <div class="kc-option" data-question="2" data-option="0" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>It generates presentation slides automatically</span>
-            </div>
-            <div class="kc-option" data-question="2" data-option="1" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>It provides a quick overview of what has changed in key metrics</span>
-            </div>
-            <div class="kc-option" data-question="2" data-option="2" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>It sends automated email reports to leadership</span>
-            </div>
-            <div class="kc-option" data-question="2" data-option="3" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>It creates detailed financial forecasts</span>
-            </div>
-          </div>
-          <div class="kc-feedback" id="kcFeedback2"></div>
-        </div>
-        <div class="kc-question" id="kcQ3">
-          <div class="kc-question-text"><span class="kc-question-number">Q4.</span> What should you do after noticing a change on the homepage?</div>
-          <div class="kc-options">
-            <div class="kc-option" data-question="3" data-option="0" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Immediately launch a campaign</span>
-            </div>
-            <div class="kc-option" data-question="3" data-option="1" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Ignore it until the next billing cycle</span>
-            </div>
-            <div class="kc-option" data-question="3" data-option="2" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Explore the Dashboards to understand why the change occurred</span>
-            </div>
-            <div class="kc-option" data-question="3" data-option="3" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Reset the homepage filters</span>
-            </div>
-          </div>
-          <div class="kc-feedback" id="kcFeedback3"></div>
-        </div>
 
         <div class="kc-submit-wrap">
-          <button class="kc-submit-btn" id="kcSubmitBtn" onclick="submitKnowledgeCheck()" disabled>SUBMIT ANSWERS</button>
+          <button class="kc-submit-btn" id="kcSubmitBtn" onclick="submitKnowledgeCheck()" disabled>SUBMIT ANSWER</button>
         </div>
         <div class="kc-results" id="kcResults">
           <div class="kc-results-score" id="kcScore"></div>
@@ -1216,9 +1150,9 @@
   }
 
   /* ── Knowledge Check ── */
-  const kcAnswers = [1, 2, 1, 2];
+  const kcAnswers = [1];
   const kcSelections = {};
-  const kcTotal = 4;
+  const kcTotal = 1;
 
   function selectOption(el) {
     const q = el.dataset.question;
