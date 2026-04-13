@@ -51,19 +51,191 @@
   .lesson-hero::before {
     content: '';
     position: absolute;
-    right: -80px; top: -80px;
-    width: 360px; height: 360px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.05);
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent 0 28px,
+      rgba(255,255,255,0.035) 28px 29px
+    );
+    pointer-events: none;
   }
   .lesson-hero::after {
     content: '';
     position: absolute;
-    right: 80px; bottom: -120px;
-    width: 240px; height: 240px;
+    right: -80px; bottom: -80px;
+    width: 300px; height: 300px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.04);
+    background: rgba(255,255,255,0.06);
   }
+
+  /* ─── BENTO MOSAIC ─────────────────────────────────── */
+  .bento-scenario {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 0;
+    margin: 48px 0 0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+  .bento-scenario-left {
+    background: var(--blue);
+    color: var(--white);
+    padding: 48px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+  .bento-scenario-left .big-letter {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 140px;
+    line-height: 0.85;
+    font-weight: 700;
+    color: rgba(255,255,255,0.95);
+  }
+  .bento-scenario-left .role {
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 16px;
+    opacity: 0.9;
+  }
+  .bento-scenario-left .name {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 4px;
+  }
+  .bento-scenario-right {
+    background: var(--white);
+    padding: 40px 44px;
+  }
+  .bento-scenario-right .scenario-text {
+    font-size: 16px;
+    color: var(--gray-700);
+    line-height: 1.7;
+    margin-bottom: 14px;
+  }
+  .bento-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .bento-chip {
+    display: inline-block;
+    background: var(--blue-light);
+    color: var(--blue-dark);
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  /* ─── BENTO Section 1 ─────────────────────────────────── */
+  .bento-s1 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+    margin: 32px 0;
+  }
+  .bento-s1 .bento-prose {
+    background: var(--gray-100);
+    border-radius: var(--radius-lg);
+    padding: 36px 40px;
+  }
+  .bento-s1 .bento-prose p {
+    font-size: 17px;
+    color: var(--gray-700);
+    line-height: 1.75;
+  }
+  .bento-s1 .bento-image {
+    grid-row: 1 / 3;
+    background: var(--gray-100);
+    border: 2px dashed var(--gray-300);
+    border-radius: var(--radius-lg);
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  .bento-s1 .bento-stat {
+    background: var(--accent-orange);
+    color: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .bento-s1 .bento-stat .stat-number {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .bento-s1 .bento-stat .stat-text {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  /* ─── BENTO Section 2 (4 outcomes mosaic) ─────── */
+  .bento-s2 {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "big sm1 sm2"
+      "big sm3 sm4";
+    gap: 16px;
+    margin: 32px 0;
+    min-height: 360px;
+  }
+  .bento-s2 .b-tile {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-left: 4px solid var(--blue);
+    border-radius: var(--radius-lg);
+    padding: 24px 26px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .bento-s2 .b-tile.big { grid-area: big; border-left-width: 6px; padding: 36px 40px; }
+  .bento-s2 .b-tile.sm1 { grid-area: sm1; }
+  .bento-s2 .b-tile.sm2 { grid-area: sm2; }
+  .bento-s2 .b-tile.sm3 { grid-area: sm3; }
+  .bento-s2 .b-tile.sm4 { grid-area: sm4; }
+  .bento-s2 .b-tile .b-num {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 6px;
+  }
+  .bento-s2 .b-tile.big .b-num { font-size: 56px; }
+  .bento-s2 .b-tile .b-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 6px;
+  }
+  .bento-s2 .b-tile.big .b-title { font-size: 22px; }
+  .bento-s2 .b-tile .b-desc {
+    font-size: 13px;
+    color: var(--gray-500);
+    line-height: 1.55;
+  }
+  .bento-s2 .b-tile.big .b-desc { font-size: 15px; }
   .lesson-title {
     font-family: 'Source Serif 4', Georgia, serif;
     font-size: 48px;
@@ -514,28 +686,32 @@
   <!-- ═══ CONTENT ═══════════════════════════════════════ -->
   <div class="content-wrapper">
 
-    <!-- ─── SCENARIO ─── -->
-    <div class="scenario-block">
-      <div class="scenario-header">
-        <span>&#128203;</span> SCENARIO
+    <!-- ─── BENTO SCENARIO ─── -->
+    <div class="bento-scenario">
+      <div class="bento-scenario-left">
+        <div class="big-letter">G</div>
+        <div class="role">General Manager</div>
+        <div class="name">George Marshall</div>
       </div>
-      <div class="scenario-body">
-        <div class="scenario-avatar">
-          <div style="width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
-          </div>
-          <div class="scenario-avatar-label">George Marshall<br/>General Manager</div>
+      <div class="bento-scenario-right">
+        <p class="scenario-text">George Marshall is a GM at ABC Fiber in Batesville, Mississippi. George has been in discussions with his team of Network Planners on whether to expand ABC Fiber's service area to the southwest side of Batesville.</p>
+        <p class="scenario-text">ABC Fiber has seen tremendous success in acquiring households of 3+ people who enjoy gaming. Recognizing this, George would like to examine the prospects on the southwest side of Batesville that share these characteristics.</p>
+        <div class="bento-chips">
+          <span class="bento-chip">Expansion ROI</span>
+          <span class="bento-chip">Lookalike Segments</span>
+          <span class="bento-chip">Gaming Households</span>
         </div>
-        <div class="scenario-content">
-          <div class="scenario-name">GEORGE MARSHALL &middot; GENERAL MANAGER</div>
-          <p class="scenario-text">George Marshall is a GM at ABC Fiber in Batesville, Mississippi. George has been in discussions with his team of Network Planners on whether to expand ABC Fiber's service area to the southwest side of Batesville.</p>
-          <p class="scenario-text">ABC Fiber has seen tremendous success in acquiring households of 3+ people who enjoy gaming. Recognizing this, George would like to examine the prospects on the southwest side of Batesville that share these characteristics.</p>
-          <ul class="scenario-questions">
-            <li>How can lookalike segments help prioritize service area expansions?</li>
-            <li>Which areas outside our service area look most like our best subscribers?</li>
-            <li>How can I use this data to support marketing campaigns in new areas?</li>
-          </ul>
+      </div>
+    </div>
+
+    <div class="embed-placeholder" style="margin-top: 24px;">
+      <!-- <img src="./abc-fiber-service-map.png" alt="ABC Fiber Service Map"> -->
+      <div class="embed-inner">
+        <div class="embed-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/></svg>
         </div>
+        <div class="embed-label">ABC Fiber Service Map</div>
+        <div class="embed-sublabel">Image placeholder for current service area visualization</div>
       </div>
     </div>
 
@@ -547,11 +723,25 @@
         <h2>Prioritizing New Builds</h2>
       </div>
 
-      <div class="prose">
-        <p>Lookalike segments can be used to help you identify areas outside of your current service area that may look similar to your current subscriber base. This information can not only help your marketing team decide which areas to begin targeting in marketing campaigns, but also help GMs and network planners to prioritize network growth in highly favorable areas.</p>
+      <div class="bento-s1">
+        <div class="bento-prose">
+          <p>Lookalike segments can be used to help you identify areas outside of your current service area that may look similar to your current subscriber base. This information can not only help your marketing team decide which areas to begin targeting in marketing campaigns, but also help GMs and network planners to prioritize network growth in highly favorable areas.</p>
+        </div>
+        <div class="bento-image">
+          <!-- <img src="./lookalike-geographic-analysis.png" alt="Lookalike Segment Geographic Analysis"> -->
+          <div class="embed-icon" style="width: 60px; height: 60px; border-radius: 8px; background: var(--gray-200); display: flex; align-items: center; justify-content: center;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          </div>
+          <div class="embed-label" style="font-size: 16px; font-weight: 700; color: var(--gray-500);">Lookalike Segment Geographic Analysis</div>
+          <div class="embed-sublabel" style="font-size: 13px; color: var(--gray-500); opacity: 0.7;">Image placeholder</div>
+        </div>
+        <div class="bento-stat">
+          <div class="stat-number">ROI</div>
+          <div class="stat-text">Prioritize network growth in highly favorable areas</div>
+        </div>
       </div>
 
-      <!-- Embed Placeholder -->
+      <!-- Existing service area expansion map placeholder -->
       <div class="embed-placeholder">
         <div class="embed-inner">
           <div class="embed-icon">
@@ -580,35 +770,43 @@
         <p>By using the lookalike segment filters, Rebecca can identify prospects in the southwest side of Batesville that share characteristics with ABC Fiber's most successful subscriber segments &mdash; households of 3+ people who enjoy gaming.</p>
       </div>
 
-      <!-- Outcomes Grid -->
-      <div class="outcomes-grid">
-        <div class="outcome-card">
-          <div class="outcome-number">1</div>
-          <div>
-            <div class="outcome-title">Identify Target Areas</div>
-            <div class="outcome-desc">Use lookalike segments to identify geographic areas with prospects who share characteristics with your best subscribers.</div>
-          </div>
+      <!-- Bento Mosaic of 4 outcomes -->
+      <div class="bento-s2">
+        <div class="b-tile big">
+          <div class="b-num">01</div>
+          <div class="b-title">Identify Target Areas</div>
+          <div class="b-desc">Use lookalike segments to identify geographic areas with prospects who share characteristics with your best subscribers.</div>
         </div>
-        <div class="outcome-card">
-          <div class="outcome-number">2</div>
-          <div>
-            <div class="outcome-title">Analyze Prospect Data</div>
-            <div class="outcome-desc">Examine demographic and psychographic data of prospects in potential expansion areas.</div>
-          </div>
+        <div class="b-tile sm1">
+          <div class="b-num">02</div>
+          <div class="b-title">Analyze Prospect Data</div>
+          <div class="b-desc">Examine demographic and psychographic data of prospects in potential expansion areas.</div>
         </div>
-        <div class="outcome-card">
-          <div class="outcome-number">3</div>
-          <div>
-            <div class="outcome-title">Prioritize Build-Outs</div>
-            <div class="outcome-desc">Share insights with GMs and network planners to prioritize infrastructure investments in areas with the highest potential ROI.</div>
-          </div>
+        <div class="b-tile sm2">
+          <div class="b-num">03</div>
+          <div class="b-title">Prioritize Build-Outs</div>
+          <div class="b-desc">Share insights with GMs and network planners to prioritize infrastructure investments in areas with the highest ROI.</div>
         </div>
-        <div class="outcome-card">
-          <div class="outcome-number">4</div>
-          <div>
-            <div class="outcome-title">Launch Targeted Campaigns</div>
-            <div class="outcome-desc">Run marketing campaigns specifically targeting high-potential prospects in expansion areas.</div>
+        <div class="b-tile sm3">
+          <div class="b-num">04</div>
+          <div class="b-title">Launch Targeted Campaigns</div>
+          <div class="b-desc">Run marketing campaigns specifically targeting high-potential prospects in expansion areas.</div>
+        </div>
+        <div class="b-tile sm4" style="background: var(--blue-light); border-left-color: var(--accent-orange);">
+          <div class="b-num" style="color: var(--accent-orange);">&#9733;</div>
+          <div class="b-title">Result</div>
+          <div class="b-desc">Higher-ROI network expansion backed by real demographic data.</div>
+        </div>
+      </div>
+
+      <div class="embed-placeholder">
+        <!-- <img src="./facebook-lookalike-setup.png" alt="Facebook Lookalike Campaign Setup"> -->
+        <div class="embed-inner">
+          <div class="embed-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
           </div>
+          <div class="embed-label">Facebook Lookalike Campaign Setup</div>
+          <div class="embed-sublabel">Image placeholder for Rebecca's campaign builder view</div>
         </div>
       </div>
 

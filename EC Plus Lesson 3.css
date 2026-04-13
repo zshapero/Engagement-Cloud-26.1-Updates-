@@ -36,10 +36,148 @@
     }
 
     .main {
-      max-width: 960px;
-      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
       background: var(--white);
-      box-shadow: var(--shadow-md);
+    }
+
+    /* ── Journey Timeline layout ── */
+    .journey-rail {
+      position: relative;
+      padding-left: 56px;
+      margin: 32px 0;
+    }
+
+    .journey-rail::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      bottom: 20px;
+      width: 2px;
+      background: var(--blue);
+    }
+
+    .journey-step {
+      position: relative;
+      margin-bottom: 24px;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .journey-step::before {
+      content: attr(data-step);
+      position: absolute;
+      left: -56px;
+      top: 18px;
+      width: 40px;
+      height: 40px;
+      background: var(--blue);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 16px;
+      box-shadow: 0 0 0 4px var(--white);
+    }
+
+    .journey-step h4 {
+      font-family: 'Source Serif 4', serif;
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 6px;
+    }
+
+    .journey-step p {
+      font-size: 15px;
+      color: var(--gray-700);
+      line-height: 1.6;
+    }
+
+    /* ── Outcome flow with arrows ── */
+    .outcome-flow {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+      gap: 12px;
+      align-items: center;
+      margin: 32px 0;
+    }
+
+    .outcome-flow .outcome-card {
+      padding: 18px 16px;
+      text-align: center;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-top: 4px solid var(--blue);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .outcome-flow .outcome-arrow {
+      font-size: 22px;
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    .outcome-flow .outcome-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 4px;
+    }
+
+    .outcome-flow .outcome-desc {
+      font-size: 12px;
+      color: var(--gray-500);
+      line-height: 1.5;
+    }
+
+    /* ── Case study cards ── */
+    .case-study {
+      display: flex;
+      gap: 20px;
+      background: var(--blue-light);
+      border-left: 4px solid var(--blue);
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+      padding: 24px 28px;
+      margin: 28px 0;
+    }
+
+    .case-study-avatar {
+      width: 56px; height: 56px;
+      min-width: 56px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Source Serif 4', serif;
+      font-weight: 700;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .case-study h4 {
+      font-family: 'Source Serif 4', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--blue-dark);
+      margin-bottom: 8px;
+    }
+
+    .case-study p {
+      font-size: 15px;
+      color: var(--gray-700);
+      line-height: 1.65;
+      margin: 0;
     }
 
     /* Hero */
@@ -696,6 +834,17 @@
         <strong>Key Insight:</strong> Lookalike segments leverage the characteristics of your highest-value subscribers to find more people just like them, allowing you to acquire new customers with a much higher predicted lifetime value.
       </div>
 
+      <div class="embed-placeholder">
+        <!-- <img src="./lookalike-segment-builder.png" alt="Lookalike Segment Builder Interface"> -->
+        <div class="embed-inner">
+          <div class="embed-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <div class="embed-label">Lookalike Segment Builder Interface</div>
+          <div class="embed-sublabel">Image placeholder for AI-driven segment builder screenshot</div>
+        </div>
+      </div>
+
       <div class="continue-wrap">
         <button class="continue-btn" onclick="revealSection('section-2')">Continue to Section 2 &rarr;</button>
       </div>
@@ -712,26 +861,36 @@
         <p>This process involves four key outcomes that work together to create a seamless acquisition pipeline.</p>
       </div>
 
-      <div class="outcomes-grid">
+      <div class="outcome-flow">
         <div class="outcome-card">
-          <div class="outcome-number">1</div>
           <div class="outcome-title">Develop Custom Audience</div>
-          <div class="outcome-desc">Export your high-value subscriber data to create a Facebook Custom Audience as the seed for matching.</div>
+          <div class="outcome-desc">Export high-value subscriber data as a Facebook Custom Audience.</div>
         </div>
+        <div class="outcome-arrow">&rarr;</div>
         <div class="outcome-card">
-          <div class="outcome-number">2</div>
           <div class="outcome-title">Target Lookalike</div>
-          <div class="outcome-desc">Use the Custom Audience to generate a Lookalike Audience of similar Facebook users in your market.</div>
+          <div class="outcome-desc">Generate a Lookalike Audience of similar users in your market.</div>
         </div>
+        <div class="outcome-arrow">&rarr;</div>
         <div class="outcome-card">
-          <div class="outcome-number">3</div>
           <div class="outcome-title">Facebook Analyzes</div>
-          <div class="outcome-desc">Facebook matches profiles based on interests, demographics, and behavior patterns to find the best prospects.</div>
+          <div class="outcome-desc">Matches profiles based on interests, demographics, and behavior.</div>
         </div>
+        <div class="outcome-arrow">&rarr;</div>
         <div class="outcome-card">
-          <div class="outcome-number">4</div>
           <div class="outcome-title">Facebook Targets</div>
-          <div class="outcome-desc">Your ad campaigns are served directly to the Lookalike Audience, maximizing relevance and conversion rates.</div>
+          <div class="outcome-desc">Ads served directly to your Lookalike Audience for high conversion.</div>
+        </div>
+      </div>
+
+      <div class="embed-placeholder">
+        <!-- <img src="./facebook-ads-manager.png" alt="Facebook Ads Manager Integration"> -->
+        <div class="embed-inner">
+          <div class="embed-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </div>
+          <div class="embed-label">Facebook Ads Manager Integration</div>
+          <div class="embed-sublabel">Image placeholder for campaign setup interface</div>
         </div>
       </div>
 
@@ -739,51 +898,32 @@
         <p>Follow these seven steps to set up your Facebook Lookalike campaign through Engagement Cloud:</p>
       </div>
 
-      <div class="step-card">
-        <div class="step-number">1</div>
-        <div class="step-card-body">
+      <div class="journey-rail">
+        <div class="journey-step" data-step="1">
           <h4>Integrate Facebook</h4>
           <p>Connect your Facebook Business account to Engagement Cloud through the Integrations settings panel.</p>
         </div>
-      </div>
-      <div class="step-card">
-        <div class="step-number">2</div>
-        <div class="step-card-body">
+        <div class="journey-step" data-step="2">
           <h4>Create Exclusion List</h4>
           <p>Build a segment of all current subscribers and send it to Facebook as a Custom Audience to exclude from your ads.</p>
         </div>
-      </div>
-      <div class="step-card">
-        <div class="step-number">3</div>
-        <div class="step-card-body">
+        <div class="journey-step" data-step="3">
           <h4>Send to Facebook</h4>
           <p>Export your exclusion segment to Facebook so current subscribers are automatically filtered out of campaigns.</p>
         </div>
-      </div>
-      <div class="step-card">
-        <div class="step-number">4</div>
-        <div class="step-card-body">
+        <div class="journey-step" data-step="4">
           <h4>Create High-Value Segment</h4>
           <p>Define a segment of your most valuable subscribers based on plan tier, tenure, or engagement metrics.</p>
         </div>
-      </div>
-      <div class="step-card">
-        <div class="step-number">5</div>
-        <div class="step-card-body">
+        <div class="journey-step" data-step="5">
           <h4>Send Segment to Facebook</h4>
           <p>Export the high-value segment to Facebook as a Custom Audience to serve as the seed for your Lookalike.</p>
         </div>
-      </div>
-      <div class="step-card">
-        <div class="step-number">6</div>
-        <div class="step-card-body">
+        <div class="journey-step" data-step="6">
           <h4>Create Lookalike in Facebook</h4>
           <p>In Facebook Ads Manager, create a Lookalike Audience from the high-value Custom Audience, selecting your target geography and audience size percentage.</p>
         </div>
-      </div>
-      <div class="step-card">
-        <div class="step-number">7</div>
-        <div class="step-card-body">
+        <div class="journey-step" data-step="7">
           <h4>Create and Launch Ad</h4>
           <p>Build your ad creative, set your budget, and launch the campaign targeting the Lookalike Audience while excluding current subscribers.</p>
         </div>
@@ -809,25 +949,35 @@
         <strong>Eligibility Note:</strong> The ACP program uses federal poverty guidelines to determine household eligibility. Households at or below 200% of the Federal Poverty Guidelines, or those participating in certain government assistance programs, may qualify for a monthly broadband discount.
       </div>
 
-      <div class="use-case">
-        <h4>Use Case: Ava Kelly at 123 Fiber</h4>
-        <p>Ava is a community outreach manager at 123 Fiber. She wants to increase subscriber counts in underserved neighborhoods while helping residents access affordable internet. Using ACP targeting in Engagement Cloud, she identifies eligible households, sends personalized mailers explaining the ACP benefit, and provides a simple sign-up path. Within three months, 123 Fiber adds 340 new ACP subscribers.</p>
+      <div class="case-study">
+        <div class="case-study-avatar">AK</div>
+        <div>
+          <h4>Use Case: Ava Kelly at 123 Fiber</h4>
+          <p>Ava is a community outreach manager at 123 Fiber. She wants to increase subscriber counts in underserved neighborhoods while helping residents access affordable internet. Using ACP targeting in Engagement Cloud, she identifies eligible households, sends personalized mailers explaining the ACP benefit, and provides a simple sign-up path. Within three months, 123 Fiber adds 340 new ACP subscribers.</p>
+        </div>
+      </div>
+
+      <div class="embed-placeholder">
+        <!-- <img src="./acp-eligibility-heatmap.png" alt="ACP Eligibility Heatmap"> -->
+        <div class="embed-inner">
+          <div class="embed-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8 6 6 9 6 12a6 6 0 0 0 12 0c0-3-2-6-6-10z"/></svg>
+          </div>
+          <div class="embed-label">ACP Eligibility Heatmap</div>
+          <div class="embed-sublabel">Image placeholder for eligible households map</div>
+        </div>
       </div>
 
       <div class="prose">
         <p>Follow these steps to set up ACP targeting in Engagement Cloud:</p>
       </div>
 
-      <div class="step-card">
-        <div class="step-number">1</div>
-        <div class="step-card-body">
+      <div class="journey-rail">
+        <div class="journey-step" data-step="1">
           <h4>Identify Eligible Areas</h4>
           <p>Use the ACP Targeting module to view a heatmap of eligible households within your coverage area, filtered by poverty level and government program participation.</p>
         </div>
-      </div>
-      <div class="step-card">
-        <div class="step-number">2</div>
-        <div class="step-card-body">
+        <div class="journey-step" data-step="2">
           <h4>Create and Launch Campaign</h4>
           <p>Build a targeted campaign with messaging tailored to ACP-eligible households, including details on the discount, eligibility, and a simple enrollment process.</p>
         </div>
@@ -857,46 +1007,47 @@
         <p>Uploaded addresses are geocoded and matched against your serviceable area, then added to your prospect database. From there, you can create segments, launch campaigns, and track conversions just as you would with any other prospect group.</p>
       </div>
 
-      <div class="use-case">
-        <h4>Use Case: Tori Michaels at Huntsville Electric</h4>
-        <p>Tori manages marketing for Huntsville Electric's broadband division. The utility just completed a fiber buildout in three new subdivisions, and Tori has a spreadsheet of 1,200 serviceable addresses. She uploads the list to Engagement Cloud, creates a welcome campaign with a limited-time offer, and tracks sign-ups in real time. Within 60 days, she achieves a 28% take rate across all three communities.</p>
+      <div class="case-study">
+        <div class="case-study-avatar">TM</div>
+        <div>
+          <h4>Use Case: Tori Michaels at Huntsville Electric</h4>
+          <p>Tori manages marketing for Huntsville Electric's broadband division. The utility just completed a fiber buildout in three new subdivisions, and Tori has a spreadsheet of 1,200 serviceable addresses. She uploads the list to Engagement Cloud, creates a welcome campaign with a limited-time offer, and tracks sign-ups in real time. Within 60 days, she achieves a 28% take rate across all three communities.</p>
+        </div>
+      </div>
+
+      <div class="embed-placeholder">
+        <!-- <img src="./prospect-list-upload.png" alt="Prospect List Upload Screen"> -->
+        <div class="embed-inner">
+          <div class="embed-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+          </div>
+          <div class="embed-label">Prospect List Upload Screen</div>
+          <div class="embed-sublabel">Image placeholder for prospect list upload interface</div>
+        </div>
       </div>
 
       <div class="prose">
         <p>Follow these five steps to upload and activate a prospect list:</p>
       </div>
 
-      <div class="step-card">
-        <div class="step-number">1</div>
-        <div class="step-card-body">
+      <div class="journey-rail">
+        <div class="journey-step" data-step="1">
           <h4>Prepare Your File</h4>
           <p>Format your address list as a CSV file with columns for street address, city, state, and ZIP code. Include any additional data fields you want to use for segmentation.</p>
         </div>
-      </div>
-      <div class="step-card">
-        <div class="step-number">2</div>
-        <div class="step-card-body">
+        <div class="journey-step" data-step="2">
           <h4>Upload to Engagement Cloud</h4>
           <p>Navigate to the Prospect Lists section and use the upload tool to import your CSV file. The system will validate the format and flag any issues.</p>
         </div>
-      </div>
-      <div class="step-card">
-        <div class="step-number">3</div>
-        <div class="step-card-body">
+        <div class="journey-step" data-step="3">
           <h4>Geocode and Match</h4>
           <p>Engagement Cloud will automatically geocode each address and match it against your serviceable area footprint, categorizing each as serviceable or out-of-area.</p>
         </div>
-      </div>
-      <div class="step-card">
-        <div class="step-number">4</div>
-        <div class="step-card-body">
+        <div class="journey-step" data-step="4">
           <h4>Create a Segment</h4>
           <p>Build a segment from the uploaded addresses to use as the target audience for your marketing campaigns.</p>
         </div>
-      </div>
-      <div class="step-card">
-        <div class="step-number">5</div>
-        <div class="step-card-body">
+        <div class="journey-step" data-step="5">
           <h4>Launch Your Campaign</h4>
           <p>Design and deploy your campaign -- whether it is direct mail, email, or digital ads -- targeting the newly uploaded prospect segment.</p>
         </div>

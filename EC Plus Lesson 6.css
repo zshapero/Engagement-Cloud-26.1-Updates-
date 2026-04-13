@@ -41,9 +41,247 @@
 
   /* ─── HERO ────────────────────────────────────────────── */
   .lesson-hero {
-    background: var(--blue); color: white;
+    background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+    color: white;
     padding: 72px 100px 64px;
     position: relative; overflow: hidden;
+  }
+  .completion-badge {
+    position: absolute;
+    top: 32px;
+    right: 100px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 22px;
+    background: var(--accent-orange);
+    color: var(--white);
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 0 6px 20px rgba(255,126,33,0.4);
+  }
+  .completion-badge::before {
+    content: '★';
+    font-size: 16px;
+  }
+
+  /* ─── CINEMATIC VIDEO ─────────────────────────────── */
+  .cinematic-video {
+    position: relative;
+    background: #0a0e1e;
+    border: 12px solid #1a1d2e;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 28px 0;
+  }
+  .cinematic-video::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(3,20,248,0.08) 0%, transparent 70%);
+  }
+  .cinematic-play {
+    position: relative;
+    z-index: 1;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 10px rgba(3,20,248,0.25), 0 10px 40px rgba(3,20,248,0.6);
+  }
+  .cinematic-play svg { width: 36px; height: 36px; fill: white; margin-left: 6px; }
+  .cinematic-caption {
+    position: absolute;
+    bottom: 24px;
+    left: 28px;
+    right: 28px;
+    z-index: 1;
+    color: rgba(255,255,255,0.85);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  /* ─── DASHBOARD RESOURCE GRID ─────────────────────── */
+  .resource-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 28px 0;
+  }
+  .resource-card-new {
+    display: flex;
+    gap: 18px;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-left: 4px solid var(--blue);
+    border-radius: var(--radius-lg);
+    padding: 24px 28px;
+    box-shadow: var(--shadow-sm);
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    color: inherit;
+  }
+  .resource-card-new:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+  .resource-card-new .rc-icon {
+    width: 56px; height: 56px;
+    flex-shrink: 0;
+    border-radius: var(--radius);
+    background: var(--blue-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue);
+  }
+  .resource-card-new .rc-icon svg { width: 28px; height: 28px; }
+  .resource-card-new .rc-label {
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 4px;
+  }
+  .resource-card-new .rc-title {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--gray-900);
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+  .resource-card-new .rc-sub {
+    font-size: 13px;
+    color: var(--gray-500);
+    line-height: 1.5;
+  }
+
+  /* ─── ASSESSMENT CONTAINER ────────────────────────── */
+  .assessment-wrap {
+    background: var(--gray-100);
+    border-radius: var(--radius-lg);
+    padding: 40px 44px;
+    margin: 32px 0;
+    border-top: 4px solid var(--blue);
+  }
+  .assessment-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--gray-300);
+  }
+  .assessment-trophy {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: var(--blue);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+  }
+  .assessment-title {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--gray-900);
+  }
+  .assessment-sub {
+    font-size: 14px;
+    color: var(--gray-500);
+    margin-top: 2px;
+  }
+  .question-chip {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--blue);
+    background: var(--blue-light);
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+  }
+
+  /* ─── CELEBRATION / CERTIFICATE ───────────────────── */
+  .celebration-block {
+    text-align: center;
+    padding: 56px 40px;
+    background: linear-gradient(135deg, var(--blue-light) 0%, var(--white) 100%);
+    border-radius: var(--radius-lg);
+    margin: 32px 0;
+    border: 1px solid var(--gray-200);
+  }
+  .celebration-check {
+    width: 80px; height: 80px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: var(--blue);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    box-shadow: 0 0 0 10px rgba(3,20,248,0.12);
+  }
+  .celebration-block h3 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 10px;
+  }
+  .certificate-box {
+    border: 3px double var(--blue);
+    border-radius: var(--radius-lg);
+    padding: 36px 40px;
+    margin: 28px 0;
+    text-align: center;
+    background: var(--white);
+    position: relative;
+  }
+  .certificate-box .cert-label {
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent-orange);
+    margin-bottom: 14px;
+  }
+  .certificate-box .cert-title {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 8px;
+  }
+  .certificate-box .cert-body {
+    font-size: 15px;
+    color: var(--gray-500);
+    font-style: italic;
+  }
+
+  .learning-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin: 28px 0;
   }
   .lesson-hero::before {
     content: ''; position: absolute;
@@ -458,6 +696,7 @@
 
   <!-- ═══ HERO ═══════════════════════════════════════════ -->
   <div class="lesson-hero">
+    <div class="completion-badge">Course Complete</div>
     <h1 class="lesson-title">Resources and Knowledge Check</h1>
     <p class="lesson-subtitle">Access demo resources, additional materials, and complete the final knowledge check to certify your understanding of Engagement Cloud Plus.</p>
     <div class="lesson-meta">
@@ -468,6 +707,18 @@
 
   <!-- ═══ CONTENT ═══════════════════════════════════════ -->
   <div class="content-wrapper">
+
+    <!-- Hero banner image placeholder -->
+    <div class="embed-placeholder" style="margin-top: 48px;">
+      <!-- <img src="./ec-plus-hero.png" alt="EC Plus Product Hero Image"> -->
+      <div class="embed-inner" style="min-height: 260px;">
+        <div class="embed-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        </div>
+        <div class="embed-label">EC Plus Product Hero Image</div>
+        <div class="embed-sublabel">Image placeholder for course-complete banner</div>
+      </div>
+    </div>
 
     <!-- ─── SECTION 1: Engagement Cloud Plus Demo ─────── -->
     <div class="reveal-section visible" id="section-1">
@@ -481,14 +732,12 @@
         <p>For a detailed demonstration of Engagement Cloud Plus, see the video below.</p>
       </div>
 
-      <div class="embed-placeholder">
-        <div class="embed-inner">
-          <div class="embed-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16" fill="currentColor" stroke="none"/></svg>
-          </div>
-          <div class="embed-label">Video Placeholder</div>
-          <div class="embed-sublabel">Engagement Cloud Plus product demonstration</div>
+      <div class="cinematic-video">
+        <!-- <img src="./ec-plus-demo-poster.png" alt="Demo Video Poster"> -->
+        <div class="cinematic-play">
+          <svg viewBox="0 0 24 24"><polygon points="8,5 20,12 8,19"/></svg>
         </div>
+        <div class="cinematic-caption">Video Placeholder &middot; Engagement Cloud Plus Product Demonstration</div>
       </div>
 
       <div class="continue-wrap">
@@ -509,73 +758,40 @@
         <p>For more information on Calix Engagement Cloud Plus, explore the resources below.</p>
       </div>
 
-      <a href="#" class="resource-link">
-        <div class="resource-link-inner">
-          <div class="resource-link-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
-              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
-            </svg>
+      <div class="resource-grid">
+        <a href="#" class="resource-card-new">
+          <div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M4 10h16M10 4v16"/></svg></div>
+          <div>
+            <div class="rc-label">Blog Article</div>
+            <div class="rc-title">Want To Acquire New Subscribers and Expand Into New Markets? Follow the Data.</div>
+            <div class="rc-sub">Blog article on data-driven acquisition strategies.</div>
           </div>
-          <div class="resource-link-text">
-            <div class="resource-link-label">Blog Article</div>
-            <div class="resource-link-title">Want To Acquire New Subscribers and Expand Into New Markets? Follow the Data.</div>
-            <div class="resource-link-sub">Blog article on data-driven acquisition strategies.</div>
+        </a>
+        <a href="#" class="resource-card-new">
+          <div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+          <div>
+            <div class="rc-label">Ebook</div>
+            <div class="rc-title">How to Unlock Data-Driven Insights to Improve Acquisition, Strengthen Subscriber Loyalty, and Grow Your Business</div>
+            <div class="rc-sub">Comprehensive guide to leveraging data insights.</div>
           </div>
-          <div class="resource-link-arrow">&rarr;</div>
-        </div>
-      </a>
-
-      <a href="#" class="resource-link">
-        <div class="resource-link-inner">
-          <div class="resource-link-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
-              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
-            </svg>
+        </a>
+        <a href="#" class="resource-card-new">
+          <div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div>
+          <div>
+            <div class="rc-label">Solutions Brief</div>
+            <div class="rc-title">Calix Engagement Cloud Plus</div>
+            <div class="rc-sub">Solutions brief with detailed feature overview.</div>
           </div>
-          <div class="resource-link-text">
-            <div class="resource-link-label">Ebook</div>
-            <div class="resource-link-title">How to Unlock Data-Driven Insights to Improve Acquisition, Strengthen Subscriber Loyalty, and Grow Your Business</div>
-            <div class="resource-link-sub">Comprehensive guide to leveraging data insights.</div>
+        </a>
+        <a href="#" class="resource-card-new">
+          <div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/></svg></div>
+          <div>
+            <div class="rc-label">Help Documentation</div>
+            <div class="rc-title">Calix Engagement Cloud Help</div>
+            <div class="rc-sub">Technical help documentation and resources.</div>
           </div>
-          <div class="resource-link-arrow">&rarr;</div>
-        </div>
-      </a>
-
-      <a href="#" class="resource-link">
-        <div class="resource-link-inner">
-          <div class="resource-link-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
-              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
-            </svg>
-          </div>
-          <div class="resource-link-text">
-            <div class="resource-link-label">Solutions Brief</div>
-            <div class="resource-link-title">Calix Engagement Cloud Plus</div>
-            <div class="resource-link-sub">Solutions brief with detailed feature overview.</div>
-          </div>
-          <div class="resource-link-arrow">&rarr;</div>
-        </div>
-      </a>
-
-      <a href="#" class="resource-link">
-        <div class="resource-link-inner">
-          <div class="resource-link-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
-              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
-            </svg>
-          </div>
-          <div class="resource-link-text">
-            <div class="resource-link-label">Help Documentation</div>
-            <div class="resource-link-title">Calix Engagement Cloud Help</div>
-            <div class="resource-link-sub">Technical help documentation and resources.</div>
-          </div>
-          <div class="resource-link-arrow">&rarr;</div>
-        </div>
-      </a>
+        </a>
+      </div>
 
       <div class="continue-wrap">
         <button class="continue-btn" onclick="revealSection('section-3', this)">CONTINUE TO KNOWLEDGE CHECK</button>
@@ -591,17 +807,20 @@
         <h2>Final Knowledge Check</h2>
       </div>
 
-      <div class="knowledge-check" id="knowledgeCheck">
-        <div class="knowledge-check-header">
-          <div class="knowledge-check-icon">?</div>
-          <div>
-            <div class="knowledge-check-title">Final Knowledge Check</div>
-            <div class="knowledge-check-subtitle">A passing grade of 80% or higher is required (4 out of 5 correct)</div>
-          </div>
+      <div class="assessment-wrap">
+      <div class="assessment-header">
+        <div class="assessment-trophy">&#127942;</div>
+        <div>
+          <div class="assessment-title">Final Assessment</div>
+          <div class="assessment-sub">A passing grade of 80% or higher is required (4 out of 5 correct)</div>
         </div>
+      </div>
+
+      <div class="knowledge-check" id="knowledgeCheck" style="background: transparent; padding: 0; margin: 0;">
 
         <!-- Q1 -->
         <div class="kc-question" id="kcQ0">
+          <div class="question-chip">Question 1 of 5</div>
           <div class="kc-question-text"><span class="kc-question-number">Q1.</span> Calix Engagement Cloud Plus allows BSPs to target both your current subscriber base and potential prospects in digital and direct mail marketing campaigns.</div>
           <div class="kc-options">
             <div class="kc-option" data-question="0" data-option="0" onclick="selectOption(this)">
@@ -618,6 +837,7 @@
 
         <!-- Q2 -->
         <div class="kc-question" id="kcQ1">
+          <div class="question-chip">Question 2 of 5</div>
           <div class="kc-question-text"><span class="kc-question-number">Q2.</span> Which is NOT a filter available in Engagement Cloud Plus?</div>
           <div class="kc-options">
             <div class="kc-option" data-question="1" data-option="0" onclick="selectOption(this)">
@@ -642,6 +862,7 @@
 
         <!-- Q3 -->
         <div class="kc-question" id="kcQ2">
+          <div class="question-chip">Question 3 of 5</div>
           <div class="kc-question-text"><span class="kc-question-number">Q3.</span> Why is it often better to use ZIP+4s instead of ZIP-Codes to segment subscribers and prospects in marketing campaigns?</div>
           <div class="kc-options">
             <div class="kc-option" data-question="2" data-option="0" onclick="selectOption(this)">
@@ -666,6 +887,7 @@
 
         <!-- Q4 -->
         <div class="kc-question" id="kcQ3">
+          <div class="question-chip">Question 4 of 5</div>
           <div class="kc-question-text"><span class="kc-question-number">Q4.</span> What is a Base Area?</div>
           <div class="kc-options">
             <div class="kc-option" data-question="3" data-option="0" onclick="selectOption(this)">
@@ -686,6 +908,7 @@
 
         <!-- Q5 -->
         <div class="kc-question" id="kcQ4">
+          <div class="question-chip">Question 5 of 5</div>
           <div class="kc-question-text"><span class="kc-question-number">Q5.</span> Which of the following is a recommended filter for targeting Arlo managed service subscribers?</div>
           <div class="kc-options">
             <div class="kc-option" data-question="4" data-option="0" onclick="selectOption(this)">
@@ -717,6 +940,7 @@
           <button class="kc-retry-btn" id="kcRetryBtn" onclick="retryKnowledgeCheck()" style="display:none;">TRY AGAIN</button>
         </div>
       </div>
+      </div><!-- /assessment-wrap -->
 
       <div class="continue-wrap">
         <button class="continue-btn" onclick="revealSection('section-4', this)">CONTINUE TO NEXT SECTION</button>
@@ -732,65 +956,73 @@
         <h2>Thank You and Next Steps</h2>
       </div>
 
-      <div class="takeaway-block">
-        <div class="block-label">Congratulations</div>
-        <p>You have completed the Introduction to Engagement Cloud Plus course. You should now be able to define Engagement Cloud Plus, explain how it helps BSPs acquire new subscribers, work with demographics, psychographics, and geographies, create lookalike segments, and leverage managed service targeting.</p>
+      <div class="celebration-block">
+        <div class="celebration-check">&#10003;</div>
+        <h3>Congratulations!</h3>
+        <p style="font-size: 17px; color: var(--gray-700); max-width: 720px; margin: 0 auto; line-height: 1.7;">You have completed the Introduction to Engagement Cloud Plus course. You should now be able to define Engagement Cloud Plus, explain how it helps BSPs acquire new subscribers, work with demographics, psychographics, and geographies, create lookalike segments, and leverage managed service targeting.</p>
+      </div>
+
+      <!-- Certificate of Completion image placeholder -->
+      <div class="embed-placeholder">
+        <!-- <img src="./certificate-of-completion.png" alt="Certificate of Completion"> -->
+        <div class="embed-inner">
+          <div class="embed-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="6"/><path d="M15.5 13L17 22l-5-3-5 3 1.5-9"/></svg>
+          </div>
+          <div class="embed-label">Certificate of Completion</div>
+          <div class="embed-sublabel">Image placeholder for printable course certificate</div>
+        </div>
+      </div>
+
+      <div class="certificate-box">
+        <div class="cert-label">Certificate of Completion</div>
+        <div class="cert-title">Introduction to Engagement Cloud Plus</div>
+        <div class="cert-body">Awarded upon successful completion of all six lessons and the final knowledge check.</div>
       </div>
 
       <div class="prose">
         <p>If you have any questions about any of the concepts mentioned in this course, please do not hesitate to message training@calix.com, and we will connect you with a subject matter expert to provide further assistance.</p>
       </div>
 
-      <a href="#" class="resource-link">
-        <div class="resource-link-inner">
-          <div class="resource-link-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
-              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
-            </svg>
+      <!-- Next Steps Roadmap image placeholder -->
+      <div class="embed-placeholder">
+        <!-- <img src="./next-steps-roadmap.png" alt="Next Steps Roadmap"> -->
+        <div class="embed-inner">
+          <div class="embed-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M12 3v18M7 7l5 5 5-5M7 17l5-5 5 5"/></svg>
           </div>
-          <div class="resource-link-text">
-            <div class="resource-link-label">Continue Learning</div>
-            <div class="resource-link-title">CommandIQ Overview</div>
-            <div class="resource-link-sub">eLearning course on using CommandIQ and how it interacts with Calix Cloud.</div>
-          </div>
-          <div class="resource-link-arrow">&rarr;</div>
+          <div class="embed-label">Next Steps Roadmap</div>
+          <div class="embed-sublabel">Image placeholder for recommended learning path</div>
         </div>
-      </a>
+      </div>
 
-      <a href="#" class="resource-link">
-        <div class="resource-link-inner">
-          <div class="resource-link-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
-              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
-            </svg>
+      <div class="block-label">Continue Learning</div>
+      <div class="learning-row">
+        <a href="#" class="resource-card-new" style="flex-direction: column;">
+          <div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M12 8v8M8 12h8"/></svg></div>
+          <div>
+            <div class="rc-label">Continue Learning</div>
+            <div class="rc-title">CommandIQ Overview</div>
+            <div class="rc-sub">eLearning course on using CommandIQ and how it interacts with Calix Cloud.</div>
           </div>
-          <div class="resource-link-text">
-            <div class="resource-link-label">Continue Learning</div>
-            <div class="resource-link-title">Introduction to Deployment Cloud</div>
-            <div class="resource-link-sub">Essential skills for deploying and managing EXOS systems using Deployment Cloud.</div>
+        </a>
+        <a href="#" class="resource-card-new" style="flex-direction: column;">
+          <div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+          <div>
+            <div class="rc-label">Continue Learning</div>
+            <div class="rc-title">Introduction to Deployment Cloud</div>
+            <div class="rc-sub">Essential skills for deploying and managing EXOS systems using Deployment Cloud.</div>
           </div>
-          <div class="resource-link-arrow">&rarr;</div>
-        </div>
-      </a>
-
-      <a href="#" class="resource-link">
-        <div class="resource-link-inner">
-          <div class="resource-link-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
-              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
-            </svg>
+        </a>
+        <a href="#" class="resource-card-new" style="flex-direction: column;">
+          <div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
+          <div>
+            <div class="rc-label">Continue Learning</div>
+            <div class="rc-title">Introduction to Calix Service Cloud</div>
+            <div class="rc-sub">Self-paced eLearning focused on supporting subscribers, services, and the home network.</div>
           </div>
-          <div class="resource-link-text">
-            <div class="resource-link-label">Continue Learning</div>
-            <div class="resource-link-title">Introduction to Calix Service Cloud</div>
-            <div class="resource-link-sub">Self-paced eLearning focused on supporting subscribers, services, and the home network.</div>
-          </div>
-          <div class="resource-link-arrow">&rarr;</div>
-        </div>
-      </a>
+        </a>
+      </div>
 
     </div>
 
