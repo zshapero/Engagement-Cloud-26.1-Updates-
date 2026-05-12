@@ -868,7 +868,7 @@
 
   .img-placeholder.compact {
     padding: 22px 16px;
-    margin: 14px 0 0;
+    margin: 0 0 16px;
     gap: 6px;
   }
 
@@ -1646,19 +1646,19 @@
     <div class="reveal-section hidden" id="section-5">
       <div class="section-heading">
         <div class="sh-label">Section 5</div>
-        <h2>Plus: Going Deeper with Demographics and Geography</h2>
+        <h2>Engagement Cloud Plus: Going Deeper with Demographics and Geography</h2>
       </div>
 
       <div class="plus-banner">
         <div class="plus-icon">⭐</div>
         <div>
           <div class="plus-banner-title">Engagement Cloud Plus</div>
-          <div class="plus-banner-text">In Plus, Elena gets two new dashboards — Residential Prospects and Business Prospects — plus a rich set of demographic, psychographic, and geographic filters. This section walks through what she sees and how to use it.</div>
+          <div class="plus-banner-text">In Engagement Cloud Plus, Elena gets two new dashboards — Residential Prospects and Business Prospects — along with a rich set of demographic, psychographic, and geographic filters. This section walks through what she sees and how to use it.</div>
         </div>
       </div>
 
       <div class="prose">
-        <p>Engagement Cloud Plus adds two prospect-facing dashboards alongside the subscriber dashboards Elena already knows. They surface non-subscribers in her service area, enriched with the same demographic and psychographic data Plus uses everywhere else.</p>
+        <p>Engagement Cloud Plus adds two prospect-facing dashboards alongside the subscriber dashboards Elena already knows. They surface non-subscribers in her service area, enriched with the same demographic and psychographic data Engagement Cloud Plus uses everywhere else.</p>
       </div>
 
       <div class="data-sources">
@@ -1685,7 +1685,7 @@
       <h3 class="subsection-heading">Demographic vs. Psychographic Data</h3>
 
       <div class="prose">
-        <p>Two types of data work together in Plus. Demographic data describes who a subscriber is. Psychographic data describes how they behave.</p>
+        <p>Two types of data work together in Engagement Cloud Plus. Demographic data describes who a subscriber is. Psychographic data describes how they behave.</p>
       </div>
 
       <div class="compare-pair">
@@ -1712,41 +1712,41 @@
       </div>
 
       <div class="prose">
-        <p>Plus organizes both demographic and psychographic data into three complementary audience segment systems. Each one is available as a filter in Explore Data.</p>
+        <p>Engagement Cloud Plus organizes both demographic and psychographic data into three complementary audience segment systems. Each one is available as a filter in Explore Data.</p>
       </div>
 
       <div class="outcomes-grid">
         <div class="outcome-card">
           <div class="outcome-number">1</div>
           <div>
-            <div class="outcome-title">Lifestyle (PRIZM)</div>
-            <div class="outcome-desc">68 segments grouped into 11 life-stage categories. Ranks households from most to least affluent based on age, income, presence of children, and lifestyle preferences.</div>
             <div class="img-placeholder compact">
               <div class="img-placeholder-label">[IMAGE: Sample PRIZM segment profile]</div>
               <div class="img-placeholder-note">Suggested: ~400×240 screenshot of a single PRIZM segment with its life-stage category and top attributes.</div>
             </div>
+            <div class="outcome-title">Lifestyle (PRIZM)</div>
+            <div class="outcome-desc">68 segments grouped into 11 life-stage categories. Ranks households from most to least affluent based on age, income, presence of children, and lifestyle preferences.</div>
           </div>
         </div>
         <div class="outcome-card">
           <div class="outcome-number">2</div>
           <div>
-            <div class="outcome-title">Finance (P$YCLE)</div>
-            <div class="outcome-desc">60 segments grouped into 12 categories by financial behavior, income, household composition, and stage of life. Ranks from most to least affluent.</div>
             <div class="img-placeholder compact">
               <div class="img-placeholder-label">[IMAGE: Sample P$YCLE segment profile]</div>
               <div class="img-placeholder-note">Suggested: ~400×240 screenshot of a single P$YCLE segment with its financial-behavior category and top attributes.</div>
             </div>
+            <div class="outcome-title">Finance (P$YCLE)</div>
+            <div class="outcome-desc">60 segments grouped into 12 categories by financial behavior, income, household composition, and stage of life. Ranks from most to least affluent.</div>
           </div>
         </div>
         <div class="outcome-card">
           <div class="outcome-number">3</div>
           <div>
-            <div class="outcome-title">Tech (Connexions)</div>
-            <div class="outcome-desc">53 segments grouped into 10 categories by technology adoption habits. Built specifically for the telecom industry — ranks from highest to lowest tech use.</div>
             <div class="img-placeholder compact">
               <div class="img-placeholder-label">[IMAGE: Sample Connexions segment profile]</div>
               <div class="img-placeholder-note">Suggested: ~400×240 screenshot of a single Connexions segment with its tech-adoption category and top attributes.</div>
             </div>
+            <div class="outcome-title">Tech (Connexions)</div>
+            <div class="outcome-desc">53 segments grouped into 10 categories by technology adoption habits. Built specifically for the telecom industry — ranks from highest to lowest tech use.</div>
           </div>
         </div>
       </div>
@@ -1756,8 +1756,8 @@
       </div>
 
       <div class="img-placeholder">
-        <div class="img-placeholder-label">[IMAGE: Explore Data filter panel showing Plus demographic and psychographic filters at the bottom of the page]</div>
-        <div class="img-placeholder-note">Suggested: 1200×600 screenshot from a Plus customer environment. Highlight the filter section.</div>
+        <div class="img-placeholder-label">[IMAGE: Explore Data filter panel showing Engagement Cloud Plus demographic and psychographic filters at the bottom of the page]</div>
+        <div class="img-placeholder-note">Suggested: 1200×600 screenshot from an Engagement Cloud Plus customer environment. Highlight the filter section.</div>
       </div>
 
       <div class="note-callout">Note: filter percentages are specific to your Base Area — they represent the proportion of your service area that matches each segment, not a national average.</div>
