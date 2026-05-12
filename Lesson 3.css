@@ -764,6 +764,145 @@
 
   .plus-cta:hover { opacity: 0.9; }
 
+  /* ─── DATA SOURCES BLOCK ──────────────────────────────── */
+  .data-sources {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 28px 0;
+  }
+
+  .data-source-card {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-top: 4px solid var(--blue);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    transition: box-shadow 0.2s;
+  }
+
+  .data-source-card:hover { box-shadow: var(--shadow-md); }
+
+  .data-source-icon {
+    width: 44px; height: 44px;
+    border-radius: var(--radius);
+    background: var(--blue-light);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  .data-source-icon svg { width: 22px; height: 22px; color: var(--blue); }
+
+  .data-source-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 8px;
+  }
+
+  .data-source-desc {
+    font-size: 17px;
+    color: var(--gray-500);
+    line-height: 1.6;
+  }
+
+  /* ─── OUTCOMES GRID ───────────────────────────────────── */
+  .outcomes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin: 28px 0;
+  }
+
+  .outcome-card {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+
+  .outcome-card:hover { box-shadow: var(--shadow-md); border-color: var(--blue-mid); }
+
+  .outcome-number {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--blue);
+    color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+
+  .outcome-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 8px;
+  }
+
+  .outcome-desc {
+    font-size: 17px;
+    color: var(--gray-500);
+    line-height: 1.65;
+  }
+
+  /* ─── IMAGE PLACEHOLDER ──────────────────────────────── */
+  .img-placeholder {
+    background: var(--gray-100);
+    border: 2px dashed var(--gray-300);
+    border-radius: var(--radius-lg);
+    margin: 24px 0;
+    padding: 48px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .img-placeholder-label {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--gray-700);
+    letter-spacing: 0.3px;
+  }
+
+  .img-placeholder-note {
+    font-size: 17px;
+    color: var(--gray-500);
+    font-style: italic;
+    max-width: 640px;
+  }
+
+  /* ─── NOTE CALLOUT ───────────────────────────────────── */
+  .note-callout {
+    background: var(--blue-light);
+    border-left: 3px solid var(--blue);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 14px 20px;
+    margin: 20px 0;
+    font-size: 17px;
+    font-style: italic;
+    color: var(--blue-dark);
+    line-height: 1.6;
+  }
+
+  /* ─── SUBSECTION HEADING ─────────────────────────────── */
+  .subsection-heading {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin: 32px 0 8px;
+    line-height: 1.3;
+  }
+
   /* ─── CONTINUE BUTTON & SECTION REVEAL ───────────────── */
   .reveal-section {
     overflow: hidden;
@@ -1409,21 +1548,123 @@
       </div>
 
       <div class="continue-wrap">
-        <button class="continue-btn" onclick="revealSection('section-final', this)">CONTINUE TO NEXT SECTION</button>
+        <button class="continue-btn" onclick="revealSection('section-5', this)">CONTINUE TO NEXT SECTION</button>
       </div>
     </div>
 
-    <!-- ─── FINAL: PLUS + TAKEAWAY + NEXT ─── -->
-    <div class="reveal-section hidden" id="section-final">
+    <!-- ─── SECTION 5: PLUS — DEMOGRAPHICS & GEOGRAPHY ─── -->
+    <div class="reveal-section hidden" id="section-5">
+      <div class="section-heading">
+        <div class="sh-label">Section 5</div>
+        <h2>Plus: Going Deeper with Demographics and Geography</h2>
+      </div>
 
       <div class="plus-banner">
         <div class="plus-icon">⭐</div>
         <div>
-          <div class="plus-banner-title">Engagement Cloud Plus Dashboards</div>
-          <div class="plus-banner-text">If you have Engagement Cloud Plus, you'll also see Residential Prospects and Business Prospects dashboards — enabling analysis of demographic and geographic data for non-subscribers within your base area.</div>
+          <div class="plus-banner-title">Engagement Cloud Plus</div>
+          <div class="plus-banner-text">In Plus, Elena gets two new dashboards — Residential Prospects and Business Prospects — plus a rich set of demographic, psychographic, and geographic filters. This section walks through what she sees and how to use it.</div>
         </div>
-        <div class="plus-cta">Learn More →</div>
       </div>
+
+      <div class="prose">
+        <p>Engagement Cloud Plus adds two prospect-facing dashboards alongside the subscriber dashboards Elena already knows. They surface non-subscribers in her service area, enriched with the same demographic and psychographic data Plus uses everywhere else.</p>
+      </div>
+
+      <div class="data-sources">
+        <div class="data-source-card">
+          <div class="data-source-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M3 12L12 4l9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>
+            </svg>
+          </div>
+          <div class="data-source-title">Residential Prospects Dashboard</div>
+          <div class="data-source-desc">Households in your Base Area who aren't yet subscribers. Filter by demographic, psychographic, and geographic attributes to identify who to target.</div>
+        </div>
+        <div class="data-source-card">
+          <div class="data-source-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="4" y="3" width="16" height="18" rx="1"/><path d="M9 8h2M13 8h2M9 12h2M13 12h2M9 16h2M13 16h2"/>
+            </svg>
+          </div>
+          <div class="data-source-title">Business Prospects Dashboard</div>
+          <div class="data-source-desc">Businesses in your Base Area not yet on your service. Filter by industry, employee count, revenue, and more to find SmartBiz upsell opportunities.</div>
+        </div>
+      </div>
+
+      <h3 class="subsection-heading">Demographic vs. Psychographic Data</h3>
+
+      <div class="prose">
+        <p>Two types of data work together in Plus. Demographic data describes who a subscriber is. Psychographic data describes how they behave.</p>
+      </div>
+
+      <div class="data-sources">
+        <div class="data-source-card">
+          <div class="data-source-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/>
+            </svg>
+          </div>
+          <div class="data-source-title">Demographic</div>
+          <div class="data-source-desc">Quantitative. External and physical factors: age, income, location, household size, education, marital status.</div>
+        </div>
+        <div class="data-source-card">
+          <div class="data-source-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M9 3a4 4 0 0 0-4 4c0 1 .3 1.9.8 2.7A4 4 0 0 0 8 17h1v4h6v-5a4 4 0 0 0 3.2-6.3A4 4 0 0 0 15 3H9z"/><path d="M9 9h6M12 9v8"/>
+            </svg>
+          </div>
+          <div class="data-source-title">Psychographic</div>
+          <div class="data-source-desc">Qualitative. Behavioral characteristics: spending habits, technology adoption, lifestyle preferences, brand affinities.</div>
+        </div>
+      </div>
+
+      <div class="prose">
+        <p>Plus organizes both demographic and psychographic data into three complementary audience segment systems. Each one is available as a filter in Explore Data.</p>
+      </div>
+
+      <div class="outcomes-grid">
+        <div class="outcome-card">
+          <div class="outcome-number">1</div>
+          <div>
+            <div class="outcome-title">Lifestyle (PRIZM)</div>
+            <div class="outcome-desc">68 segments grouped into 11 life-stage categories. Ranks households from most to least affluent based on age, income, presence of children, and lifestyle preferences.</div>
+          </div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-number">2</div>
+          <div>
+            <div class="outcome-title">Finance (P$YCLE)</div>
+            <div class="outcome-desc">60 segments grouped into 12 categories by financial behavior, income, household composition, and stage of life. Ranks from most to least affluent.</div>
+          </div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-number">3</div>
+          <div>
+            <div class="outcome-title">Tech (Connexions)</div>
+            <div class="outcome-desc">53 segments grouped into 10 categories by technology adoption habits. Built specifically for the telecom industry — ranks from highest to lowest tech use.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="prose">
+        <p>Click any segment in Explore Data to open its full profile, which shows the demographic and psychographic attributes that define it.</p>
+      </div>
+
+      <div class="img-placeholder">
+        <div class="img-placeholder-label">[IMAGE: Explore Data filter panel showing Plus demographic and psychographic filters at the bottom of the page]</div>
+        <div class="img-placeholder-note">Suggested: 1200×600 screenshot from a Plus customer environment. Highlight the filter section.</div>
+      </div>
+
+      <div class="note-callout">Note: filter percentages are specific to your Base Area — they represent the proportion of your service area that matches each segment, not a national average.</div>
+
+      <div class="continue-wrap">
+        <button class="continue-btn" onclick="revealSection('section-final', this)">CONTINUE TO NEXT SECTION</button>
+      </div>
+    </div>
+
+    <!-- ─── FINAL: TAKEAWAY + NEXT ─── -->
+    <div class="reveal-section hidden" id="section-final">
 
       <div class="takeaway-block">
         <div class="block-label">Key Takeaway</div>
@@ -1469,6 +1710,28 @@
             </div>
           </div>
           <div class="kc-feedback" id="kcFeedback0"></div>
+        </div>
+        <div class="kc-question" id="kcQ1">
+          <div class="kc-question-text"><span class="kc-question-number">Q2.</span> Which of the following is psychographic data rather than demographic data?</div>
+          <div class="kc-options">
+            <div class="kc-option" data-question="1" data-option="0" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>Median household income</span>
+            </div>
+            <div class="kc-option" data-question="1" data-option="1" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>Marital status</span>
+            </div>
+            <div class="kc-option" data-question="1" data-option="2" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>Technology usage habits</span>
+            </div>
+            <div class="kc-option" data-question="1" data-option="3" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>Employment status</span>
+            </div>
+          </div>
+          <div class="kc-feedback" id="kcFeedback1"></div>
         </div>
 
         <div class="kc-submit-wrap">
@@ -1525,9 +1788,9 @@
   }
 
   /* ── Knowledge Check ── */
-  const kcAnswers = [1];
+  const kcAnswers = [1, 2];
   const kcSelections = {};
-  const kcTotal = 1;
+  const kcTotal = 2;
 
   function selectOption(el) {
     const q = el.dataset.question;
