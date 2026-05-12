@@ -1503,13 +1503,13 @@
         </div>
       </div>
 
-      <div class="note-callout">
-        <strong>Note:</strong> If existing subscribers are mistakenly included in a prospect upload, Engagement Cloud Plus will skip them. A given household can only exist as a subscriber or a prospect &mdash; never both.
-      </div>
-
       <div class="img-placeholder">
         <div class="img-placeholder-label">[IMAGE: Subscriber/Prospect File Upload screen &mdash; the uploader with the file selected, the segment named, and &ldquo;Prospect&rdquo; chosen as the segment type]</div>
         <div class="img-placeholder-note">Suggested: full-screen capture of the Engagement Cloud Plus uploader, ~1200&times;700. Crop to the segment-naming row and the template-download link.</div>
+      </div>
+
+      <div class="note-callout">
+        <strong>Note:</strong> If existing subscribers are mistakenly included in a prospect upload, Engagement Cloud Plus will skip them. A given household can only exist as a subscriber or a prospect &mdash; never both.
       </div>
 
       <div class="takeaway-block">
@@ -1554,28 +1554,6 @@
             </div>
           </div>
           <div class="kc-feedback" id="kcFeedback0"></div>
-        </div>
-        <div class="kc-question" id="kcQ1">
-          <div class="kc-question-text"><span class="kc-question-number">Q2.</span> Which of these is NOT a way to bring prospects into Engagement Cloud Plus?</div>
-          <div class="kc-options">
-            <div class="kc-option" data-question="1" data-option="0" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Build a Lookalike Acquisition Segment</span>
-            </div>
-            <div class="kc-option" data-question="1" data-option="1" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Upload a prospect list from your demand generation platform or operating support system</span>
-            </div>
-            <div class="kc-option" data-question="1" data-option="2" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Manually add prospects one at a time in the Subscribers tab</span>
-            </div>
-            <div class="kc-option" data-question="1" data-option="3" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Work with Calix to expand the Base Area to capture more prospects</span>
-            </div>
-          </div>
-          <div class="kc-feedback" id="kcFeedback1"></div>
         </div>
 
         <div class="kc-submit-wrap">
@@ -1632,9 +1610,9 @@
   }
 
   /* ── Knowledge Check ── */
-  const kcAnswers = [1, 2];
+  const kcAnswers = [1];
   const kcSelections = {};
-  const kcTotal = 2;
+  const kcTotal = 1;
 
   function selectOption(el) {
     const q = el.dataset.question;
