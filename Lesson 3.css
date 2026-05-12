@@ -890,10 +890,11 @@
   .section-img {
     display: block;
     width: 100%;
+    max-width: 720px;
     height: auto;
     border: 1px solid var(--gray-200);
     border-radius: var(--radius-lg);
-    margin: 24px 0;
+    margin: 24px auto;
   }
 
   .segment-img {
