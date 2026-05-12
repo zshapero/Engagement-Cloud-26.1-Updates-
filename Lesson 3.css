@@ -886,6 +886,25 @@
     max-width: 640px;
   }
 
+  /* ─── SECTION IMAGES ─────────────────────────────────── */
+  .section-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    margin: 24px 0;
+  }
+
+  .segment-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    margin: 0 0 14px;
+  }
+
   /* ─── COMPARE PAIR (Demographic vs. Psychographic) ───── */
   .compare-pair {
     display: grid;
@@ -1209,20 +1228,8 @@
   .kc-option.correct-answer .kc-option-radio {
     border-color: #22c55e;
   }
-  .kc-option.correct-answer .kc-option-radio::after {
-    content: '\2713';
-    font-size: 12px;
-    color: #22c55e;
-    font-weight: 700;
-  }
   .kc-option.wrong-answer .kc-option-radio {
     border-color: #ef4444;
-  }
-  .kc-option.wrong-answer .kc-option-radio::after {
-    content: '\2717';
-    font-size: 12px;
-    color: #ef4444;
-    font-weight: 700;
   }
   .kc-option.disabled {
     pointer-events: none;
@@ -1719,10 +1726,7 @@
         <div class="outcome-card">
           <div class="outcome-number">1</div>
           <div>
-            <div class="img-placeholder compact">
-              <div class="img-placeholder-label">[IMAGE: Sample PRIZM segment profile]</div>
-              <div class="img-placeholder-note">Suggested: ~400×240 screenshot of a single PRIZM segment with its life-stage category and top attributes.</div>
-            </div>
+            <img class="segment-img" src="Upper Crust Segment.png" alt="Sample PRIZM segment profile — 1 Upper Crust, 1.03% of US Households" />
             <div class="outcome-title">Lifestyle (PRIZM)</div>
             <div class="outcome-desc">68 segments grouped into 11 life-stage categories. Ranks households from most to least affluent based on age, income, presence of children, and lifestyle preferences.</div>
           </div>
@@ -1730,10 +1734,7 @@
         <div class="outcome-card">
           <div class="outcome-number">2</div>
           <div>
-            <div class="img-placeholder compact">
-              <div class="img-placeholder-label">[IMAGE: Sample P$YCLE segment profile]</div>
-              <div class="img-placeholder-note">Suggested: ~400×240 screenshot of a single P$YCLE segment with its financial-behavior category and top attributes.</div>
-            </div>
+            <img class="segment-img" src="Foundational Occupant Segment.png" alt="Sample P$YCLE segment profile — 60 Foundational Occupant, 2.19% of US Households" />
             <div class="outcome-title">Finance (P$YCLE)</div>
             <div class="outcome-desc">60 segments grouped into 12 categories by financial behavior, income, household composition, and stage of life. Ranks from most to least affluent.</div>
           </div>
@@ -1741,10 +1742,7 @@
         <div class="outcome-card">
           <div class="outcome-number">3</div>
           <div>
-            <div class="img-placeholder compact">
-              <div class="img-placeholder-label">[IMAGE: Sample Connexions segment profile]</div>
-              <div class="img-placeholder-note">Suggested: ~400×240 screenshot of a single Connexions segment with its tech-adoption category and top attributes.</div>
-            </div>
+            <img class="segment-img" src="Plugged-In Families Segment.png" alt="Sample Connexions segment profile — 2 Plugged-In Families, 1.99% of US Households" />
             <div class="outcome-title">Tech (Connexions)</div>
             <div class="outcome-desc">53 segments grouped into 10 categories by technology adoption habits. Built specifically for the telecom industry — ranks from highest to lowest tech use.</div>
           </div>
@@ -1755,10 +1753,7 @@
         <p>Click any segment in Explore Data to open its full profile, which shows the demographic and psychographic attributes that define it.</p>
       </div>
 
-      <div class="img-placeholder">
-        <div class="img-placeholder-label">[IMAGE: Explore Data filter panel showing Engagement Cloud Plus demographic and psychographic filters at the bottom of the page]</div>
-        <div class="img-placeholder-note">Suggested: 1200×600 screenshot from an Engagement Cloud Plus customer environment. Highlight the filter section.</div>
-      </div>
+      <img class="section-img" src="Explore Data Filter Panel.png" alt="Explore Data filter panel showing Engagement Cloud Plus demographic and psychographic filters at the bottom of the page" />
 
       <div class="note-callout">Note: filter percentages are specific to your Base Area — they represent the proportion of your service area that matches each segment, not a national average.</div>
 
