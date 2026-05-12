@@ -1,0 +1,1761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Lesson 8: Targeting Managed Services with Engagement Cloud Plus</title>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --blue: #0314f8;
+    --blue-dark: #0010c4;
+    --blue-light: #e8eaff;
+    --blue-mid: #3d52f9;
+    --white: #ffffff;
+    --gray-100: #f7f8fc;
+    --gray-200: #eef0f7;
+    --gray-300: #d8dce8;
+    --gray-500: #8b91aa;
+    --gray-700: #4a4f66;
+    --gray-900: #1a1d2e;
+    --accent-orange: #ff6b35;
+    --radius: 4px;
+    --radius-lg: 8px;
+    --shadow-sm: 0 1px 4px rgba(3,20,248,0.08);
+    --shadow-md: 0 4px 20px rgba(3,20,248,0.12);
+    --shadow-lg: 0 8px 40px rgba(3,20,248,0.16);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    background: var(--white);
+    color: var(--gray-900);
+    font-size: 17px;
+    line-height: 1.7;
+    display: block;
+    min-height: 100vh;
+  }
+
+  /* ─── MAIN CONTENT ────────────────────────────────────── */
+  .main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ─── LESSON HERO ─────────────────────────────────────── */
+  .lesson-hero {
+    background: var(--blue);
+    color: white;
+    padding: 72px 100px 64px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .lesson-hero::before {
+    content: '';
+    position: absolute;
+    right: -80px; top: -80px;
+    width: 360px; height: 360px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+
+  .lesson-hero::after {
+    content: '';
+    position: absolute;
+    right: 80px; bottom: -120px;
+    width: 240px; height: 240px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+
+  .lesson-title {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    max-width: 800px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .lesson-subtitle {
+    font-size: 18px;
+    opacity: 0.8;
+    max-width: 700px;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+  }
+
+  .lesson-meta {
+    display: flex;
+    gap: 24px;
+    margin-top: 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .lesson-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 17px;
+    opacity: 0.7;
+  }
+
+  /* ─── CONTENT BLOCKS ──────────────────────────────────── */
+  .content-wrapper {
+    width: 100%;
+    padding: 0 100px 80px;
+  }
+
+  /* ─── SCENARIO BLOCK ──────────────────────────────────── */
+  .scenario-block {
+    background: var(--blue);
+    color: white;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin: 48px 0 0;
+  }
+
+  .scenario-header {
+    padding: 16px 28px;
+    background: rgba(0,0,0,0.15);
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .scenario-body {
+    padding: 28px;
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  .scenario-avatar {
+    width: 200px; height: 240px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.12);
+    flex-shrink: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 10px;
+    overflow: hidden;
+  }
+
+  .scenario-avatar-icon {
+    opacity: 0.5;
+  }
+
+  .scenario-avatar-label {
+    font-size: 17px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.55);
+    text-align: center;
+    line-height: 1.3;
+    padding: 0 10px;
+  }
+
+  .scenario-content { flex: 1; }
+
+  .scenario-name {
+    font-weight: 700;
+    font-size: 17px;
+    margin-bottom: 8px;
+    opacity: 0.8;
+    letter-spacing: 0.5px;
+  }
+
+  .scenario-text {
+    font-size: 17px;
+    line-height: 1.65;
+    opacity: 0.95;
+  }
+
+  .scenario-questions {
+    margin-top: 16px;
+    padding: 16px 20px;
+    background: rgba(255,255,255,0.1);
+    border-radius: var(--radius);
+    list-style: none;
+  }
+
+  .scenario-questions li {
+    padding: 5px 0;
+    font-size: 17px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .scenario-questions li::before {
+    content: '?';
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px;
+    font-weight: 900;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ─── SECTION DIVIDER ─────────────────────────────────── */
+  .section-intro {
+    padding: 40px 0 0;
+  }
+
+  .section-intro p {
+    font-size: 17px;
+    color: var(--gray-700);
+    line-height: 1.75;
+    margin-bottom: 16px;
+  }
+
+  .section-intro p strong {
+    color: var(--gray-900);
+  }
+
+  .callout-quote {
+    border-left: 4px solid var(--blue);
+    padding: 16px 24px;
+    background: var(--blue-light);
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    margin: 24px 0;
+  }
+
+  .callout-quote p {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 19px;
+    font-style: italic;
+    color: var(--blue-dark);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ─── OBJECTIVES ──────────────────────────────────────── */
+  .objectives-block {
+    background: var(--gray-100);
+    border-radius: var(--radius-lg);
+    padding: 32px 36px;
+    margin: 32px 0 0;
+    border: 1px solid var(--gray-200);
+  }
+
+  .block-label {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .block-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--blue-light);
+  }
+
+  .objectives-list { list-style: none; }
+
+  .objectives-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 8px 0;
+    font-size: 17px;
+    color: var(--gray-700);
+    border-bottom: 1px solid var(--gray-200);
+  }
+
+  .objectives-list li:last-child { border-bottom: none; }
+
+  .obj-check {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: var(--blue);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .obj-check svg { width: 12px; height: 12px; }
+
+  /* ─── SECTION HEADING ─────────────────────────────────── */
+  .section-heading {
+    margin-top: 56px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--blue);
+  }
+
+  .section-heading h2 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--gray-900);
+    line-height: 1.25;
+  }
+
+  .section-heading .sh-label {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 8px;
+  }
+
+  /* ─── SCREENSHOT PLACEHOLDER ──────────────────────────── */
+  .screenshot-placeholder {
+    background: var(--gray-100);
+    border: 2px dashed var(--gray-300);
+    border-radius: var(--radius-lg);
+    margin: 24px 0;
+    overflow: hidden;
+  }
+
+  .screenshot-inner {
+    padding: 80px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 340px;
+  }
+
+  .screenshot-icon {
+    width: 56px; height: 56px;
+    border-radius: var(--radius-lg);
+    background: var(--gray-200);
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .screenshot-icon svg { width: 26px; height: 26px; color: var(--gray-500); }
+
+  .screenshot-label {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--gray-500);
+    letter-spacing: 0.5px;
+  }
+
+  .screenshot-sublabel {
+    font-size: 17px;
+    color: var(--gray-300);
+    letter-spacing: 0.3px;
+  }
+
+  .screenshot-caption {
+    font-size: 17px;
+    color: var(--gray-500);
+    text-align: center;
+    padding: 12px 20px;
+    border-top: 1px solid var(--gray-200);
+    font-style: italic;
+  }
+
+  /* ─── CARD GRID ───────────────────────────────────────── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0;
+  }
+
+  .card {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    transition: box-shadow 0.2s, border-color 0.2s;
+    cursor: default;
+  }
+
+  .card:hover { box-shadow: var(--shadow-md); border-color: var(--blue-mid); }
+
+  .card-icon {
+    width: 40px; height: 40px;
+    border-radius: var(--radius);
+    background: var(--blue-light);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 14px;
+  }
+
+  .card-icon svg { width: 20px; height: 20px; color: var(--blue); }
+
+  .card-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 8px;
+  }
+
+  .card-desc {
+    font-size: 17px;
+    color: var(--gray-500);
+    line-height: 1.6;
+  }
+
+  .card.plus {
+    border-color: var(--blue-mid);
+    background: var(--blue-light);
+  }
+
+  .card.plus .card-icon { background: var(--blue); }
+  .card.plus .card-icon svg { color: white; }
+  .card.plus .card-title { color: var(--blue-dark); }
+
+  .plus-badge {
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: white;
+    background: var(--blue);
+    padding: 4px 12px;
+    border-radius: 100px;
+    margin-bottom: 10px;
+  }
+
+  /* ─── ACCORDION / TABS ────────────────────────────────── */
+  .tabs-wrapper { margin: 24px 0; }
+
+  .tabs-nav {
+    display: flex;
+    border-bottom: 2px solid var(--gray-200);
+    gap: 0;
+  }
+
+  .tab-btn {
+    padding: 12px 24px;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--gray-500);
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    cursor: pointer;
+    transition: all 0.15s;
+    letter-spacing: 0.3px;
+  }
+
+  .tab-btn:hover { color: var(--gray-900); }
+  .tab-btn.active { color: var(--blue); border-bottom-color: var(--blue); }
+
+  .tab-panel { display: none; padding: 28px 0 0; }
+  .tab-panel.active { display: block; }
+
+  .tab-panel p {
+    font-size: 17px;
+    color: var(--gray-700);
+    line-height: 1.75;
+    margin-bottom: 16px;
+  }
+
+  /* ─── USE CASE BLOCK ──────────────────────────────────── */
+  .usecase-block {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-left: 4px solid var(--accent-orange);
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+
+  .usecase-label {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent-orange);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .usecase-block p {
+    font-size: 17px;
+    color: var(--gray-700);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* ─── BULLET LIST ─────────────────────────────────────── */
+  .styled-list {
+    list-style: none;
+    margin: 16px 0;
+  }
+
+  .styled-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 7px 0;
+    font-size: 17px;
+    color: var(--gray-700);
+    line-height: 1.6;
+  }
+
+  .styled-list li::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--blue);
+    flex-shrink: 0;
+    margin-top: 8px;
+  }
+
+  /* ─── FILTER TAGS ─────────────────────────────────────── */
+  .filter-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 16px 0;
+  }
+
+  .filter-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    background: var(--blue-light);
+    border: 1px solid rgba(3,20,248,0.15);
+    border-radius: 100px;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--blue-dark);
+  }
+
+  .filter-tag-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--blue);
+  }
+
+  /* ─── COMPARISON CALLOUT ──────────────────────────────── */
+  .compare-block { margin: 28px 0; }
+
+  .compare-transform {
+    display: flex;
+    align-items: stretch;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+
+  .compare-before {
+    flex: 1;
+    background: var(--gray-100);
+    border: 2px solid var(--gray-300);
+    border-right: none;
+    border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+    padding: 28px 32px;
+  }
+
+  .compare-after {
+    flex: 1;
+    background: var(--blue);
+    color: white;
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    padding: 28px 32px;
+  }
+
+  .compare-arrow-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gray-200);
+    width: 52px;
+    flex-shrink: 0;
+  }
+
+  .compare-arrow-circle {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid var(--blue);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--blue);
+    font-weight: 900;
+    box-shadow: 0 2px 8px rgba(3,20,248,0.18);
+  }
+
+  .compare-tag {
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 4px;
+    margin-bottom: 14px;
+  }
+
+  .compare-before .compare-tag { background: var(--gray-300); color: var(--gray-700); }
+  .compare-after .compare-tag { background: rgba(255,255,255,0.18); color: rgba(255,255,255,0.9); }
+
+  .compare-question {
+    font-size: 17px;
+    line-height: 1.65;
+    font-style: italic;
+  }
+
+  .compare-before .compare-question { color: var(--gray-700); }
+  .compare-after .compare-question { color: white; font-weight: 600; }
+
+  .compare-caption {
+    margin-top: 12px;
+    font-size: 17px;
+    color: var(--gray-500);
+    text-align: center;
+  }
+
+  /* ─── KEY TAKEAWAY ────────────────────────────────────── */
+  .takeaway-block {
+    background: var(--blue);
+    color: white;
+    border-radius: var(--radius-lg);
+    padding: 36px 40px;
+    margin: 48px 0 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .takeaway-block::before {
+    content: '★';
+    position: absolute;
+    right: 28px; top: 20px;
+    font-size: 80px;
+    opacity: 0.06;
+    line-height: 1;
+  }
+
+  .takeaway-block .block-label { color: rgba(255,255,255,0.6); }
+  .takeaway-block .block-label::after { background: rgba(255,255,255,0.15); }
+
+  .takeaway-block p {
+    font-size: 17px;
+    line-height: 1.75;
+    opacity: 0.92;
+  }
+
+  .takeaway-block p + p { margin-top: 12px; }
+
+  /* ─── NEXT LESSON ─────────────────────────────────────── */
+  .next-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--gray-100);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    padding: 20px 28px;
+    margin-top: 24px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .next-block:hover { border-color: var(--blue); background: var(--blue-light); }
+
+  .next-label {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    margin-bottom: 4px;
+  }
+
+  .next-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--gray-900);
+  }
+
+  .next-arrow {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--blue);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    color: white;
+    font-size: 18px;
+    transition: transform 0.2s;
+  }
+
+  .next-block:hover .next-arrow { transform: translateX(4px); }
+
+  /* ─── PROSE BLOCKS ────────────────────────────────────── */
+  .prose { padding-top: 20px; }
+
+  .prose p {
+    font-size: 17px;
+    color: var(--gray-700);
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  .prose p:last-child { margin-bottom: 0; }
+
+  /* ─── PLUS SECTION ────────────────────────────────────── */
+  .plus-banner {
+    background: linear-gradient(135deg, #0a10d4, var(--blue));
+    color: white;
+    border-radius: var(--radius-lg);
+    padding: 28px 32px;
+    margin: 24px 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .plus-icon {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .plus-banner-title {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .plus-banner-text {
+    font-size: 17px;
+    opacity: 0.8;
+    line-height: 1.5;
+  }
+
+  .plus-cta {
+    margin-left: auto;
+    flex-shrink: 0;
+    padding: 10px 20px;
+    background: white;
+    color: var(--blue);
+    font-size: 17px;
+    font-weight: 700;
+    border-radius: var(--radius);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: opacity 0.15s;
+  }
+
+  .plus-cta:hover { opacity: 0.9; }
+
+  /* ─── DATA SOURCES GRID ──────────────────────────────── */
+  .data-sources {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 28px 0;
+  }
+  .data-source-card {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-top: 4px solid var(--blue);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    transition: box-shadow 0.2s;
+  }
+  .data-source-card:hover { box-shadow: var(--shadow-md); }
+  .data-source-icon {
+    width: 44px; height: 44px;
+    border-radius: var(--radius);
+    background: var(--blue-light);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 16px;
+  }
+  .data-source-icon svg { width: 22px; height: 22px; color: var(--blue); }
+  .data-source-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 8px;
+  }
+  .data-source-desc {
+    font-size: 17px;
+    color: var(--gray-500);
+    line-height: 1.6;
+  }
+
+  /* ─── OUTCOMES GRID ──────────────────────────────────── */
+  .outcomes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin: 28px 0;
+  }
+  .outcomes-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+  .outcomes-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+  .outcome-card {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    position: relative;
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+  .outcome-card:hover { box-shadow: var(--shadow-md); border-color: var(--blue-mid); }
+  .outcome-number {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--blue);
+    color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+  .outcome-icon {
+    width: 44px; height: 44px;
+    border-radius: var(--radius);
+    background: var(--blue-light);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .outcome-icon svg { width: 22px; height: 22px; color: var(--blue); }
+  .outcome-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 8px;
+  }
+  .recipe-tagline {
+    font-size: 14px;
+    color: var(--gray-500);
+    font-style: italic;
+    margin-bottom: 8px;
+  }
+  .outcome-desc {
+    font-size: 17px;
+    color: var(--gray-500);
+    line-height: 1.65;
+  }
+
+  /* ─── IMAGE PLACEHOLDER ──────────────────────────────── */
+  .img-placeholder {
+    background: var(--gray-100);
+    border: 2px dashed var(--gray-300);
+    border-radius: var(--radius-lg);
+    margin: 24px 0;
+    padding: 48px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+  }
+  .img-placeholder-label {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--gray-700);
+    letter-spacing: 0.3px;
+  }
+  .img-placeholder-note {
+    font-size: 17px;
+    color: var(--gray-500);
+    font-style: italic;
+    max-width: 640px;
+  }
+  /* Avatar variant: fills the .scenario-avatar slot and inverts colors */
+  .scenario-avatar > .img-placeholder {
+    margin: 0;
+    padding: 14px 10px;
+    width: 100%;
+    height: 100%;
+    gap: 6px;
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.35);
+  }
+  .scenario-avatar > .img-placeholder .img-placeholder-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.9);
+    letter-spacing: 0.2px;
+  }
+  .scenario-avatar > .img-placeholder .img-placeholder-note {
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+    font-style: italic;
+  }
+
+  /* ─── NOTE CALLOUT ───────────────────────────────────── */
+  .note-callout {
+    background: #fff5ec;
+    border-left: 4px solid var(--accent-orange);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 14px 20px;
+    margin: 20px 0;
+    font-size: 17px;
+    color: var(--gray-700);
+    line-height: 1.6;
+  }
+  .note-callout strong { color: var(--gray-900); }
+
+  /* ─── SUBSECTION HEADING ─────────────────────────────── */
+  .subsection-heading {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin: 32px 0 8px;
+    line-height: 1.3;
+  }
+
+  /* ─── INLINE LINK ────────────────────────────────────── */
+  .prose a, .note-callout a {
+    color: var(--blue);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .prose a:hover, .note-callout a:hover { color: var(--blue-dark); }
+
+
+  /* ─── CONTINUE BUTTON & SECTION REVEAL ───────────────── */
+  .reveal-section {
+    overflow: hidden;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .reveal-section.hidden {
+    display: none;
+  }
+
+  .reveal-section.revealing {
+    display: block;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .reveal-section.visible {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .continue-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0 8px;
+  }
+
+  .continue-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 759px;
+    height: 56px;
+    background: var(--blue);
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: none;
+  }
+
+  .continue-btn:hover {
+    background: var(--blue-dark);
+    box-shadow: 0 4px 16px rgba(3,20,248,0.3);
+  }
+
+  .continue-btn:active { transform: translateY(1px); }
+
+  .continue-btn svg {
+    width: 18px; height: 18px;
+    transition: transform 0.2s;
+  }
+
+  .continue-btn:hover svg { transform: translateX(3px); }
+
+  /* ─── ANIMATIONS ──────────────────────────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .lesson-hero > * { animation: fadeUp 0.5s ease both; }
+  .lesson-hero .lesson-title    { animation-delay: 0.05s; }
+  .lesson-hero .lesson-subtitle { animation-delay: 0.13s; }
+  .lesson-hero .lesson-meta     { animation-delay: 0.2s; }
+
+  /* ─── SCROLLBAR ────────────────────────────────────────── */
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--gray-300); border-radius: 4px; }
+
+  /* ─── IMAGE CLARITY FIX ──────────────────────────────── */
+  .screenshot-placeholder img,
+  .scenario-avatar img,
+  .testimonial-photo img {
+    max-width: 75%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+
+  /* ─── KNOWLEDGE CHECK ─────────────────────────────────── */
+  .knowledge-check {
+    background: var(--gray-100);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    margin-top: 32px;
+  }
+  .knowledge-check-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .knowledge-check-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: white;
+    flex-shrink: 0;
+  }
+  .knowledge-check-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--gray-900);
+  }
+  .knowledge-check-subtitle {
+    font-size: 14px;
+    color: var(--gray-500);
+    margin-top: 2px;
+  }
+  .kc-question {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    margin-bottom: 16px;
+    transition: border-color 0.3s;
+  }
+  .kc-question.correct {
+    border-color: #22c55e;
+    background: #f0fdf4;
+  }
+  .kc-question.incorrect {
+    border-color: #ef4444;
+    background: #fef2f2;
+  }
+  .kc-question-text {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 14px;
+    color: var(--gray-900);
+  }
+  .kc-question-number {
+    color: var(--blue);
+    margin-right: 6px;
+  }
+  .kc-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .kc-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 15px;
+    color: var(--gray-700);
+    background: var(--white);
+  }
+  .kc-option:hover {
+    border-color: var(--blue-mid);
+    background: var(--blue-light);
+  }
+  .kc-option.selected {
+    border-color: var(--blue);
+    background: var(--blue-light);
+    color: var(--gray-900);
+    font-weight: 600;
+  }
+  .kc-option.correct-answer {
+    border-color: #22c55e;
+    background: #dcfce7;
+    color: #166534;
+    font-weight: 600;
+  }
+  .kc-option.wrong-answer {
+    border-color: #ef4444;
+    background: #fee2e2;
+    color: #991b1b;
+  }
+  .kc-option-radio {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--gray-300);
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+  .kc-option.selected .kc-option-radio {
+    border-color: var(--blue);
+  }
+  .kc-option.selected .kc-option-radio::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: var(--blue);
+    border-radius: 50%;
+  }
+  .kc-option.correct-answer .kc-option-radio {
+    border-color: #22c55e;
+  }
+  .kc-option.wrong-answer .kc-option-radio {
+    border-color: #ef4444;
+  }
+  .kc-option.disabled {
+    pointer-events: none;
+  }
+  .kc-feedback {
+    margin-top: 10px;
+    padding: 10px 14px;
+    border-radius: var(--radius);
+    font-size: 14px;
+    font-weight: 600;
+    display: none;
+  }
+  .kc-feedback.show { display: block; }
+  .kc-feedback.correct {
+    background: #dcfce7;
+    color: #166534;
+  }
+  .kc-feedback.incorrect {
+    background: #fee2e2;
+    color: #991b1b;
+  }
+  .kc-submit-wrap {
+    text-align: center;
+    margin-top: 24px;
+  }
+  .kc-submit-btn {
+    background: var(--blue);
+    color: white;
+    border: none;
+    padding: 14px 48px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: var(--radius);
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: background 0.2s;
+  }
+  .kc-submit-btn:hover { background: var(--blue-dark); }
+  .kc-submit-btn:disabled {
+    background: var(--gray-300);
+    cursor: not-allowed;
+  }
+  .kc-results {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: var(--radius-lg);
+    display: none;
+  }
+  .kc-results.show { display: block; }
+  .kc-results.pass {
+    background: #dcfce7;
+    border: 1px solid #22c55e;
+  }
+  .kc-results.fail {
+    background: #fef3c7;
+    border: 1px solid #f59e0b;
+  }
+  .kc-results-score {
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 4px;
+  }
+  .kc-results.pass .kc-results-score { color: #166534; }
+  .kc-results.fail .kc-results-score { color: #92400e; }
+  .kc-results-text {
+    font-size: 15px;
+    color: var(--gray-700);
+  }
+  .kc-retry-btn {
+    margin-top: 12px;
+    background: var(--blue);
+    color: white;
+    border: none;
+    padding: 10px 32px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .kc-retry-btn:hover { background: var(--blue-dark); }
+
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════ MAIN ════ -->
+<main class="main">
+
+  <!-- Hero -->
+  <div class="lesson-hero">
+    <h1 class="lesson-title">Targeting Managed Services with Engagement Cloud Plus</h1>
+    <p class="lesson-subtitle">Match subscribers and prospects to the managed services that fit how they actually live, work, and use their connection.</p>
+    <div class="lesson-meta">
+      <div class="lesson-meta-item">⏱ 10 min read</div>
+      <div class="lesson-meta-item">📊 Lesson 8 · 4 sections</div>
+    </div>
+  </div>
+
+  <!-- ═══ CONTENT ═══════════════════════════════════════════ -->
+  <div class="content-wrapper">
+
+    <!-- ─── SCENARIO ─── -->
+    <div class="scenario-block">
+      <div class="scenario-header">
+        <span>📋</span> SCENARIO
+      </div>
+      <div class="scenario-body">
+        <div class="scenario-avatar">
+          <div class="img-placeholder">
+            <div class="img-placeholder-label">[IMAGE: Elena character illustration]</div>
+            <div class="img-placeholder-note">Suggested: 240&times;240, consistent with other lesson avatars.</div>
+          </div>
+        </div>
+        <div class="scenario-content">
+          <div class="scenario-name">Elena · Marketing Manager</div>
+          <p class="scenario-text">Elena&rsquo;s GM wants to push two managed services this quarter &mdash; ProtectIQ and Bark. The challenge: they&rsquo;re not for everyone. ProtectIQ matters most to homeowners with many connected devices; Bark matters most to families with school-age kids. With Engagement Cloud Plus, Elena can match each managed service to the slice of subscribers most likely to want it &mdash; instead of blasting both offers to her whole base.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── PLUS LESSON FRAMING ─── -->
+    <div class="plus-banner">
+      <div class="plus-icon">⭐</div>
+      <div>
+        <div class="plus-banner-title">Engagement Cloud Plus</div>
+        <div class="plus-banner-text">This lesson uses Engagement Cloud Plus filters &mdash; demographic, behavioral, and product-adoption signals &mdash; that aren&rsquo;t available in Engagement Cloud alone.</div>
+      </div>
+    </div>
+
+    <!-- ─── OBJECTIVES ─── -->
+    <div class="objectives-block">
+      <div class="block-label">By the end of this lesson</div>
+      <ul class="objectives-list">
+        <li>
+          <div class="obj-check">
+            <svg viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          Understand why different managed services need different audiences
+        </li>
+        <li>
+          <div class="obj-check">
+            <svg viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          Apply recommended Engagement Cloud Plus filter recipes per product
+        </li>
+        <li>
+          <div class="obj-check">
+            <svg viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          Build a targeted Bark campaign step-by-step in Explore Data
+        </li>
+        <li>
+          <div class="obj-check">
+            <svg viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          Use SMB Match to surface SmartBiz upsell candidates hiding on residential plans
+        </li>
+      </ul>
+    </div>
+
+    <!-- ─── SECTION 1: THE MANAGED SERVICES OPPORTUNITY ─── -->
+    <div class="reveal-section visible" id="section-1">
+      <div class="section-heading">
+        <div class="sh-label">Section 1</div>
+        <h2>The Managed Services Opportunity</h2>
+      </div>
+
+      <div class="prose">
+        <p>Managed services &mdash; ProtectIQ, ExperienceIQ, Arlo, Bark, Servify, SmartBiz &mdash; add recurring revenue and deepen the relationship with each subscriber. But every one of them appeals to a different kind of household or business. The mistake is to pitch them all to everyone.</p>
+        <p>Engagement Cloud Plus turns &ldquo;promote managed service X&rdquo; into a sharper question: which subset of subscribers &mdash; or which prospects &mdash; actually look like the people who would buy X? The matching dimensions vary by product, but they come from the same Engagement Cloud Plus data: household composition, technology sophistication, devices in the home, demographics, and behavioral signals.</p>
+      </div>
+
+      <h3 class="subsection-heading">Same Approach, Two Audiences</h3>
+
+      <div class="prose">
+        <p>The targeting logic works in both directions. For existing subscribers, it&rsquo;s an upsell question &mdash; who already has the service but doesn&rsquo;t have Bark? For prospects, it&rsquo;s an acquisition pitch &mdash; who would sign up for service if Bark were part of the bundle?</p>
+      </div>
+
+      <div class="continue-wrap">
+        <button class="continue-btn" onclick="revealSection('section-2', this)">CONTINUE TO NEXT SECTION</button>
+      </div>
+    </div>
+
+    <!-- ─── SECTION 2: FILTER RECIPES BY PRODUCT ─── -->
+    <div class="reveal-section hidden" id="section-2">
+      <div class="section-heading">
+        <div class="sh-label">Section 2</div>
+        <h2>Filter Recipes by Product</h2>
+      </div>
+
+      <div class="prose">
+        <p>Each managed service has a recommended filter set in Engagement Cloud Plus. These aren&rsquo;t strict rules &mdash; Elena will refine them based on what she sees in her data &mdash; but they&rsquo;re a strong starting point.</p>
+      </div>
+
+      <div class="outcomes-grid">
+        <div class="outcome-card">
+          <div class="outcome-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="outcome-title">Arlo</div>
+            <div class="recipe-tagline">Smart-home security cameras</div>
+            <div class="outcome-desc"><strong>Filters:</strong> IoT device count and type, level of tech sophistication, is homeowner, income level.</div>
+          </div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/>
+            </svg>
+          </div>
+          <div>
+            <div class="outcome-title">Bark</div>
+            <div class="recipe-tagline">Family digital safety</div>
+            <div class="outcome-desc"><strong>Filters:</strong> number of children (1+), level of tech sophistication, CommandIQ parental controls active, number and type of devices in home (especially game consoles), current Bark adoption status.</div>
+          </div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><circle cx="12" cy="11" r="2"/><path d="M12 13v3"/>
+            </svg>
+          </div>
+          <div>
+            <div class="outcome-title">ProtectIQ</div>
+            <div class="recipe-tagline">Network-level threat protection</div>
+            <div class="outcome-desc"><strong>Filters:</strong> IoT device count and type, device brand mix, is homeowner, level of tech sophistication, usage type, current ProtectIQ status.</div>
+          </div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/>
+            </svg>
+          </div>
+          <div>
+            <div class="outcome-title">ExperienceIQ</div>
+            <div class="recipe-tagline">Parental controls and content filtering</div>
+            <div class="outcome-desc"><strong>Filters:</strong> families with children, age range, marital status, number of children, household size, current ExperienceIQ status.</div>
+          </div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M14.7 6.3a4 4 0 0 0-5.6 5.6l-6.3 6.3 2 2 6.3-6.3a4 4 0 0 0 5.6-5.6l-2.6 2.6-2-2z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="outcome-title">Servify</div>
+            <div class="recipe-tagline">Device protection and support</div>
+            <div class="outcome-desc"><strong>Filters:</strong> IoT device count and type, device brand, is homeowner, income level, level of tech sophistication, current Servify status.</div>
+          </div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+            </svg>
+          </div>
+          <div>
+            <div class="outcome-title">SmartBiz</div>
+            <div class="recipe-tagline">Small business solutions</div>
+            <div class="outcome-desc"><strong>Filters:</strong> SMB Match, age of business, business type, employee count, annual revenue, current SmartBiz status.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="img-placeholder">
+        <div class="img-placeholder-label">[IMAGE: side-by-side comparison of two Engagement Cloud Plus filter panels &mdash; one set up for Bark targeting, one for ProtectIQ &mdash; showing how the same dashboard produces different audiences with different recipes]</div>
+        <div class="img-placeholder-note">Suggested: ~1200&times;600 screenshot mockup.</div>
+      </div>
+
+      <div class="continue-wrap">
+        <button class="continue-btn" onclick="revealSection('section-3', this)">CONTINUE TO NEXT SECTION</button>
+      </div>
+    </div>
+
+    <!-- ─── SECTION 3: WORKED EXAMPLE — BARK FOR FAMILIES ─── -->
+    <div class="reveal-section hidden" id="section-3">
+      <div class="section-heading">
+        <div class="sh-label">Section 3</div>
+        <h2>Worked Example: Bark for Families</h2>
+      </div>
+
+      <div class="prose">
+        <p>Elena&rsquo;s first campaign targets Bark. Her GM wants families with school-age kids who aren&rsquo;t already on Bark. Here&rsquo;s the segment build:</p>
+      </div>
+
+      <div class="outcomes-grid">
+        <div class="outcome-card">
+          <div class="outcome-number">1</div>
+          <div>
+            <div class="outcome-title">Open the filter panel</div>
+            <div class="outcome-desc">Open Explore Data &mdash; Subscribers. Click Add Filter.</div>
+          </div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-number">2</div>
+          <div>
+            <div class="outcome-title">Pick the tech segment</div>
+            <div class="outcome-desc">Tech Segment: select &ldquo;Family Dishes&rdquo; (the household segment for media-heavy families with kids).</div>
+          </div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-number">3</div>
+          <div>
+            <div class="outcome-title">Add household size</div>
+            <div class="outcome-desc">Number of Children: select &ldquo;One child&rdquo;, &ldquo;Two children&rdquo;, and &ldquo;Three or more children&rdquo;.</div>
+          </div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-number">4</div>
+          <div>
+            <div class="outcome-title">Exclude existing Bark</div>
+            <div class="outcome-desc">Bark: select &ldquo;Does not have&rdquo; to exclude existing Bark subscribers.</div>
+          </div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-number">5</div>
+          <div>
+            <div class="outcome-title">Save the segment</div>
+            <div class="outcome-desc">Save as new segment &mdash; name it something specific, like &ldquo;Bark Upsell &mdash; Families Without Bark Q2&rdquo;.</div>
+          </div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-number">6</div>
+          <div>
+            <div class="outcome-title">Launch the campaign</div>
+            <div class="outcome-desc">Campaigns &rarr; New Campaign &rarr; pick the segment from the dropdown &rarr; choose channel and budget &rarr; deploy.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="img-placeholder">
+        <div class="img-placeholder-label">[IMAGE: Explore Data filter panel with the four Bark filters applied, showing the resulting segment size]</div>
+        <div class="img-placeholder-note">Suggested: ~1200&times;500 screenshot.</div>
+      </div>
+
+      <div class="prose">
+        <p><strong>Pro tip:</strong> a quick A/B on segment size helps Elena decide whether to broaden (drop the Tech Segment filter) or narrow (add an income or homeowner filter). The Engagement Cloud Plus filter recipe is a starting point, not a final answer.</p>
+      </div>
+
+      <div class="continue-wrap">
+        <button class="continue-btn" onclick="revealSection('section-4', this)">CONTINUE TO NEXT SECTION</button>
+      </div>
+    </div>
+
+    <!-- ─── SECTION 4: SMB MATCH ─── -->
+    <div class="reveal-section hidden" id="section-4">
+      <div class="section-heading">
+        <div class="sh-label">Section 4</div>
+        <h2>SMB Match &mdash; Finding Businesses Hiding in Residential</h2>
+      </div>
+
+      <div class="prose">
+        <p>Engagement Cloud Plus has a specialized capability for one specific managed service: SmartBiz. The SMB Match filter identifies small businesses currently running on residential broadband plans &mdash; the home bakery, the solo accountant, the side-business eBay seller. These customers are often paying for residential service but using it like a business, which makes them strong SmartBiz upsell candidates.</p>
+      </div>
+
+      <div class="data-sources">
+        <div class="data-source-card">
+          <div class="data-source-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="3" y1="20" x2="21" y2="20"/>
+            </svg>
+          </div>
+          <div class="data-source-title">The SMB Dashboard</div>
+          <div class="data-source-desc">Surfaces business signals across your subscriber base &mdash; business type, annual revenue, employee size, business age &mdash; so you can see the actual makeup of the businesses already on your service.</div>
+        </div>
+        <div class="data-source-card">
+          <div class="data-source-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><circle cx="11" cy="11" r="2.5"/>
+            </svg>
+          </div>
+          <div class="data-source-title">The SMB Match Filter</div>
+          <div class="data-source-desc">Identifies businesses by location data who aren&rsquo;t yet on SmartBiz. Save as a segment, target with tailored upsell campaigns.</div>
+        </div>
+      </div>
+
+      <div class="prose">
+        <p>The workflow mirrors what Elena just did for Bark &mdash; apply the SMB Match filter, optionally narrow by business type or revenue, save the segment, deploy a campaign positioning SmartBiz as an upgrade that fits how they&rsquo;re actually using their connection.</p>
+      </div>
+
+      <div class="img-placeholder">
+        <div class="img-placeholder-label">[IMAGE: SMB Dashboard showing business type breakdown and SMB Match filter applied to identify upsell candidates]</div>
+        <div class="img-placeholder-note">Suggested: ~1200&times;600 dashboard screenshot.</div>
+      </div>
+
+      <div class="takeaway-block">
+        <div class="block-label">Key Takeaway</div>
+        <p>The pattern is the same across every managed service: start with the recommended filter recipe, refine for your customer base and your offer, save the segment, run the campaign. Engagement Cloud Plus&rsquo;s filters are the bridge between a product Elena wants to sell and the people who actually want it.</p>
+      </div>
+
+      <div class="continue-wrap">
+        <button class="continue-btn" onclick="revealSection('section-knowledge-check', this)">CONTINUE TO KNOWLEDGE CHECK</button>
+      </div>
+    </div>
+
+    <!-- ═══ KNOWLEDGE CHECK ════════════════════════════════════ -->
+    <div class="reveal-section hidden" id="section-knowledge-check">
+
+            <div class="knowledge-check" id="knowledgeCheck">
+        <div class="knowledge-check-header">
+          <div class="knowledge-check-icon">?</div>
+          <div>
+            <div class="knowledge-check-title">Knowledge Check</div>
+            <div class="knowledge-check-subtitle">Test your understanding of this lesson</div>
+          </div>
+        </div>
+        <div class="kc-question" id="kcQ0">
+          <div class="kc-question-text"><span class="kc-question-number">Q1.</span> Elena is targeting Bark to families. Which filter is most important to include?</div>
+          <div class="kc-options">
+            <div class="kc-option" data-question="0" data-option="0" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>IoT device count</span>
+            </div>
+            <div class="kc-option" data-question="0" data-option="1" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>Number of children</span>
+            </div>
+            <div class="kc-option" data-question="0" data-option="2" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>Annual revenue</span>
+            </div>
+            <div class="kc-option" data-question="0" data-option="3" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>Homeowner status</span>
+            </div>
+          </div>
+          <div class="kc-feedback" id="kcFeedback0"></div>
+        </div>
+        <div class="kc-question" id="kcQ1">
+          <div class="kc-question-text"><span class="kc-question-number">Q2.</span> What does the SMB Match filter do?</div>
+          <div class="kc-options">
+            <div class="kc-option" data-question="1" data-option="0" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>Matches SmartBiz subscribers across multiple regions</span>
+            </div>
+            <div class="kc-option" data-question="1" data-option="1" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>Identifies businesses based on location data that aren&rsquo;t yet on SmartBiz</span>
+            </div>
+            <div class="kc-option" data-question="1" data-option="2" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>Pairs business subscribers with residential subscribers in the same ZIP</span>
+            </div>
+            <div class="kc-option" data-question="1" data-option="3" onclick="selectOption(this)">
+              <div class="kc-option-radio"></div>
+              <span>Generates a list of competing business broadband providers</span>
+            </div>
+          </div>
+          <div class="kc-feedback" id="kcFeedback1"></div>
+        </div>
+
+        <div class="kc-submit-wrap">
+          <button class="kc-submit-btn" id="kcSubmitBtn" onclick="submitKnowledgeCheck()" disabled>SUBMIT ANSWER</button>
+        </div>
+        <div class="kc-results" id="kcResults">
+          <div class="kc-results-score" id="kcScore"></div>
+          <div class="kc-results-text" id="kcResultsText"></div>
+          <button class="kc-retry-btn" id="kcRetryBtn" onclick="retryKnowledgeCheck()" style="display:none;">TRY AGAIN</button>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div><!-- /content-wrapper -->
+</main>
+
+<script>
+  function switchTab(e, panelId) {
+    const btn = e.target;
+    const tabsNav = btn.closest('.tabs-nav');
+    const tabsWrapper = btn.closest('.tabs-wrapper');
+    tabsNav.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    tabsWrapper.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    const panel = document.getElementById(panelId);
+    if (panel) panel.classList.add('active');
+  }
+
+  function revealSection(sectionId, btn) {
+    const section = document.getElementById(sectionId);
+    if (!section) return;
+
+    // Hide the button so it can't be clicked again
+    btn.closest('.continue-wrap').style.display = 'none';
+
+    // Trigger reveal animation
+    section.classList.remove('hidden');
+    section.classList.add('revealing');
+
+    // Force reflow then transition to visible
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        section.classList.remove('revealing');
+        section.classList.add('visible');
+      });
+    });
+
+    // Smooth scroll to new section after short delay
+    setTimeout(() => {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 80);
+  }
+
+  /* ── Knowledge Check ── */
+  const kcAnswers = [1, 1];
+  const kcSelections = {};
+  const kcTotal = 2;
+
+  function selectOption(el) {
+    const q = el.dataset.question;
+    const o = el.dataset.option;
+    const questionEl = document.getElementById('kcQ' + q);
+    if (questionEl.classList.contains('correct') || questionEl.classList.contains('incorrect')) return;
+    questionEl.querySelectorAll('.kc-option').forEach(opt => opt.classList.remove('selected'));
+    el.classList.add('selected');
+    kcSelections[q] = parseInt(o);
+    document.getElementById('kcSubmitBtn').disabled = Object.keys(kcSelections).length < kcTotal;
+  }
+
+  function submitKnowledgeCheck() {
+    let score = 0;
+    for (let i = 0; i < kcTotal; i++) {
+      const questionEl = document.getElementById('kcQ' + i);
+      const feedbackEl = document.getElementById('kcFeedback' + i);
+      const options = questionEl.querySelectorAll('.kc-option');
+      const selected = kcSelections[i];
+      const correct = kcAnswers[i];
+
+      options.forEach((opt, j) => {
+        opt.classList.add('disabled');
+        if (j === correct) {
+          opt.classList.add('correct-answer');
+        } else if (j === selected && j !== correct) {
+          opt.classList.add('wrong-answer');
+        }
+      });
+
+      if (selected === correct) {
+        score++;
+        questionEl.classList.add('correct');
+        feedbackEl.textContent = 'Correct!';
+        feedbackEl.className = 'kc-feedback show correct';
+      } else {
+        questionEl.classList.add('incorrect');
+        feedbackEl.textContent = 'Incorrect — see the correct answer highlighted above.';
+        feedbackEl.className = 'kc-feedback show incorrect';
+      }
+    }
+
+    const resultsEl = document.getElementById('kcResults');
+    const scoreEl = document.getElementById('kcScore');
+    const textEl = document.getElementById('kcResultsText');
+    const retryBtn = document.getElementById('kcRetryBtn');
+    const submitBtn = document.getElementById('kcSubmitBtn');
+
+    scoreEl.textContent = score + ' / ' + kcTotal;
+    submitBtn.style.display = 'none';
+
+    if (score === kcTotal) {
+      resultsEl.className = 'kc-results show pass';
+      textEl.textContent = 'Great job! You answered all questions correctly.';
+    } else {
+      resultsEl.className = 'kc-results show fail';
+      textEl.textContent = 'Review the incorrect answers above and try again.';
+      retryBtn.style.display = 'inline-block';
+    }
+  }
+
+  function retryKnowledgeCheck() {
+    for (let i = 0; i < kcTotal; i++) {
+      const questionEl = document.getElementById('kcQ' + i);
+      const feedbackEl = document.getElementById('kcFeedback' + i);
+      questionEl.className = 'kc-question';
+      feedbackEl.className = 'kc-feedback';
+      feedbackEl.textContent = '';
+      questionEl.querySelectorAll('.kc-option').forEach(opt => {
+        opt.className = 'kc-option';
+      });
+      delete kcSelections[i];
+    }
+    document.getElementById('kcResults').className = 'kc-results';
+    document.getElementById('kcSubmitBtn').style.display = 'inline-block';
+    document.getElementById('kcSubmitBtn').disabled = true;
+    document.getElementById('kcRetryBtn').style.display = 'none';
+  }
+
+</script>
+</body>
+</html>
