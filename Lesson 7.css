@@ -1244,7 +1244,7 @@
     <p class="lesson-subtitle">Turn subscriber insights into acquisition &mdash; find prospects who look like your best customers, and reach them before a competitor does.</p>
     <div class="lesson-meta">
       <div class="lesson-meta-item">⏱ 10 min read</div>
-      <div class="lesson-meta-item">📊 Lesson 7 · 4 sections</div>
+      <div class="lesson-meta-item">📊 Lesson 7 · 3 sections</div>
     </div>
   </div>
 
@@ -1259,7 +1259,7 @@
       <div class="scenario-body">
         <div class="scenario-avatar">
           <div class="img-placeholder">
-            <div class="img-placeholder-label">[IMAGE: Elena character illustration &mdash; same character used throughout the EC course]</div>
+            <div class="img-placeholder-label">[IMAGE: Elena character illustration &mdash; same character used throughout the Engagement Cloud course]</div>
             <div class="img-placeholder-note">Suggested: 240&times;240 character avatar, consistent with other lesson scenario images.</div>
           </div>
         </div>
@@ -1327,7 +1327,7 @@
 
       <div class="prose">
         <p>Everything Elena has learned so far in this course has been about subscribers &mdash; the households she already serves. Acquisition flips the question: who are the households she doesn&rsquo;t serve yet, and how does she find the ones most likely to convert?</p>
-        <p>Engagement Cloud Plus answers that question with a different kind of data. Where EC tells Elena how her subscribers use their service, Engagement Cloud Plus adds demographic, psychographic, and geographic data about non-subscribers in her Base Area.</p>
+        <p>Engagement Cloud Plus answers that question with a different kind of data. Where Engagement Cloud tells Elena how her subscribers use their service, Engagement Cloud Plus adds demographic, psychographic, and geographic data about non-subscribers in her Base Area.</p>
       </div>
 
       <h3 class="subsection-heading">Two Paths to Acquisition</h3>
@@ -1353,7 +1353,7 @@
             </svg>
           </div>
           <div class="data-source-title">Prospect List Upload</div>
-          <div class="data-source-desc">Bring your own list &mdash; from your DGP, an OSS export, or a co-op of non-data customers &mdash; and Engagement Cloud Plus matches it against household records to attach demographic and psychographic data.</div>
+          <div class="data-source-desc">Bring your own list &mdash; from your demand generation platform, an operating-support-system export, or a co-op of non-data customers &mdash; and Engagement Cloud Plus matches it against household records to attach demographic and psychographic data.</div>
         </div>
       </div>
 
@@ -1447,7 +1447,7 @@
       </div>
 
       <div class="img-placeholder">
-        <div class="img-placeholder-label">[IMAGE: Lookalike workflow diagram &mdash; flow from EC subscriber list to platform Custom Audience to Lookalike Audience to ad delivery]</div>
+        <div class="img-placeholder-label">[IMAGE: Lookalike workflow diagram &mdash; flow from Engagement Cloud subscriber list to platform Custom Audience to Lookalike Audience to ad delivery]</div>
         <div class="img-placeholder-note">Suggested: horizontal flow graphic, ~1200&times;400.</div>
       </div>
 
@@ -1468,7 +1468,7 @@
       </div>
 
       <div class="prose">
-        <p>Sometimes Elena already has a list. Maybe it came from her demand generation platform, an export from her OSS, or &mdash; common in electric co-op territory &mdash; a list of existing video or electric customers who don&rsquo;t subscribe to broadband yet. Engagement Cloud Plus accepts those lists directly.</p>
+        <p>Sometimes Elena already has a list. Maybe it came from her demand generation platform, an export from her operating support system, or &mdash; common in electric co-op territory &mdash; a list of existing video or electric customers who don&rsquo;t subscribe to broadband yet. Engagement Cloud Plus accepts those lists directly.</p>
         <p>Uploading a list does two things: it gives Elena a saved prospect segment she can target with campaigns, and it enriches each address with the same demographic and psychographic data Engagement Cloud Plus attaches everywhere else.</p>
       </div>
 
@@ -1507,44 +1507,14 @@
         <strong>Note:</strong> If existing subscribers are mistakenly included in a prospect upload, Engagement Cloud Plus will skip them. A given household can only exist as a subscriber or a prospect &mdash; never both.
       </div>
 
-      <div class="continue-wrap">
-        <button class="continue-btn" onclick="revealSection('section-4', this)">CONTINUE TO NEXT SECTION</button>
-      </div>
-    </div>
-
-    <!-- ─── SECTION 4: BEYOND MARKETING ─── -->
-    <div class="reveal-section hidden" id="section-4">
-      <div class="section-heading">
-        <div class="sh-label">Section 4</div>
-        <h2>Beyond Marketing &mdash; Prioritizing Network Expansion</h2>
-      </div>
-
-      <div class="prose">
-        <p>Lookalike segments aren&rsquo;t just a marketing tool. They&rsquo;re also a decision-support tool for GMs and network planners.</p>
-        <p>If Elena&rsquo;s GM is deciding which area to build into next, Lookalike Segments can answer a specific question: which areas just outside Elena&rsquo;s current footprint look most like her best-performing fiberhoods today? The ML model surfaces those areas using the same demographic, financial, and tech-behavior signals it uses for marketing campaigns.</p>
-      </div>
-
-      <div class="scenario-block">
-        <div class="scenario-header">
-          <span>📋</span> SECONDARY SCENARIO
-        </div>
-        <div class="scenario-body">
-          <div class="scenario-avatar">
-            <div class="img-placeholder">
-              <div class="img-placeholder-label">[IMAGE: George character illustration &mdash; GM persona]</div>
-              <div class="img-placeholder-note">Suggested: 240&times;240, consistent style with Elena&rsquo;s avatar.</div>
-            </div>
-          </div>
-          <div class="scenario-content">
-            <div class="scenario-name">George · GM</div>
-            <p class="scenario-text">George is debating whether to expand south of town. ABC Fiber has done well acquiring three-plus-person households who game. He asks Elena to run a lookalike analysis on the southwest neighborhoods to see how those prospects compare. Within a day, Elena returns a ranked map and a Facebook campaign targeting the closest matches &mdash; turning a capital allocation question into a data-driven decision.</p>
-          </div>
-        </div>
+      <div class="img-placeholder">
+        <div class="img-placeholder-label">[IMAGE: Subscriber/Prospect File Upload screen &mdash; the uploader with the file selected, the segment named, and &ldquo;Prospect&rdquo; chosen as the segment type]</div>
+        <div class="img-placeholder-note">Suggested: full-screen capture of the Engagement Cloud Plus uploader, ~1200&times;700. Crop to the segment-naming row and the template-download link.</div>
       </div>
 
       <div class="takeaway-block">
         <div class="block-label">Key Takeaway</div>
-        <p>Engagement Cloud Plus answers a question EC alone can&rsquo;t: who are the people you don&rsquo;t yet serve? Whether the goal is filling marketing campaigns or prioritizing where to build next, the underlying capability is the same &mdash; finding prospects who look like your best customers.</p>
+        <p>Engagement Cloud Plus answers a question Engagement Cloud alone can&rsquo;t: who are the people you don&rsquo;t yet serve? Whether prospects come from a Lookalike Segment or a list Elena uploads herself, the result is the same &mdash; a saved segment of non-subscribers, enriched with the demographic and psychographic data she needs to act on them.</p>
       </div>
 
       <div class="continue-wrap">
@@ -1594,7 +1564,7 @@
             </div>
             <div class="kc-option" data-question="1" data-option="1" onclick="selectOption(this)">
               <div class="kc-option-radio"></div>
-              <span>Upload a prospect list from your DGP or OSS</span>
+              <span>Upload a prospect list from your demand generation platform or operating support system</span>
             </div>
             <div class="kc-option" data-question="1" data-option="2" onclick="selectOption(this)">
               <div class="kc-option-radio"></div>
