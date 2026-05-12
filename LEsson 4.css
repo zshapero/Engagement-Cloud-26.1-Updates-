@@ -1249,12 +1249,12 @@
       </div>
     </div>
 
-    <!-- ═══════════════════════ SECTION 5: PLUS — SEGMENTS FOR PROSPECTS ═══════════════════════ -->
+    <!-- ═══════════════════════ SECTION 5: ACQUISITION SEGMENTS ═══════════════════════ -->
     <div class="reveal-section hidden" id="section-5">
 
       <div class="section-heading">
         <div class="sh-label">Section 5</div>
-        <h2>Engagement Cloud Plus: Segments for the People You Don&rsquo;t Have Yet</h2>
+        <h2>Acquisition Segments: A Third Type</h2>
       </div>
 
       <div class="plus-banner">
@@ -1267,11 +1267,6 @@
 
       <div class="prose">
         <p>Every segment Elena has built so far has been about the people she already serves. Engagement Cloud Plus opens a new question: who are the households in her area who aren&rsquo;t subscribers yet?</p>
-      </div>
-
-      <h3 class="subsection-heading">Acquisition Segments: A Third Type</h3>
-
-      <div class="prose">
         <p>Alongside the Upsell and Retention segments Elena saw earlier, Engagement Cloud Plus adds <strong>Acquisition Segments</strong> &mdash; lists of prospects in her Base Area whose demographic and behavioral profiles look like her existing high-value subscribers. Engagement Cloud Plus uses machine learning to keep these segments fresh as new prospect and subscriber data flows in.</p>
       </div>
 
@@ -1300,18 +1295,45 @@
         </div>
       </div>
 
-      <h3 class="subsection-heading">The Base Area: Where Prospects Come From</h3>
+      <div class="continue-wrap">
+        <button class="continue-btn" onclick="revealSection('section-6', this)">CONTINUE TO NEXT SECTION</button>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════ SECTION 6: THE BASE AREA ═══════════════════════ -->
+    <div class="reveal-section hidden" id="section-6">
+
+      <div class="section-heading">
+        <div class="sh-label">Section 6</div>
+        <h2>The Base Area: Where Prospects Come From</h2>
+      </div>
 
       <div class="prose">
         <p>For Engagement Cloud Plus to know which prospects to surface, it needs to know where Elena&rsquo;s service area is. That definition is called the <strong>Base Area</strong>.</p>
         <p>Calix Professional Services defines the Base Area during Engagement Cloud Plus onboarding. It typically includes the existing service area&rsquo;s ZIP codes plus the surrounding 5-mile radius &mdash; a buffer that supports future expansion targeting.</p>
       </div>
 
+      <div class="img-placeholder">
+        <div class="img-placeholder-label">[IMAGE: Base Area map &mdash; existing service-area ZIP codes shaded in one color with a 5-mile expansion buffer ring shaded in a second color]</div>
+        <div class="img-placeholder-note">Suggested: stylized map graphic, ~1000&times;600. Annotate the inner shape as &ldquo;Existing service area&rdquo; and the outer ring as &ldquo;5-mile expansion buffer&rdquo;.</div>
+      </div>
+
       <div class="note-callout">
         <strong>Note:</strong> the Base Area can&rsquo;t be edited inside Engagement Cloud directly. To revise it, work with your Customer Success Manager.
       </div>
 
-      <h3 class="subsection-heading">Going Below the ZIP Code: ZIP+4</h3>
+      <div class="continue-wrap">
+        <button class="continue-btn" onclick="revealSection('section-7', this)">CONTINUE TO NEXT SECTION</button>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════ SECTION 7: ZIP+4 ═══════════════════════ -->
+    <div class="reveal-section hidden" id="section-7">
+
+      <div class="section-heading">
+        <div class="sh-label">Section 7</div>
+        <h2>Going Below the ZIP Code: ZIP+4</h2>
+      </div>
 
       <div class="prose">
         <p>Standard ZIP codes are blunt. A single ZIP often straddles streets Elena serves and streets she doesn&rsquo;t, because ZIP boundaries weren&rsquo;t drawn around fiber footprints.</p>
