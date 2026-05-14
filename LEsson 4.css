@@ -1309,16 +1309,8 @@
       </div>
 
       <div class="prose">
-        <p>When Elena&rsquo;s GM asks how Engagement Cloud Plus knows who counts as a prospect, the answer is the <strong>Base Area</strong> &mdash; the geographic boundary that defines her territory inside the platform. Calix Professional Services sets it up during onboarding, starting with Elena&rsquo;s existing service-area ZIP codes and extending out a 5-mile buffer so future expansion is already in scope.</p>
-      </div>
-
-      <div class="note-callout">
-        <strong>Note:</strong> the Base Area can&rsquo;t be edited inside Engagement Cloud directly. To revise it, work with your Customer Success Manager.
-      </div>
-
-      <div class="prose">
-        <p>Plain ZIP codes are a blunt instrument. A single ZIP often straddles streets Elena serves and streets she doesn&rsquo;t, because ZIP boundaries weren&rsquo;t drawn around fiber footprints. To get closer to her actual network, Engagement Cloud Plus refines the Base Area with <strong>ZIP+4</strong> &mdash; the additional four digits that pinpoint a single block or one side of a street. With ZIP+4 in place, Elena can target campaigns precisely to streets she serves, skip addresses outside her footprint, and get a more accurate read on prospects inside her real fiberhoods.</p>
-        <p>Both the initial Base Area and ongoing ZIP+4 refinements live in the platform as address files &mdash; one row per household, with name, street address, city, state, ZIP, and email. It&rsquo;s the same template Elena uses for prospect and subscriber uploads, so the data she manages in Engagement Cloud Plus all speaks one common format.</p>
+        <p>The <strong>Base Area</strong> is the geographic boundary Engagement Cloud Plus uses to decide who counts as a prospect. Calix Professional Services sets it up from Elena&rsquo;s existing service-area ZIP codes plus a 5-mile expansion buffer, and <strong>ZIP+4</strong> refines it down to the block level so Elena can target the streets she actually serves.</p>
+        <p>Base Area definitions and ZIP+4 refinements both flow in as address files &mdash; the same template Elena uses for prospect and subscriber uploads. Administrators load ZIP+4 batches through ZIP Code File Upload, covered in Lesson 6.</p>
       </div>
 
       <div class="screenshot-placeholder">
@@ -1326,8 +1318,8 @@
         <div class="screenshot-caption">The Base Area / ZIP file format &mdash; name, address, city, state, ZIP, and email columns, one address per row</div>
       </div>
 
-      <div class="prose">
-        <p>ZIP+4 batches can be uploaded by an administrator through ZIP Code File Upload &mdash; covered in Lesson 6.</p>
+      <div class="note-callout">
+        <strong>Note:</strong> the Base Area can&rsquo;t be edited inside Engagement Cloud directly. To revise it, work with your Customer Success Manager.
       </div>
 
       <div class="continue-wrap">
