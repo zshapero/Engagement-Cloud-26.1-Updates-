@@ -1309,8 +1309,7 @@
       </div>
 
       <div class="prose">
-        <p>For Engagement Cloud Plus to know which prospects to surface, it needs to know where Elena&rsquo;s service area is. That definition is called the <strong>Base Area</strong>.</p>
-        <p>Calix Professional Services defines the Base Area during Engagement Cloud Plus onboarding. It typically includes the existing service area&rsquo;s ZIP codes plus the surrounding 5-mile radius &mdash; a buffer that supports future expansion targeting.</p>
+        <p>When Elena&rsquo;s GM asks how Engagement Cloud Plus knows who counts as a prospect, the answer is the <strong>Base Area</strong> &mdash; the geographic boundary that defines her territory inside the platform. Calix Professional Services sets it up during onboarding, starting with Elena&rsquo;s existing service-area ZIP codes and extending out a 5-mile buffer so future expansion is already in scope.</p>
       </div>
 
       <div class="note-callout">
@@ -1318,8 +1317,8 @@
       </div>
 
       <div class="prose">
-        <p>Standard ZIP codes are blunt. A single ZIP often straddles streets Elena serves and streets she doesn&rsquo;t, because ZIP boundaries weren&rsquo;t drawn around fiber footprints. Engagement Cloud Plus refines the Base Area with <strong>ZIP+4</strong> &mdash; the additional four digits that identify a smaller area within a ZIP, usually a single block or one side of a street. With ZIP+4, Elena can target campaigns precisely to streets she serves, avoid spending on addresses outside her footprint, and get a more accurate read on prospects within her actual fiberhoods.</p>
-        <p>Base Area refinements are uploaded as flat files of addresses with ZIP codes attached. The format is the same one used for prospect and subscriber uploads:</p>
+        <p>Plain ZIP codes are a blunt instrument. A single ZIP often straddles streets Elena serves and streets she doesn&rsquo;t, because ZIP boundaries weren&rsquo;t drawn around fiber footprints. To get closer to her actual network, Engagement Cloud Plus refines the Base Area with <strong>ZIP+4</strong> &mdash; the additional four digits that pinpoint a single block or one side of a street. With ZIP+4 in place, Elena can target campaigns precisely to streets she serves, skip addresses outside her footprint, and get a more accurate read on prospects inside her real fiberhoods.</p>
+        <p>Both the initial Base Area and ongoing ZIP+4 refinements live in the platform as address files &mdash; one row per household, with name, street address, city, state, ZIP, and email. It&rsquo;s the same template Elena uses for prospect and subscriber uploads, so the data she manages in Engagement Cloud Plus all speaks one common format.</p>
       </div>
 
       <div class="screenshot-placeholder">
@@ -1328,7 +1327,7 @@
       </div>
 
       <div class="prose">
-        <p>ZIP+4 batches can be uploaded by an administrator through ZIP Code File Upload. We&rsquo;ll cover that in Lesson 6.</p>
+        <p>ZIP+4 batches can be uploaded by an administrator through ZIP Code File Upload &mdash; covered in Lesson 6.</p>
       </div>
 
       <div class="continue-wrap">
@@ -1350,8 +1349,8 @@
       </div>
 
       <ul class="styled-list">
-        <li><strong>Draw Boundary:</strong> Use this option to create a free-form, polygonal shape on the map. Click on the map to set points and outline the desired area. A dashed boundary line indicates the shape is still open. To close it, either double-click or place the last point on the first point. Once closed, the map automatically centers on the selected area.</li>
-        <li><strong>Place Circle:</strong> Select this option to add a circle with a defined radius (representing a tower). Click on the map to set the center point of the circle, then enter the desired radius in the popup dialog. Note that the dialog may take a few seconds to appear after clicking on the map.</li>
+        <li><strong>Draw Boundary:</strong> click on the map to drop points and outline a free-form polygon; double-click or close the loop to finish.</li>
+        <li><strong>Place Circle:</strong> click to set a center point, then enter a radius to draw a circle &mdash; useful for representing tower coverage.</li>
       </ul>
 
       <div class="screenshot-placeholder">
@@ -1397,28 +1396,6 @@
           </div>
           <div class="kc-feedback" id="kcFeedback0"></div>
         </div>
-        <div class="kc-question" id="kcQ1">
-          <div class="kc-question-text"><span class="kc-question-number">Q2.</span> What does an Acquisition Segment contain?</div>
-          <div class="kc-options">
-            <div class="kc-option" data-question="1" data-option="0" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Existing subscribers ready to upgrade to a higher tier</span>
-            </div>
-            <div class="kc-option" data-question="1" data-option="1" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Non-subscriber prospects in your Base Area who match your high-value subscribers</span>
-            </div>
-            <div class="kc-option" data-question="1" data-option="2" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Customers who churned in the last six months</span>
-            </div>
-            <div class="kc-option" data-question="1" data-option="3" onclick="selectOption(this)">
-              <div class="kc-option-radio"></div>
-              <span>Business subscribers only</span>
-            </div>
-          </div>
-          <div class="kc-feedback" id="kcFeedback1"></div>
-        </div>
 
         <div class="kc-submit-wrap">
           <button class="kc-submit-btn" id="kcSubmitBtn" onclick="submitKnowledgeCheck()" disabled>SUBMIT ANSWER</button>
@@ -1453,9 +1430,9 @@
   }
 
   /* ── Knowledge Check ── */
-  const kcAnswers = [1, 1];
+  const kcAnswers = [1];
   const kcSelections = {};
-  const kcTotal = 2;
+  const kcTotal = 1;
 
   function selectOption(el) {
     const q = el.dataset.question;
